@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 importers:
 
@@ -32,7 +32,7 @@ importers:
       ui: workspace:*
     dependencies:
       classnames: 2.3.1
-      next: 12.0.8_react-dom@17.0.2+react@17.0.2
+      next: 12.0.8_sfoxds7t5ydpegc3knd667wn6m
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       ui: link:../../packages/ui
@@ -931,7 +931,7 @@ packages:
       '@rushstack/eslint-patch': 1.0.8
       '@typescript-eslint/parser': 5.10.1
       eslint-import-resolver-node: 0.3.4
-      eslint-import-resolver-typescript: 2.4.0_eslint-plugin-import@2.25.2
+      eslint-import-resolver-typescript: 2.4.0_vh5gizyt4jfjl2cpwztvw7criy
       eslint-plugin-import: 2.25.2
       eslint-plugin-jsx-a11y: 6.5.1
       eslint-plugin-react: 7.29.1
@@ -961,7 +961,7 @@ packages:
       resolve: 1.22.0
     dev: false
 
-  /eslint-import-resolver-typescript/2.4.0_eslint-plugin-import@2.25.2:
+  /eslint-import-resolver-typescript/2.4.0_vh5gizyt4jfjl2cpwztvw7criy:
     resolution: {integrity: sha512-useJKURidCcldRLCNKWemr1fFQL1SzB3G4a0li6lFGvlc5xGe1hY343bvG07cbpCzPuM/lK19FIJB3XGFSkplA==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -1700,7 +1700,7 @@ packages:
       escalade: 3.1.1
     dev: true
 
-  /next/12.0.8_react-dom@17.0.2+react@17.0.2:
+  /next/12.0.8_sfoxds7t5ydpegc3knd667wn6m:
     resolution: {integrity: sha512-g5c1Kuh1F8tSXJn2rVvzYBzqe9EXaR6+rY3/KrQ7y0D9FueRLfHI35wM0DRadDcPSc3+vncspfhYH3jnYE/KjA==}
     engines: {node: '>=12.22.0'}
     hasBin: true
