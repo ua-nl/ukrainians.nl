@@ -1,8 +1,5 @@
 # ukrainians.nl
 
-## What's inside?
-
-This turborepo uses [pnpm](https://pnpm.io) as a packages manager. It includes the following packages/apps:
 
 ### Apps and Packages
 
@@ -25,12 +22,10 @@ This turborepo has some additional tools already setup for you:
 
 ### How To
 
- [Install pnpm](https://pnpm.io/installation)
-
 ```bash
     cd ukrainians.nl
-    pnmp install
-    pnpm dev
+    nmp install
+    npm run dev
 ```
 
 Open `http://localhost:3000` in your browser.

@@ -1,1 +1,1 @@
-module.exports = require("config/postcss.config");
+module.exports = require("webconfig/postcss.config");

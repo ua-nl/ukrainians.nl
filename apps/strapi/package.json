@@ -1,0 +1,25 @@
+{
+  "name": "strapi-backend",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "lint": "eslint src --fix"
+  },
+  "dependencies": {
+    "@strapi/plugin-graphql": "^4.1.11",
+    "@strapi/plugin-i18n": "4.1.11",
+    "@strapi/plugin-users-permissions": "4.1.11",
+    "@strapi/strapi": "4.1.11",
+    "pg": "8.6.0"
+  },
+  "devDependencies": {
+    "better-sqlite3": "7.4.6"
+  },
+  "strapi": {
+    "uuid": "7e44976c-1b0f-4c92-869d-43608ae926ed"
+  }
+}
