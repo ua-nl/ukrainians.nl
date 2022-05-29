@@ -4,15 +4,40 @@
   "main": "./index.tsx",
   "types": "./index.tsx",
   "license": "MIT",
+  "exports": {
+    "./ux": "./dist/ux.js",
+    "./lib": "./dist/lib.js"
+  },
+  "typesVersions": {
+    "*": {
+      "ux": [
+        "./src/ux.ts"
+      ],
+      "lib": [
+        "./src/lib.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "dist": "tsc -p . --watch"
+  },
   "devDependencies": {
-    "@types/react": "^17.0.37",
-    "@types/react-dom": "^17.0.11",
-    "typescript": "^4.5.3",
-    "webconfig": "*",
-    "tsconfig": "*"
+    "tsconfig": "*",
+    "typescript": "^4.7.2",
+    "webconfig": "*"
   },
   "dependencies": {
-    "ariakit": "^2.0.0-next.25",
-    "classnames": "^2.3.1"
+    "@emotion/css": "^11.9.0",
+    "@emotion/react": "^11.9.0",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.8.0",
+    "@mui/material": "^5.8.1",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.5",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "swr": "^1.3.0"
   }
 }

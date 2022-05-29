@@ -1,13 +1,36 @@
-import { Button, Spacer } from "ui";
+import { useRouter } from 'next/router';
+import useSwr from 'swr';
+import { ButtonPrimary, ButtonSecondary, Spacer } from 'ui/ux';
+import { appCtx } from './AppCtx';
+import { TopMenu } from '../../../../packages/ui/src/components/TopMenu';
+
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function Web() {
+  const router = useRouter();
+  const { lang = 'en' } = router.query;
+  const { data, error } = useSwr(`/api/config/${lang}`, fetcher);
+
+  if (error) {
+    return (
+      <>
+        <h1>Failed to load APP</h1>
+        <p>{String(error)}</p>
+      </>
+    );
+  }
+  if (!data) {
+    return <h1>Loading...</h1>;
+  }
+
   return (
-    <div>
-      <Button>Solid primary</Button>
+    <appCtx.Provider value={data}>
+      <TopMenu pages={data.menu} />
+      <ButtonPrimary>Solid primary</ButtonPrimary>
       <Spacer />
-      <Button variant="secondary">Secondary primary</Button>
+      <ButtonSecondary>Secondary primary</ButtonSecondary>
       <Spacer />
-      <Button>Solid primary</Button>
-    </div>
+      <ButtonPrimary>Solid primary</ButtonPrimary>
+    </appCtx.Provider>
   );
 }

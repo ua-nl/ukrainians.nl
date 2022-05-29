@@ -1,17 +1,18 @@
-import type { AppProps } from "next/app";
-import Head from "next/head";
-import "../styles/tailwind.css";
+import React from 'react';
+import type { AppProps } from 'next/app';
+import { AppWrapper } from 'ui/ux';
+import Head from 'next/head';
 
-const Application = ({ Component, pageProps }: AppProps) => (
-  <>
-    <Head>
-      <title>ukrainians.nl</title>
-    </Head>
-
-    <main>
+const App = ({ Component, pageProps }: AppProps) => {
+  return (
+    <AppWrapper>
+      <Head>
+        <title>ukrainians.nl</title>
+      </Head>
+      {/* @ts-expect-error: different react instances */}
       <Component {...pageProps} />
-    </main>
-  </>
-);
+    </AppWrapper>
+  );
+};
 
-export default Application;
+export default App;
