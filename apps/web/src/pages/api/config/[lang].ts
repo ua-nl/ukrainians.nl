@@ -1,16 +1,17 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import layoutEn from './__mock__/layout.en.json';
-import layoutNl from './__mock__/layout.nl.json';
+import { Config, getConfig } from '../../../lib/getConfig';
+import { AvailableLangs } from '../../../lib/getConfigL10n';
 
-const LANG_MAP = {
-  en: layoutEn,
-  nl: layoutNl,
+const LANG_MAP: Record<string, AvailableLangs> = {
+  nl: 'nl',
 };
+const DEF_LANG = 'en';
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<typeof layoutEn>,
+  res: NextApiResponse<Config>,
 ) {
-  const lang = (req.query.lang ?? 'en') as keyof typeof LANG_MAP;
-  res.status(200).json(LANG_MAP[lang]);
+  const argLang = String(req.query.lang).split(',')[0];
+  const lang: AvailableLangs = LANG_MAP[argLang] ?? DEF_LANG;
+  res.status(200).json(getConfig(lang));
 }

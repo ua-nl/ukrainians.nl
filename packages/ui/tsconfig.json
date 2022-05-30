@@ -1,13 +1,14 @@
 {
-  "extends": "tsconfig/base.json",
+  "extends": "config/tsconfig.base.json",
   "display": "React Library",
   "compilerOptions": {
     "lib": [
       "ES2015"
     ],
-    "module": "ESNext",
-    "target": "ES6",
+    "isolatedModules": false,
     "jsx": "react-jsx",
+    "target": "ESNext",
+    "module": "ES6",
     "outDir": "./dist",
     "rootDir": "./src"
   },

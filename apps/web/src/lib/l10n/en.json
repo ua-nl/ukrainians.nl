@@ -1,0 +1,20 @@
+{
+  "menu.about": "About",
+  "menu.home": "Home",
+
+  "info.email": "Email",
+  "info.phone": "Phone",
+  "info.kvk": "KVK",
+  "info.anbi": "ANBI",
+
+  "links.title": "Useful links",
+  "links.school": "Schools",
+  "links.church": "Churches",
+  "links.vacancy": "Vacancies",
+  "links.about": "About Us",
+  "links.events": "Events",
+  "links.contact": "Contact",
+
+  "donate": "Donate",
+  "followUs": "Follow us"
+}

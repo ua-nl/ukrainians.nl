@@ -3,9 +3,9 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "dev": "strapi develop",
-    "start": "strapi start",
-    "build": "strapi build",
+    "_dev": "strapi develop",
+    "_start": "strapi start",
+    "_build": "strapi build",
     "strapi": "strapi",
     "lint": "eslint src --fix"
   },

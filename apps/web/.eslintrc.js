@@ -1,1 +1,1 @@
-module.exports = require("webconfig/eslint-preset");
+module.exports = require("config/eslintrc");
