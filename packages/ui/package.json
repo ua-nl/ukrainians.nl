@@ -2,11 +2,11 @@
   "name": "ui",
   "version": "0.0.0",
   "main": ".",
-  "types": ".",
   "license": "MIT",
   "exports": {
     "./ux": "./dist/ux.js",
-    "./lib": "./dist/lib.js"
+    "./lib": "./dist/lib.js",
+    "./assets": "./dist/assets.js"
   },
   "typesVersions": {
     "*": {
@@ -15,6 +15,9 @@
       ],
       "lib": [
         "./src/lib.ts"
+      ],
+      "assets": [
+        "./src/assets.tsx"
       ]
     }
   },

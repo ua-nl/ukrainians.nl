@@ -2,9 +2,7 @@
   "extends": "config/tsconfig.base.json",
   "display": "React Library",
   "compilerOptions": {
-    "lib": [
-      "ES2015"
-    ],
+    "lib": ["ES2015"],
     "isolatedModules": false,
     "jsx": "react-jsx",
     "target": "ESNext",
@@ -12,7 +10,5 @@
     "outDir": "./dist",
     "rootDir": "./src"
   },
-  "include": [
-    "src"
-  ],
+  "include": ["src", "src/assets/**/*.svg"]
 }
