@@ -8,3 +8,5 @@ export * from './ux/Breadcrumbs';
 export * from './ux/Section';
 export * from './ux/Typography';
 export * from './ux/Card';
+export * from './ux/Col';
+export * from './ux/ImgBox';

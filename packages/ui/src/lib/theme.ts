@@ -123,6 +123,7 @@ export const mainTheme = createTheme({
     },
     h4: {
       fontSize: getTypografyFontSize(16),
+      fontWeight: 700,
     },
     body1: {
       fontSize: getTypografyFontSize(16),

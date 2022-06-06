@@ -12,15 +12,18 @@ export const Section: FC<{
   children: ReactNode;
   first?: boolean;
   bg?: keyof typeof SECTION_COLOR;
-}> = (props) =>
-  !props.bg ? (
-    <Container maxWidth={CONTAINER_MAX_WIDTH}>
-      <Box mt={props.first ? undefined : '100px'}>{props.children}</Box>
-    </Container>
-  ) : (
-    <Box mt={props.first ? undefined : '100px'}>
-      <Box pt="100px" pb="100px" bgcolor={SECTION_COLOR[props.bg]}>
-        <Section first>{props.children}</Section>
-      </Box>
+}> = (props) => (
+  <Box mt={props.first ? undefined : '100px'}>
+    <Box bgcolor={props.bg ? SECTION_COLOR[props.bg] : undefined}>
+      <Container maxWidth={CONTAINER_MAX_WIDTH}>
+        {!props.bg ? (
+          props.children
+        ) : (
+          <Box pt="100px" pb="100px">
+            {props.children}
+          </Box>
+        )}
+      </Container>
     </Box>
-  );
+  </Box>
+);

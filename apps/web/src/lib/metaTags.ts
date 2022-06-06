@@ -3,7 +3,7 @@ export const META_TAGS = {
     'Stichting Oekraïners in Nederland / Ukrainians in the Netherlands Foundation',
   description:
     'Ukrainians in the Netherlands Foundation (Stichting Oekraïners in Nederland) is a non-profit platform established in 2014 to support the needs of the Dutch Ukrainian diaspora.',
-  img: '/img/sunflowers.png',
+  img: '/img/field.png',
   favicon: '/img/favicon.png',
   keywords: [
     'Stichting',

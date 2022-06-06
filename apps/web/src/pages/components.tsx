@@ -10,7 +10,7 @@ import {
   Para,
   Para2,
   Section,
-  IconCard,
+  Col,
 } from 'ui/ux';
 import {
   IconBird,
@@ -28,7 +28,6 @@ import { ActionCards } from '../components/ActionSection';
 
 export default function Index() {
   const ctx = useUIContext();
-
   return (
     <Page ctx={ctx}>
       <Bread
@@ -146,26 +145,29 @@ export default function Index() {
       </Section>
 
       <Section bg="yellow">
-        <p>
-          Ukrainians in the Netherlands Foundation is a non-profit organization
-          established during the Euromaidan Uprising in 2014. Since then, our
-          foundation has become a point of reference and connection for the
-          Ukrainian-Dutch diaspora, and has also been providing support for and
-          humanitarian aid to Ukraine. We actively collaborate with the
-          Ukrainian Embassy in the Kingdom of the Netherlands, sponsoring and
-          supporting local Ukrainian weekend schools and churches and organising
-          numerous cultural and educational events.
-        </p>
-        <p>
-          From the moment the Russian Federation unjustly invaded Ukraine on 24
-          February 2022, our foundation has been at forefront of urgent
-          humanitarian assistance for Ukrainian civilians and the Armed Forces
-          of Ukraine, as well as support for refugees and displaced persons in
-          the Netherlands. Consequently, we collaborate with numerous partners
-          both in Ukraine and in the Netherlands, including accredited volunteer
-          organisations, public-sector organisations and foundations, as well as
-          commercial enterprises.
-        </p>
+        <Col.Container>
+          <Col.Item>
+            Ukrainians in the Netherlands Foundation is a non-profit
+            organization established during the Euromaidan Uprising in 2014.
+            Since then, our foundation has become a point of reference and
+            connection for the Ukrainian-Dutch diaspora, and has also been
+            providing support for and humanitarian aid to Ukraine. We actively
+            collaborate with the Ukrainian Embassy in the Kingdom of the
+            Netherlands, sponsoring and supporting local Ukrainian weekend
+            schools and churches and organising numerous cultural and
+            educational events.
+          </Col.Item>
+          <Col.Item>
+            From the moment the Russian Federation unjustly invaded Ukraine on
+            24 February 2022, our foundation has been at forefront of urgent
+            humanitarian assistance for Ukrainian civilians and the Armed Forces
+            of Ukraine, as well as support for refugees and displaced persons in
+            the Netherlands. Consequently, we collaborate with numerous partners
+            both in Ukraine and in the Netherlands, including accredited
+            volunteer organisations, public-sector organisations and
+            foundations, as well as commercial enterprises.
+          </Col.Item>
+        </Col.Container>
       </Section>
 
       <Section>
