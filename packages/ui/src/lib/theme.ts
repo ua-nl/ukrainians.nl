@@ -20,7 +20,7 @@ const getTypografyFontSize = (base: number) =>
 
 export const mainTheme = createTheme({
   // spacing: 4,
-  spacing: [4, 8, 16, 32, 24, 40, 20, 48, 56, 64, 100, 120],
+  // spacing: [4, 8, 16, 32, 24, 40, 20, 48, 56, 64, 100, 120],
   components: {
     MuiCssBaseline: {
       styleOverrides: {

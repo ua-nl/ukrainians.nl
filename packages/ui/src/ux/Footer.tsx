@@ -14,7 +14,7 @@ export const Footer: React.FC<
     maxWidth: ContainerProps['maxWidth'];
   }
 > = ({ contactData, texts, maxWidth, l10n }) => (
-  <Box bgcolor={UASysColors.darkBlue}>
+  <Box bgcolor={UASysColors.darkBlue} pt="32px" pb="32px">
     <Container maxWidth={maxWidth}>
       <LogoFooter />
 

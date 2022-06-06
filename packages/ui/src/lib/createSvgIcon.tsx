@@ -1,18 +1,30 @@
-import { SVGProps, FC, ReactNode } from 'react';
+import { SVGProps, FC, ReactNode, HTMLAttributes } from 'react';
 
+export type SvgIconUA = ReturnType<typeof createSvgIconUA>;
 export const createSvgIconUA =
-  (content: ReactNode): FC<SVGProps<SVGSVGElement>> =>
-  (props) =>
+  (
+    content: ReactNode,
+  ): FC<
+    SVGProps<SVGSVGElement> & {
+      size?: NonNullable<HTMLAttributes<HTMLSpanElement>['style']>['fontSize'];
+    }
+  > =>
+  ({ size, ...props }) =>
     (
-      <svg
-        width="1em"
-        height="1em"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="10 10 72 72"
-        {...props}
-        style={{ verticalAlign: 'middle' }}
-      >
-        {content}
-      </svg>
+      <span style={{ fontSize: size, lineHeight: 0 }}>
+        <svg
+          width="1em"
+          height="1em"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="8 8 72 72"
+          {...props}
+          style={{
+            verticalAlign: 'middle',
+            // border: '1px solid red',
+          }}
+        >
+          {content}
+        </svg>
+      </span>
     );
