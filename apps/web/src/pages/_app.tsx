@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { UIContext } from 'ui/lib';
 import { UIProvider } from '../lib/uiContext';
 import { useJSON } from '../lib/useJSON';
-import { Wrap } from '../components/Wrap';
+import { WrapApp } from '../components/WrapApp';
 
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
@@ -13,31 +13,31 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   if (error) {
     return (
-      <Wrap title="App error">
+      <WrapApp title="App error">
         <h1>Failed to load APP</h1>
         <p>
           <code>
             <pre>{String(error)}</pre>
           </code>
         </p>
-      </Wrap>
+      </WrapApp>
     );
   }
 
   if (!data) {
     return (
-      <Wrap title="Loading">
+      <WrapApp title="Loading">
         <LinearProgress />
-      </Wrap>
+      </WrapApp>
     );
   }
 
   return (
     <UIProvider value={data}>
-      <Wrap>
+      <WrapApp>
         {/* @ts-expect-error: different react instances */}
         <Component {...pageProps} />
-      </Wrap>
+      </WrapApp>
     </UIProvider>
   );
 };

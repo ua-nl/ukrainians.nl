@@ -7,10 +7,15 @@ const createTypography =
     tProps: Partial<Pick<TypographyProps, 'gutterBottom' | 'mb'>> = {},
   ): FC<{
     children: ReactNode;
+    center?: boolean;
   }> =>
   (props) =>
     (
-      <Typography variant={variant} gutterBottom={tProps.gutterBottom}>
+      <Typography
+        variant={variant}
+        gutterBottom={tProps.gutterBottom}
+        textAlign={props.center ? 'center' : undefined}
+      >
         {props.children}
       </Typography>
     );

@@ -1,6 +1,5 @@
 import {
   Box,
-  Card,
   Container,
   ContainerProps,
   Typography,

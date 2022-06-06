@@ -3,20 +3,20 @@ import { FC, ReactNode } from 'react';
 import { H2 } from './Typography';
 import { SvgIconUA } from '../lib/createSvgIcon';
 
-export const IconCardContainer: FC<{
+const IconCardContainer: FC<{
   children: ReactNode;
 }> = (props) => (
   <Grid
     container
-    rowSpacing={{ xs: 1, sm: 2, md: 3 }}
-    columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+    rowSpacing={{ xs: 1, sm: 3, md: 5 }}
+    columnSpacing={{ xs: 1, sm: 3, md: 5 }}
     alignItems="stretch"
   >
     {props.children}
   </Grid>
 );
 
-export const IconCard: FC<{
+const IconCardItem: FC<{
   Icon: SvgIconUA;
   title: string;
   children: ReactNode;
@@ -37,3 +37,8 @@ export const IconCard: FC<{
     </Card>
   </Grid>
 );
+
+export const IconCard = {
+  Container: IconCardContainer,
+  Item: IconCardItem,
+};

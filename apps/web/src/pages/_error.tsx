@@ -1,12 +1,12 @@
 import { NextPage } from 'next';
-import { Wrap } from '../components/Wrap';
+import { WrapApp } from '../components/WrapApp';
 
 const AppError: NextPage<{
   statusCode: number;
 }> = ({ statusCode }) => (
-  <Wrap title="Error">
+  <WrapApp title="Error">
     <h1>Error {statusCode}!</h1>
-  </Wrap>
+  </WrapApp>
 );
 
 AppError.getInitialProps = ({ res, err }) => ({
