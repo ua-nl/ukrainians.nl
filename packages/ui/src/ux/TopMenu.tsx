@@ -8,8 +8,9 @@ import {
   ContainerProps,
   Menu,
 } from '@mui/material';
-import { UIContext } from '../lib/uiContext';
+
 import { LogoMenu } from '../assets/LogoMenu.svg';
+import { UIContext } from '../lib/uiContext';
 
 export const TopMenu: React.FC<
   Pick<UIContext, 'menu' | 'l10n' | 'texts'> & {
@@ -17,7 +18,7 @@ export const TopMenu: React.FC<
     currentSlug?: string;
   }
 > = ({ menu, currentSlug, l10n, maxWidth, texts }) => (
-  <AppBar position="static" color='transparent'>
+  <AppBar position="static" color="transparent">
     <Container maxWidth={maxWidth}>
       <Toolbar disableGutters>
         <LogoMenu />

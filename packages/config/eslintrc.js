@@ -1,11 +1,48 @@
+/**
+ * @type {import('eslint').Linter.Config}
+ */
 module.exports = {
-  extends: ["next", "prettier"],
-  settings: {
-    next: {
-      rootDir: ["apps/*/", "packages/*/"],
-    },
-  },
+  extends: ['eslint:recommended', 'prettier', 'plugin:prettier/recommended'],
+  plugins: ['import', 'prettier'],
   rules: {
-    "@next/next/no-html-link-for-pages": "off"
+    'import/order': [
+      'error',
+      {
+        groups: [
+          ['builtin', 'external'],
+          ['parent', 'sibling'],
+          'index',
+          'unknown',
+          'type',
+        ],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
   },
+  overrides: [
+    {
+      files: ['**/*.{ts,tsx}'],
+      parser: '@typescript-eslint/parser',
+      extends: ['plugin:@typescript-eslint/recommended'],
+      plugins: ['@typescript-eslint'],
+    },
+    {
+      files: ['*.{js,ts}'],
+      env: {
+        node: true,
+        browser: false,
+      }
+    },
+    {
+      files: ['**/*.test.{js,ts,tsx}'],
+      env: {
+        jest: true,
+      },
+      plugins: ['jest'],
+    },
+  ],
 };

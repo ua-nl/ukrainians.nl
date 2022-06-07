@@ -1,10 +1,11 @@
-import { Bread, Col, H1, ImgBox, Page, Para, Section } from 'ui/ux';
 import Image from 'next/image';
-import { useUIContext } from '../lib/uiContext';
-import { ActionCards } from '../components/ActionSection';
+import { Bread, Col, H1, ImgBox, Page, Para, Section } from 'ui/ux';
+
+import partners from '../../public/img/partners.png';
 import atTheTruck from '../../public/photo/at-the-truck.jpeg';
 import groupWithFlag from '../../public/photo/group-with-flag.jpeg';
-import partners from '../../public/img/partners.png';
+import { ActionCards } from '../components/ActionSection';
+import { useUIContext } from '../lib/uiContext';
 
 export default function Index() {
   const ctx = useUIContext();

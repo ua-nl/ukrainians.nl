@@ -1,4 +1,4 @@
-import { createSvgIconUA } from "../../lib/createSvgIcon";
+import { createSvgIconUA } from '../../lib/createSvgIcon';
 
 export const IconCalendar = createSvgIconUA(
   <>
@@ -54,5 +54,5 @@ export const IconCalendar = createSvgIconUA(
       d="M64.2 45a1.8 1.8 0 1 1-3.7 0 1.8 1.8 0 0 1 3.7 0Z"
       fill="#FDCD61"
     />
-  </>
+  </>,
 );

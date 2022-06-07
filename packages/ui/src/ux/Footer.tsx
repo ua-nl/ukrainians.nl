@@ -1,12 +1,9 @@
-import {
-  Box,
-  Container,
-  ContainerProps,
-  Typography,
-} from '@mui/material';
-import type { UIContext } from '../lib/uiContext';
-import { UASysColors } from '../lib/cssVars.color';
+import { Box, Container, ContainerProps, Typography } from '@mui/material';
+
 import { LogoFooter } from '../assets/LogoFooter.svg';
+import { UASysColors } from '../lib/cssVars.color';
+
+import type { UIContext } from '../lib/uiContext';
 
 export const Footer: React.FC<
   Pick<UIContext, 'l10n' | 'contactData' | 'texts'> & {

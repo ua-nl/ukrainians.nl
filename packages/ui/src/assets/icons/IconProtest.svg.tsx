@@ -178,5 +178,5 @@ export const IconProtest = createSvgIconUA(
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-  </>
+  </>,
 );

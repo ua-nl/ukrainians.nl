@@ -1,12 +1,13 @@
-import { ReactNode, FC } from 'react';
 import { CacheProvider } from '@emotion/react';
 import {
   CssBaseline,
   StyledEngineProvider,
   ThemeProvider,
 } from '@mui/material';
-import { mainTheme } from '../lib/theme';
+import { ReactNode, FC } from 'react';
+
 import { cssCache } from '../lib/cssCache';
+import { mainTheme } from '../lib/theme';
 
 export const AppWrapper: FC<{ children: ReactNode }> = ({ children }) => (
   <StyledEngineProvider injectFirst>

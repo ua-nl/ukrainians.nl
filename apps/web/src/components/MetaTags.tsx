@@ -1,4 +1,5 @@
 import { FC } from 'react';
+
 import { META_TAGS } from '../lib/metaTags';
 
 export const MetaTags: FC = () => (

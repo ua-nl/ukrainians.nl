@@ -1,4 +1,5 @@
 import { createTheme, PaletteColorOptions } from '@mui/material';
+
 import { UASysColors } from './cssVars.color';
 
 declare module '@mui/material' {
@@ -11,16 +12,18 @@ declare module '@mui/material/styles' {
   interface CustomPalette {
     accent: PaletteColorOptions;
   }
-  interface Palette extends CustomPalette {}
-  interface PaletteOptions extends CustomPalette {}
+  interface PaletteOptions {
+    accent: PaletteColorOptions;
+  }
+  interface Palette {
+    accent: PaletteColorOptions;
+  }
 }
 
 const getTypografyFontSize = (base: number) =>
   `${((base / 16) * 100).toFixed(0)}%`;
 
 export const mainTheme = createTheme({
-  // spacing: 4,
-  // spacing: [4, 8, 16, 32, 24, 40, 20, 48, 56, 64, 100, 120],
   components: {
     MuiCssBaseline: {
       styleOverrides: {
@@ -53,7 +56,7 @@ export const mainTheme = createTheme({
         containedSecondary: {
           color: UASysColors.white,
         },
-        // @ts-expect-error
+        // @ts-expect-error custom variants are not in types
         containedAccent: {
           color: UASysColors.blueHover,
         },

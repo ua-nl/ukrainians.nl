@@ -1,6 +1,7 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
 import { Config, getConfig } from '../../../lib/getConfig';
 import { AvailableLangs } from '../../../lib/getConfigL10n';
+
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 const LANG_MAP: Record<string, AvailableLangs> = {
   nl: 'nl',

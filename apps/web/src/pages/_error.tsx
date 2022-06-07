@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+
 import { WrapApp } from '../components/WrapApp';
 
 const AppError: NextPage<{

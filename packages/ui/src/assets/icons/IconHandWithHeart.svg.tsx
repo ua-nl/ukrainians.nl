@@ -24,5 +24,5 @@ export const IconHandWithHeart = createSvgIconUA(
       strokeMiterlimit={10}
       strokeLinecap="round"
     />
-  </>
+  </>,
 );

@@ -1,5 +1,6 @@
-import { FC, ReactNode } from 'react';
 import { Box, Container } from '@mui/material';
+import { FC, ReactNode } from 'react';
+
 import { UASysColors } from '../lib/cssVars.color';
 import { CONTAINER_MAX_WIDTH } from './Page';
 

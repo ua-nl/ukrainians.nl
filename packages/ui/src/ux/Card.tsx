@@ -1,7 +1,8 @@
 import { Box, Card, Grid } from '@mui/material';
 import { FC, ReactNode } from 'react';
-import { H2 } from './Typography';
+
 import { SvgIconUA } from '../lib/createSvgIcon';
+import { H2 } from './Typography';
 
 const IconCardContainer: FC<{
   children: ReactNode;

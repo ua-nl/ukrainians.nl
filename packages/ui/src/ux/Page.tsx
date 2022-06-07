@@ -1,8 +1,9 @@
-import { FC, ReactNode } from 'react';
 import { Box } from '@mui/material';
+import { FC, ReactNode } from 'react';
+
+import { UIContext } from '../lib/uiContext';
 import { Footer } from './Footer';
 import { TopMenu } from './TopMenu';
-import { UIContext } from '../lib/uiContext';
 
 export const CONTAINER_MAX_WIDTH = 'lg';
 

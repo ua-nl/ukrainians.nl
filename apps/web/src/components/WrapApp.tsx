@@ -1,9 +1,10 @@
-import type { FC, ReactNode } from 'react';
-import { AppWrapper } from 'ui/ux';
 import Head from 'next/head';
-import { AppHeader } from 'ui/ux';
+import { AppWrapper, AppHeader } from 'ui/ux';
+
 import { META_TAGS } from '../lib/metaTags';
 import { MetaTags } from './MetaTags';
+
+import type { FC, ReactNode } from 'react';
 
 export const WrapApp: FC<{
   children: ReactNode;

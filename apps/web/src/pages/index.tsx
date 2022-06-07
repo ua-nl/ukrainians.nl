@@ -1,6 +1,7 @@
 import { Page, Section } from 'ui/ux';
-import { useUIContext } from '../lib/uiContext';
+
 import { ActionCards } from '../components/ActionSection';
+import { useUIContext } from '../lib/uiContext';
 
 export default function Index() {
   const ctx = useUIContext();

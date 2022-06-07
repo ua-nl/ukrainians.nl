@@ -1,4 +1,15 @@
 import {
+  IconBird,
+  IconCalendar,
+  IconCoatOfArms,
+  IconHandWithHeart,
+  IconHouse,
+  IconProtest,
+  IconProtestHand,
+  IconUkraineInHands,
+  IconUkraineOnHand,
+} from 'ui/assets';
+import {
   Bread,
   Button,
   Caption,
@@ -12,19 +23,9 @@ import {
   Section,
   Col,
 } from 'ui/ux';
-import {
-  IconBird,
-  IconCalendar,
-  IconCoatOfArms,
-  IconHandWithHeart,
-  IconHouse,
-  IconProtest,
-  IconProtestHand,
-  IconUkraineInHands,
-  IconUkraineOnHand,
-} from 'ui/assets';
-import { useUIContext } from '../lib/uiContext';
+
 import { ActionCards } from '../components/ActionSection';
+import { useUIContext } from '../lib/uiContext';
 
 export default function Index() {
   const ctx = useUIContext();

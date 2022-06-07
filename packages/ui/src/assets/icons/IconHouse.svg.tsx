@@ -17,5 +17,5 @@ export const IconHouse = createSvgIconUA(
       d="M55.3 52.4a37.8 37.8 0 0 1-9.4 10.7 28 28 0 0 1-9.5-10.7h18.9Z"
       fill="#FDCD61"
     />
-  </>
+  </>,
 );

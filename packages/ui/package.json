@@ -22,12 +22,12 @@
     }
   },
   "scripts": {
+    "lint": "eslint . --ignore-path .gitignore",
     "build": "tsc -p .",
     "dev": "tsc -p . --watch",
     "start": "npm run build"
   },
   "devDependencies": {
-    "typescript": "^4.7.2",
     "config": "*"
   },
   "peerDependencies": {

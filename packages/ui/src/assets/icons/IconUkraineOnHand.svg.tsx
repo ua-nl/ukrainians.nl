@@ -36,5 +36,5 @@ export const IconUkraineOnHand = createSvgIconUA(
       strokeMiterlimit={10}
       strokeLinecap="round"
     />
-  </>
+  </>,
 );

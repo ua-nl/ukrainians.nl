@@ -1,5 +1,5 @@
-import { FC, ReactNode } from 'react';
 import { Typography, TypographyProps } from '@mui/material';
+import { FC, ReactNode } from 'react';
 
 const createTypography =
   (

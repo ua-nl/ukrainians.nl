@@ -1,10 +1,12 @@
 import { LinearProgress } from '@mui/material';
-import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import { UIContext } from 'ui/lib';
+
+import { WrapApp } from '../components/WrapApp';
 import { UIProvider } from '../lib/uiContext';
 import { useJSON } from '../lib/useJSON';
-import { WrapApp } from '../components/WrapApp';
+
+import type { AppProps } from 'next/app';
 
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();

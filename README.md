@@ -1,6 +1,5 @@
 # ukrainians.nl
 
-
 ### Apps and Packages
 
 - `web`: a [Next.js](https://nextjs.org) app, managing the website

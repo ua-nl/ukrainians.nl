@@ -1,4 +1,5 @@
 import { UIContext } from 'ui/lib';
+
 import { getConfigContactData } from './getConfigContactData';
 import { AvailableLangs, getConfigL10n } from './getConfigL10n';
 import { getConfigMenu } from './getConfigMenu';

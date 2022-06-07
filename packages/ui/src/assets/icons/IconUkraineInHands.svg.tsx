@@ -44,5 +44,5 @@ export const IconUkraineInHands = createSvgIconUA(
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-  </>
+  </>,
 );
