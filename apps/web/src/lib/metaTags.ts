@@ -17,4 +17,5 @@ export const META_TAGS = {
     'humanitarian volunteer',
     'aid support 2022',
   ].join(' '),
+  url: 'https://ukrainians.nl/',
 };
