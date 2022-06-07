@@ -10,28 +10,25 @@ export interface ButtonProps
   size?: 'small' | 'medium';
 }
 
-const PropMap = {
-  variant: {
-    primary: 'contained',
-    accent: 'contained',
-    secondary: 'contained',
-    outline: 'outlined',
-  } as Record<ButtonType, MuiButtonProps['variant']>,
-  color: {
-    primary: 'primary',
-    secondary: 'secondary',
-    accent: 'accent',
-    outline: 'primary',
-  } as Record<ButtonType, MuiButtonProps['color']>,
+const PROP_MAP_VARIANT: Record<ButtonType, MuiButtonProps['variant']> = {
+  primary: 'contained',
+  accent: 'contained',
+  secondary: 'contained',
+  outline: 'outlined',
 };
-
+const PROP_MAP_COLOR: Record<ButtonType, MuiButtonProps['color']> = {
+  primary: 'primary',
+  secondary: 'secondary',
+  accent: 'accent',
+  outline: 'primary',
+};
 export const Button = ({ type, ...props }: ButtonProps) => {
   const btnType = type ?? 'outline';
   return (
     <MuiButton
       {...props}
-      variant={PropMap.variant[btnType]}
-      color={PropMap.color[btnType]}
+      variant={PROP_MAP_VARIANT[btnType]}
+      color={PROP_MAP_COLOR[btnType]}
     />
   );
 };

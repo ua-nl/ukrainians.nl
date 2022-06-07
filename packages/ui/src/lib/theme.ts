@@ -64,26 +64,18 @@ export const mainTheme = createTheme({
     },
   },
   palette: {
-    // bgButtonPrimaryNormal: `blue100`,
-    // bvuttonPrimaryHover: `blueHover`,
-    // bgButtonCommonNormal: `blue100`,
-    // bgButtonCommonHover: `blueHover`,
     primary: {
       light: UASysColors.blue60,
       main: UASysColors.blue100,
       dark: UASysColors.blueHover,
       contrastText: UASysColors.white,
     },
-    // bgButtonAccentHover: `yellowHover`,
-    // bgButtonAccentNormal: `yellow100`,
     accent: {
       light: UASysColors.yellow30,
       main: UASysColors.yellow60,
       dark: UASysColors.yellow100,
       contrastText: UASysColors.blue100,
     },
-    // bgButtonSecondaryNormal: `blue30`,
-    // bgButtonSecondaryHover: `blue60`,
     secondary: {
       light: UASysColors.blue30,
       main: UASysColors.blue30,
@@ -101,8 +93,6 @@ export const mainTheme = createTheme({
     },
   },
   typography: {
-    // htmlFontSize: `16px`,
-    // fontSize: `16`,
     fontFamily: ['Montserrat', 'Helvetica', 'Arial', 'sans-serif'].join(','),
     allVariants: {
       accentColor: UASysColors.yellowHover,
@@ -140,8 +130,5 @@ export const mainTheme = createTheme({
     button: {
       fontSize: getTypografyFontSize(16),
     },
-    // input: {
-    // fontSize: getTypografyFontSize(12),
-    // },
   },
 });
