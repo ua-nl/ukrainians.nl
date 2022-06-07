@@ -1,8 +1,8 @@
 import type { AppProps } from 'next/app';
+import type { UIContext } from 'ui/lib';
 
 import { LinearProgress } from '@mui/material';
 import { useRouter } from 'next/router';
-import { UIContext } from 'ui/lib';
 
 import { WrapApp } from '../components/WrapApp';
 import { UIProvider } from '../lib/uiContext';

@@ -1,5 +1,6 @@
+import type { UIContext } from 'ui/lib';
+
 import { createContext, useContext } from 'react';
-import { UIContext } from 'ui/lib';
 
 const uiContext = createContext<UIContext>({
   lang: 'en',

@@ -1,8 +1,8 @@
+import type { UIContext } from '../lib/uiContext';
 import type { ReactNode } from 'react';
 
 import { Box } from '@mui/material';
 
-import { UIContext } from '../lib/uiContext';
 import { Footer } from './Footer';
 import { TopMenu } from './TopMenu';
 

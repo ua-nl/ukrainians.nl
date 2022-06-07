@@ -1,6 +1,5 @@
 import type { L10NKeys } from './l10n/@types';
-
-import { UIContext } from 'ui/lib';
+import type { UIContext } from 'ui/lib';
 
 import { getConfigContactData } from './getConfigContactData';
 import { AvailableLangs, getConfigL10n } from './getConfigL10n';
