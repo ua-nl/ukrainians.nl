@@ -1,16 +1,18 @@
 /**
  * @type {import('eslint').Linter.Config}
  */
- module.exports = {
+module.exports = {
   root: true,
   settings: {
     next: {
-      rootDir: ['apps/*/', 'packages/*/'],
+      rootDir: 'packages/web/',
     },
   },
-
-
-
-  extends: [require.resolve('config/eslintrc'),    'plugin:@next/next/recommended',
-],
+  extends: [
+    require.resolve('config/eslintrc'),
+    'plugin:@next/next/recommended',
+  ],
+  parserOptions: {
+    project: require.resolve('./tsconfig.json'),
+  },
 };

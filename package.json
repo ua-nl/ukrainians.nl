@@ -12,7 +12,7 @@
     "lint": "turbo run lint",
     "fmt": "npm run fmt:code && npm run fmt:md",
     "fmt:code": "turbo run lint -- --fix",
-    "fmt:md": "prettier --write '**/*.{md}'"
+    "fmt:md": "prettier --write '**/*.md' --ignore-path .gitignore"
   },
   "devDependencies": {
     "turbo": "1.2.16"

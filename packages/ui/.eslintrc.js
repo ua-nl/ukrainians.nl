@@ -3,4 +3,7 @@
  */
 module.exports = {
   extends: [require.resolve('config/eslintrc')],
+  parserOptions: {
+    project: require.resolve('./tsconfig.json'),
+  },
 };

@@ -11,7 +11,9 @@ import type { AppProps } from 'next/app';
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
   const { lang = 'en' } = router.query;
-  const { data, error } = useJSON<UIContext>(`/api/config/${lang}`);
+  const { data, error } = useJSON<UIContext>(
+    `/api/config/${Array.isArray(lang) ? lang[0] : lang}`,
+  );
 
   if (error) {
     return (
@@ -37,7 +39,6 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <UIProvider value={data}>
       <WrapApp>
-        {/* @ts-expect-error: different react instances */}
         <Component {...pageProps} />
       </WrapApp>
     </UIProvider>
