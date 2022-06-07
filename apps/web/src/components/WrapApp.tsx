@@ -1,27 +1,25 @@
 import type { ReactNode } from 'react';
 
 import Head from 'next/head';
-import { AppWrapper, AppHeader } from 'ui/ux';
+import { AppWrapper, AppWrapperProps, AppHeader } from 'ui/ux';
 
 import { META_TAGS } from '../lib/metaTags';
 import { MetaTags } from './MetaTags';
 
-export const WrapApp = ({
-  children,
-  title,
-}: {
+export const WrapApp = (props: {
   children: ReactNode;
   title?: string;
+  data?: AppWrapperProps['data'];
 }) => (
-  <AppWrapper>
+  <AppWrapper data={props.data}>
     <Head>
       <title>
-        {title} {title ? '⬅' : ''} ukrainians.nl
+        {props.title} {props.title ? '⬅' : ''} ukrainians.nl
       </title>
       <link rel="icon" href={META_TAGS.favicon} />
       <AppHeader />
       <MetaTags />
     </Head>
-    {children}
+    {props.children}
   </AppWrapper>
 );

@@ -5,12 +5,10 @@ import partners from '../../public/img/partners.png';
 import atTheTruck from '../../public/photo/at-the-truck.jpeg';
 import groupWithFlag from '../../public/photo/group-with-flag.jpeg';
 import { ActionCards } from '../components/ActionSection';
-import { useUIContext } from '../lib/uiContext';
 
 export default function Index() {
-  const ctx = useUIContext();
   return (
-    <Page ctx={ctx}>
+    <Page>
       <Bread history={[{ label: 'Home', href: '/' }]} current="About" />
 
       <Section first>

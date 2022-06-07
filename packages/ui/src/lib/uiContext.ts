@@ -1,3 +1,5 @@
+import { createContext, useContext } from 'react';
+
 export type UIContext = {
   lang: string;
   l10n: Record<string, string>;
@@ -16,3 +18,20 @@ export type UIContext = {
     followUs: string;
   };
 };
+
+export const UI_CONTEXT_EMPTY: UIContext = {
+  lang: 'en',
+  menu: [],
+  texts: {
+    contactHeader: 'Contacts',
+    donateBtn: 'Donate',
+    followUs: 'Follow us',
+  },
+  l10n: {},
+  contactData: [],
+};
+
+const uiContext = createContext<UIContext>(UI_CONTEXT_EMPTY);
+
+export const UIProvider = uiContext.Provider;
+export const useUIContext = () => useContext(uiContext);

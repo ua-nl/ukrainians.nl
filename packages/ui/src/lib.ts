@@ -1,1 +1,1 @@
-export type { UIContext } from './lib/uiContext';
+export * from './lib/uiContext';

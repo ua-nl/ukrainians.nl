@@ -5,7 +5,6 @@ import { LinearProgress } from '@mui/material';
 import { useRouter } from 'next/router';
 
 import { WrapApp } from '../components/WrapApp';
-import { UIProvider } from '../lib/uiContext';
 import { useJSON } from '../lib/useJSON';
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -37,11 +36,9 @@ const App = ({ Component, pageProps }: AppProps) => {
   }
 
   return (
-    <UIProvider value={data}>
-      <WrapApp>
-        <Component {...pageProps} />
-      </WrapApp>
-    </UIProvider>
+    <WrapApp data={data}>
+      <Component {...pageProps} />
+    </WrapApp>
   );
 };
 

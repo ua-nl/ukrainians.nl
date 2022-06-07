@@ -1,4 +1,3 @@
-import type { UIContext } from '../lib/uiContext';
 import type { ReactNode } from 'react';
 
 import { Box } from '@mui/material';
@@ -10,22 +9,11 @@ export const CONTAINER_MAX_WIDTH = 'lg';
 
 export interface PageProps {
   children: ReactNode;
-  ctx: UIContext;
 }
-export const Page = ({ children, ctx }: PageProps) => (
+export const Page = ({ children }: PageProps) => (
   <>
-    <TopMenu
-      maxWidth={CONTAINER_MAX_WIDTH}
-      menu={ctx.menu}
-      l10n={ctx.l10n}
-      texts={ctx.texts}
-    />
+    <TopMenu maxWidth={CONTAINER_MAX_WIDTH} />
     <Box pb="120px">{children}</Box>
-    <Footer
-      maxWidth={CONTAINER_MAX_WIDTH}
-      texts={ctx.texts}
-      contactData={ctx.contactData}
-      l10n={ctx.l10n}
-    />
+    <Footer maxWidth={CONTAINER_MAX_WIDTH} />
   </>
 );

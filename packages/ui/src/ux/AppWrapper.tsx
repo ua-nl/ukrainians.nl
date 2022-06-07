@@ -9,14 +9,21 @@ import {
 
 import { cssCache } from '../lib/cssCache';
 import { mainTheme } from '../lib/theme';
+import { UIContext, UIProvider, UI_CONTEXT_EMPTY } from '../lib/uiContext';
 
-export const AppWrapper = ({ children }: { children: ReactNode }) => (
-  <StyledEngineProvider injectFirst>
-    <CacheProvider value={cssCache}>
-      <ThemeProvider theme={mainTheme}>
-        <CssBaseline />
-        {children}
-      </ThemeProvider>
-    </CacheProvider>
-  </StyledEngineProvider>
+export interface AppWrapperProps {
+  children: ReactNode;
+  data?: UIContext;
+}
+export const AppWrapper = (props: AppWrapperProps) => (
+  <UIProvider value={props.data ?? UI_CONTEXT_EMPTY}>
+    <StyledEngineProvider injectFirst>
+      <CacheProvider value={cssCache}>
+        <ThemeProvider theme={mainTheme}>
+          <CssBaseline />
+          {props.children}
+        </ThemeProvider>
+      </CacheProvider>
+    </StyledEngineProvider>
+  </UIProvider>
 );

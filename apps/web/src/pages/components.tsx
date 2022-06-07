@@ -25,12 +25,10 @@ import {
 } from 'ui/ux';
 
 import { ActionCards } from '../components/ActionSection';
-import { useUIContext } from '../lib/uiContext';
 
 export default function Index() {
-  const ctx = useUIContext();
   return (
-    <Page ctx={ctx}>
+    <Page>
       <Bread
         history={[
           { label: 'Home', href: '/' },
