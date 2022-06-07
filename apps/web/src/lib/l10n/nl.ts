@@ -1,4 +1,4 @@
-import { L10NStrings } from './@types';
+import type { L10NStrings } from './@types';
 
 export const l10nNL: L10NStrings = {
   'menu.about': 'Over ons',

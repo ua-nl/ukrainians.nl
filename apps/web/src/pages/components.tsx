@@ -76,7 +76,7 @@ export default function Index() {
         </H1>
         <Para>
           {[120, 100, 64, 56, 48, 40, 32, 24, 20, 16].map((size) => (
-            <span>
+            <span key={String(size)}>
               {size}px <IconCalendar size={`${size}px`} />
             </span>
           ))}

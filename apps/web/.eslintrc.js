@@ -9,6 +9,7 @@ module.exports = {
     },
   },
   extends: [
+    require.resolve('config/eslintrc-react'),
     require.resolve('config/eslintrc'),
     'plugin:@next/next/recommended',
   ],

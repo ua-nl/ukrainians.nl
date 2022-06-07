@@ -4,13 +4,11 @@ import {
 } from '@mui/material';
 
 export type ButtonType = 'primary' | 'secondary' | 'accent' | 'outline';
-export type ButtonProps = Pick<
-  MuiButtonProps,
-  'children' | 'disabled' | 'onClick'
-> & {
+export interface ButtonProps
+  extends Pick<MuiButtonProps, 'children' | 'disabled' | 'onClick'> {
   type?: ButtonType;
   size?: 'small' | 'medium';
-};
+}
 
 const PropMap = {
   variant: {
@@ -27,7 +25,7 @@ const PropMap = {
   } as Record<ButtonType, MuiButtonProps['color']>,
 };
 
-export const Button: React.FC<ButtonProps> = ({ type, ...props }) => {
+export const Button = ({ type, ...props }: ButtonProps) => {
   const btnType = type ?? 'outline';
   return (
     <MuiButton

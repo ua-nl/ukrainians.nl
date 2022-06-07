@@ -1,6 +1,6 @@
-import { SVGProps, FC } from 'react';
+import type { SVGProps } from 'react';
 
-export const LogoFooter: FC = (props: SVGProps<SVGSVGElement>) => (
+export const LogoFooter = (props: SVGProps<SVGSVGElement>) => (
   <svg width={220} height={69} fill="none" {...props}>
     <path
       d="M2.9 65.4a66.5 66.5 0 0 1 12.7-38.8"

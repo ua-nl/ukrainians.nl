@@ -1,4 +1,4 @@
-import { L10NKeys } from './l10n/@types';
+import type { L10NKeys } from './l10n/@types';
 
 const cteateCD = (key: string, value: string, label: L10NKeys) => ({
   key,

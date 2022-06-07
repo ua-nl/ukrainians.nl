@@ -1,8 +1,6 @@
-import { FC } from 'react';
-
 import { META_TAGS } from '../lib/metaTags';
 
-export const MetaTags: FC = () => (
+export const MetaTags = () => (
   <>
     <meta name="description" content={META_TAGS.description} />
     <meta name="keywords" content={META_TAGS.keywords} />

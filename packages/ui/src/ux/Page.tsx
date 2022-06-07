@@ -1,5 +1,6 @@
+import type { ReactNode } from 'react';
+
 import { Box } from '@mui/material';
-import { FC, ReactNode } from 'react';
 
 import { UIContext } from '../lib/uiContext';
 import { Footer } from './Footer';
@@ -7,10 +8,11 @@ import { TopMenu } from './TopMenu';
 
 export const CONTAINER_MAX_WIDTH = 'lg';
 
-export const Page: FC<{
+export interface PageProps {
   children: ReactNode;
   ctx: UIContext;
-}> = ({ children, ctx }) => (
+}
+export const Page = ({ children, ctx }: PageProps) => (
   <>
     <TopMenu
       maxWidth={CONTAINER_MAX_WIDTH}

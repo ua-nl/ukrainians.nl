@@ -9,11 +9,11 @@ module.exports = {
       'error',
       {
         groups: [
+          'type',
           ['builtin', 'external'],
           ['parent', 'sibling'],
           'index',
           'unknown',
-          'type',
         ],
         'newlines-between': 'always',
         alphabetize: {

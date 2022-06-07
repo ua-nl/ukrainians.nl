@@ -1,12 +1,11 @@
+import type { ReactNode } from 'react';
+
 import { Box, Card, Grid } from '@mui/material';
-import { FC, ReactNode } from 'react';
 
 import { SvgIconUA } from '../lib/createSvgIcon';
 import { H2 } from './Typography';
 
-const IconCardContainer: FC<{
-  children: ReactNode;
-}> = (props) => (
+const IconCardContainer = (props: { children: ReactNode }) => (
   <Grid
     container
     rowSpacing={{ xs: 1, sm: 3, md: 5 }}
@@ -17,11 +16,11 @@ const IconCardContainer: FC<{
   </Grid>
 );
 
-const IconCardItem: FC<{
+const IconCardItem = (props: {
   Icon: SvgIconUA;
   title: string;
   children: ReactNode;
-}> = (props) => (
+}) => (
   <Grid item xs={6}>
     <Card>
       <Box padding="56px 40px 56px 24px">

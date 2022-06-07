@@ -1,5 +1,6 @@
+import type { ReactNode } from 'react';
+
 import { Box, Container } from '@mui/material';
-import { FC, ReactNode } from 'react';
 
 import { UASysColors } from '../lib/cssVars.color';
 import { CONTAINER_MAX_WIDTH } from './Page';
@@ -9,11 +10,12 @@ const SECTION_COLOR = {
   blue: UASysColors.blue30,
   gray: UASysColors.black10,
 };
-export const Section: FC<{
+export interface SectionProps {
   children: ReactNode;
   first?: boolean;
   bg?: keyof typeof SECTION_COLOR;
-}> = (props) => (
+}
+export const Section = (props: SectionProps) => (
   <Box mt={props.first ? undefined : '100px'}>
     <Box bgcolor={props.bg ? SECTION_COLOR[props.bg] : undefined}>
       <Container maxWidth={CONTAINER_MAX_WIDTH}>

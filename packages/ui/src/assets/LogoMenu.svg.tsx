@@ -1,6 +1,6 @@
-import { SVGProps, FC } from 'react';
+import type { SVGProps } from 'react';
 
-export const LogoMenu: FC = (props: SVGProps<SVGSVGElement>) => (
+export const LogoMenu = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width={141}
     height={43}

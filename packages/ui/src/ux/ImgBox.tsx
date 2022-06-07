@@ -1,10 +1,12 @@
-import { Box, BoxProps } from '@mui/material';
-import { FC, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-export const ImgBox: FC<{
+import { Box, BoxProps } from '@mui/material';
+
+export interface ImgBoxProps {
   children: ReactNode;
   sx: BoxProps['sx'];
-}> = (props) => (
+}
+export const ImgBox = (props: ImgBoxProps) => (
   <Box overflow="hidden" lineHeight={0} borderRadius="12px" sx={props.sx}>
     {props.children}
   </Box>

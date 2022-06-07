@@ -1,17 +1,17 @@
 import { Breadcrumbs, Link, Typography, Box } from '@mui/material';
-import { FC } from 'react';
 
 import { Section } from './Section';
 
-export const Bread: FC<{
+export const Bread = (props: {
   history: Array<{ label: string; href: string }>;
   current: string;
-}> = (props) => (
+}) => (
   <Section first>
     <Box mt="50px" mb="24px">
       <Breadcrumbs component="div">
         {props.history.map((item) => (
           <Link
+            key={item.label}
             underline="hover"
             color="inherit"
             href={item.href}

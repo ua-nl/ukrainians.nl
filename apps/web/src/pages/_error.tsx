@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { NextPage } from 'next';
 
 import { WrapApp } from '../components/WrapApp';

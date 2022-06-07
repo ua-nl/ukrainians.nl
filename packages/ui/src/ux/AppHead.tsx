@@ -1,6 +1,4 @@
-import { FC } from 'react';
-
-export const AppHeader: FC = () => (
+export const AppHeader = () => (
   <>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link

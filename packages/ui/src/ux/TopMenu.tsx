@@ -1,3 +1,5 @@
+import type { UIContext } from '../lib/uiContext';
+
 import {
   AppBar,
   Box,
@@ -10,14 +12,19 @@ import {
 } from '@mui/material';
 
 import { LogoMenu } from '../assets/LogoMenu.svg';
-import { UIContext } from '../lib/uiContext';
 
-export const TopMenu: React.FC<
-  Pick<UIContext, 'menu' | 'l10n' | 'texts'> & {
-    maxWidth: ContainerProps['maxWidth'];
-    currentSlug?: string;
-  }
-> = ({ menu, currentSlug, l10n, maxWidth, texts }) => (
+export interface TopMenuProps
+  extends Pick<UIContext, 'menu' | 'l10n' | 'texts'> {
+  maxWidth: ContainerProps['maxWidth'];
+  currentSlug?: string;
+}
+export const TopMenu = ({
+  menu,
+  currentSlug,
+  l10n,
+  maxWidth,
+  texts,
+}: TopMenuProps) => (
   <AppBar position="static" color="transparent">
     <Container maxWidth={maxWidth}>
       <Toolbar disableGutters>

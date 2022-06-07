@@ -1,7 +1,12 @@
-import { Grid } from '@mui/material';
-import { FC, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-const ColContainer: FC<{ children: ReactNode }> = (props) => (
+import { Grid } from '@mui/material';
+
+export interface ColContainerProps {
+  children: ReactNode;
+}
+
+const ColContainer = (props: ColContainerProps) => (
   <Grid
     container
     rowSpacing={{ xs: 3, sm: 3, md: 5 }}
@@ -11,10 +16,12 @@ const ColContainer: FC<{ children: ReactNode }> = (props) => (
   </Grid>
 );
 
-const ColItem: FC<{
+export interface ColItemProps {
   children: ReactNode;
   vAlign?: 'flex-start' | 'flex-end' | 'center';
-}> = (props) => (
+}
+
+const ColItem = (props: ColItemProps) => (
   <Grid item xs alignSelf={props.vAlign}>
     {props.children}
   </Grid>

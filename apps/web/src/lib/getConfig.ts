@@ -1,9 +1,10 @@
+import type { L10NKeys } from './l10n/@types';
+
 import { UIContext } from 'ui/lib';
 
 import { getConfigContactData } from './getConfigContactData';
 import { AvailableLangs, getConfigL10n } from './getConfigL10n';
 import { getConfigMenu } from './getConfigMenu';
-import { L10NKeys } from './l10n/@types';
 
 export const getConfig = (lang: AvailableLangs): UIContext => ({
   lang,

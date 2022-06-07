@@ -1,4 +1,4 @@
-import { L10NKeys } from './l10n/@types';
+import type { L10NKeys } from './l10n/@types';
 
 const cteateMenuItem = (slug: string, label: L10NKeys) => ({
   label,
