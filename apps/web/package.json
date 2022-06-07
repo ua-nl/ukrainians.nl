@@ -6,23 +6,24 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fmt": "next lint --fix"
   },
   "dependencies": {
     "next": "^12.1.6",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "@types/react": "^18.0.12",
+    "@types/react-dom": "^18.0.5",
     "ui": "*"
   },
-  "peerDependencies": {
-    "react": "*",
-    "react-dom": "*",
-    "@types/react": "*"
+  "overrides": {
+    "react": "$react",
+    "react-dom": "$eract-dom"
   },
   "devDependencies": {
-    "@types/node": "^17.0.36",
-    "tsconfig": "*",
-    "webconfig": "*",
-    "eslint": "7.32.0",
-    "next-transpile-modules": "9.0.0",
-    "typescript": "^4.7.2"
+    "@next/eslint-plugin-next": "^12.1.6",
+    "config": "*",
+    "next-transpile-modules": "9.0.0"
   }
 }

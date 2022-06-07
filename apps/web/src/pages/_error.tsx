@@ -1,20 +1,15 @@
-import React from 'react';
-import { AppWrapper } from 'ui/ux';
-import Head from 'next/head';
+/* eslint-disable react/prop-types */
 import { NextPage } from 'next';
+
+import { WrapApp } from '../components/WrapApp';
 
 const AppError: NextPage<{
   statusCode: number;
-}> = ({ statusCode }) => {
-  return (
-    <AppWrapper>
-      <Head>
-        <title>ukrainians.nl</title>
-      </Head>
-      Error {statusCode}!
-    </AppWrapper>
-  );
-};
+}> = ({ statusCode }) => (
+  <WrapApp title="Error">
+    <h1>Error {statusCode}!</h1>
+  </WrapApp>
+);
 
 AppError.getInitialProps = ({ res, err }) => ({
   statusCode: res?.statusCode ?? err?.statusCode ?? 404,

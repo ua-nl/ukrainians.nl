@@ -7,13 +7,14 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "lint": "eslint src --fix"
+    "lint": "eslint .",
+    "fmt": "npm run lint -- --fix"
   },
   "dependencies": {
-    "@strapi/plugin-graphql": "^4.1.11",
-    "@strapi/plugin-i18n": "4.1.11",
-    "@strapi/plugin-users-permissions": "4.1.11",
-    "@strapi/strapi": "4.1.11",
+    "@strapi/plugin-graphql": "^4.1.12",
+    "@strapi/plugin-i18n": "4.1.12",
+    "@strapi/plugin-users-permissions": "4.1.12",
+    "@strapi/strapi": "4.1.12",
     "pg": "8.6.0"
   },
   "devDependencies": {

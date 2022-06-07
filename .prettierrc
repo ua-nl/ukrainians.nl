@@ -4,5 +4,6 @@
   "trailingComma": "all",
   "quoteProps": "as-needed",
   "printWidth": 80,
-  "singleQuote": true
+  "singleQuote": true,
+  "jsxSingleQuote": false
 }
