@@ -25,8 +25,6 @@ import {
   TextInput,
 } from 'ui/ux';
 
-import { ActionCards } from '../components/ActionSection';
-
 export default function Index() {
   return (
     <Page>
@@ -60,7 +58,7 @@ export default function Index() {
         </Caption>
       </Section>
 
-      <Section bg="blue">
+      <Section bgColor="blue">
         <H1>
           Icons &nbsp;
           <IconBird /> &nbsp;
@@ -145,7 +143,7 @@ export default function Index() {
         <TextInput id="label" label="Label" placeholder="Placeholder text" />
       </Section>
 
-      <Section bg="yellow">
+      <Section bgColor="yellow">
         <Col.Container>
           <Col.Item>
             Ukrainians in the Netherlands Foundation is a non-profit
@@ -169,10 +167,6 @@ export default function Index() {
             foundations, as well as commercial enterprises.
           </Col.Item>
         </Col.Container>
-      </Section>
-
-      <Section>
-        <ActionCards />
       </Section>
     </Page>
   );

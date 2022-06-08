@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 
 import { cssCache } from '../lib/cssCache';
-import { mainTheme } from '../lib/theme';
+import { mainTheme } from '../lib/theme/theme';
 import { UIContext, UIProvider, UI_CONTEXT_EMPTY } from '../lib/uiContext';
 
 export interface AppWrapperProps {

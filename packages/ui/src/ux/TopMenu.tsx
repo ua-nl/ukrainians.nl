@@ -22,8 +22,7 @@ const MainContent = styled(Container)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'space-between',
   width: '100%',
-  marginTop: theme.spacing(10),
-  marginBottom: theme.spacing(6),
+  padding: theme.spacing(10, 6, 6, 6),
 }));
 
 const LogoContainer = styled('div')(({ theme }) => ({

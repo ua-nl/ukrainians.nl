@@ -31,6 +31,11 @@ export const typography: TypographyOptions = {
     fontSize: getTypografyFontSize(16),
     fontWeight: 700,
   },
+  subtitle1: {
+    fontSize: getTypografyFontSize(20),
+    fontWeight: 500,
+    letterSpacing: '-1px',
+  },
   body1: {
     fontSize: getTypografyFontSize(16),
   },

@@ -1,44 +1,33 @@
-import type { ReactNode } from 'react';
+import { CardMedia } from '@mui/material';
+import { styled } from '@mui/system';
+import { ReactNode } from 'react';
 
-import { Box, Card, Grid } from '@mui/material';
+import { UASysColors } from '../lib/cssVars.color';
 
-import { SvgIconUA } from '../lib/createSvgIcon';
-import { H2 } from './Typography';
-
-const IconCardContainer = (props: { children: ReactNode }) => (
-  <Grid
-    container
-    rowSpacing={{ xs: 1, sm: 3, md: 5 }}
-    columnSpacing={{ xs: 1, sm: 3, md: 5 }}
-    alignItems="stretch"
-  >
-    {props.children}
-  </Grid>
-);
-
-const IconCardItem = (props: {
-  Icon: SvgIconUA;
-  title: string;
+type CardProps = {
+  image: string;
   children: ReactNode;
-}) => (
-  <Grid item xs={6}>
-    <Card>
-      <Box padding="56px 40px 56px 24px">
-        <Grid container>
-          <Grid item xs="auto" mr={{ xs: 1, sm: 2, md: 3 }}>
-            <props.Icon size="56px" />
-          </Grid>
-          <Grid item xs>
-            <H2>{props.title}</H2>
-            {props.children}
-          </Grid>
-        </Grid>
-      </Box>
-    </Card>
-  </Grid>
-);
-
-export const IconCard = {
-  Container: IconCardContainer,
-  Item: IconCardItem,
 };
+
+const CardContainer = styled('div')(({ theme }) => ({
+  padding: '32px',
+  borderRadius: '4px',
+  border: `1px solid ${UASysColors.grey}`,
+  boxShadow: 'none',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '16px',
+  marginBottom: '32px',
+  maxWidth: 360,
+
+  [theme.breakpoints.only('xs')]: {
+    maxWidth: '100%',
+  },
+}));
+
+export const CardItem = ({ image, children }: CardProps) => (
+  <CardContainer>
+    <CardMedia component="img" image={image} alt={image} />
+    {children}
+  </CardContainer>
+);

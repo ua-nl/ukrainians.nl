@@ -10,24 +10,18 @@ const FooterContainer = styled('div')(({ theme }) => ({
   padding: theme.spacing(8, 0),
   backgroundColor: UASysColors.darkBlue,
   color: UASysColors.white,
+  display: 'flex',
+  justifyContent: 'center',
+  width: '100%',
 }));
 
-const FooterLink = styled(Link)(() => ({
+const FooterLink = styled(Link)({
   color: UASysColors.white,
   textDecoration: 'none',
   '&:hover': {
     textDecoration: 'underline',
   },
-}));
-
-const ContentContainer = styled(Container)(({ theme }) => ({
-  [theme.breakpoints.down('md')]: {
-    maxWidth: 750,
-  },
-  [theme.breakpoints.down('sm')]: {
-    maxWidth: 400,
-  },
-}));
+});
 
 const ContactsContainer = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -53,12 +47,12 @@ const ContactItem = styled(Grid)(({ theme }) => ({
   },
 }));
 
-const LinksContainer = styled('div')(() => ({
+const LinksContainer = styled('div')({
   gridArea: 'links',
   display: 'flex',
   flexDirection: 'column',
   whiteSpace: 'nowrap',
-}));
+});
 
 const SocialMediaContainer = styled('div')(({ theme }) => ({
   gridArea: 'socials',
@@ -124,10 +118,10 @@ const ContactInfo = () => {
       {ctx.contactData.map(({ key, label, value }) => (
         <ContactItem key={key}>
           <IconBox size={24} />
-          <Typography variant="body1" mr={1} ml={2} gutterBottom={false}>
+          <Typography variant="body1" mr={1} ml={2}>
             {ctx.l10n[label]}:
           </Typography>
-          <Typography variant="h4" gutterBottom={false}>
+          <Typography variant="h4">
             {key === 'email' ? (
               <FooterLink href={`mailto:${value}`}>{value}</FooterLink>
             ) : key === 'phone' ? (
@@ -161,6 +155,7 @@ const Links = () => {
 
 const SocialMedia = () => {
   const ctx = useUIContext();
+
   return (
     <SocialMediaContainer>
       <Typography variant="h2" mb={4}>
@@ -177,9 +172,10 @@ const SocialMedia = () => {
 
 export const Footer = () => {
   const ctx = useUIContext();
+
   return (
     <FooterContainer>
-      <ContentContainer maxWidth={CONTAINER_MAX_WIDTH}>
+      <Container maxWidth={CONTAINER_MAX_WIDTH}>
         <ContactInfo />
         <MiddleContainer>
           <LogoFooter />
@@ -189,7 +185,7 @@ export const Footer = () => {
           </LinksAndSocialsContainer>
         </MiddleContainer>
         <Copyright variant="body2">{ctx.l10n[ctx.copyright]}</Copyright>
-      </ContentContainer>
+      </Container>
     </FooterContainer>
   );
 };
