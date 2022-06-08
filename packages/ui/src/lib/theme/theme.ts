@@ -1,0 +1,40 @@
+import { createTheme, PaletteColorOptions } from '@mui/material';
+
+import { ButtonStyles } from './components/Button.styles';
+import { CssBaselineStyles } from './components/CssBaseline.styles';
+import { InputStyles } from './components/Input.styles';
+import { palette } from './palette';
+import { typography } from './typography';
+
+declare module '@mui/material' {
+  interface ButtonPropsColorOverrides {
+    accent: true;
+  }
+}
+
+declare module '@mui/material/styles' {
+  interface CustomPalette {
+    accent: PaletteColorOptions;
+  }
+  interface PaletteOptions {
+    accent: PaletteColorOptions;
+  }
+  interface Palette {
+    accent: PaletteColorOptions;
+  }
+}
+
+export const mainTheme = createTheme({
+  palette,
+  typography,
+  spacing: 4,
+  shape: {
+    borderRadius: '4px',
+  },
+});
+
+mainTheme.components = {
+  ...CssBaselineStyles(mainTheme),
+  ...ButtonStyles(mainTheme),
+  ...InputStyles(mainTheme),
+};
