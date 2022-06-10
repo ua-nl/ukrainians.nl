@@ -3,6 +3,7 @@ import { createTheme, PaletteColorOptions } from '@mui/material';
 import { ButtonStyles } from './components/Button.styles';
 import { CssBaselineStyles } from './components/CssBaseline.styles';
 import { InputStyles } from './components/Input.styles';
+import { TypographyStyle } from './components/Typography.styles';
 import { palette } from './palette';
 import { typography } from './typography';
 
@@ -29,12 +30,22 @@ export const mainTheme = createTheme({
   typography,
   spacing: 4,
   shape: {
-    borderRadius: '4px',
+    borderRadius: 4,
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 950,
+      lg: 1200,
+      xl: 1536,
+    },
   },
 });
 
 mainTheme.components = {
   ...CssBaselineStyles(mainTheme),
+  ...TypographyStyle(),
   ...ButtonStyles(mainTheme),
   ...InputStyles(mainTheme),
 };

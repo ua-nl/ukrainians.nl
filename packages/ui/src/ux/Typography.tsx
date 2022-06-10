@@ -22,13 +22,13 @@ const createTypography = (
   return TypographyUA;
 };
 
-export const H1 = createTypography('h1', { gutterBottom: true });
-export const H2 = createTypography('h2', { gutterBottom: true });
-export const H3 = createTypography('h3', { gutterBottom: true });
-export const H4 = createTypography('h4', { gutterBottom: true });
+export const H1 = createTypography('h1');
+export const H2 = createTypography('h2');
+export const H3 = createTypography('h3');
+export const H4 = createTypography('h4');
 export const Para = createTypography('body1', {
   gutterBottom: true,
   mb: '16px',
 });
-export const Para2 = createTypography('body2', { gutterBottom: true });
-export const Caption = createTypography('caption', {});
+export const Para2 = createTypography('body2');
+export const Caption = createTypography('caption', { gutterBottom: false });

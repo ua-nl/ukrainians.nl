@@ -13,6 +13,7 @@ import {
   Bread,
   Button,
   Caption,
+  Col,
   H1,
   H2,
   H3,
@@ -21,7 +22,6 @@ import {
   Para,
   Para2,
   Section,
-  Col,
 } from 'ui/ux';
 
 import { ActionCards } from '../components/ActionSection';
