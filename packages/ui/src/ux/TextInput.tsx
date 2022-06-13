@@ -4,7 +4,7 @@ export const TextInput = (props: TextFieldProps) => {
   return (
     <Box>
       <InputLabel htmlFor={props.id}>{props.label}</InputLabel>
-      <TextField {...props} name={props.id} fullWidth />
+      <TextField name={props.id} fullWidth {...props} />
     </Box>
   );
 };
