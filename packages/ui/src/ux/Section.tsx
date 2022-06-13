@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { Box, Container } from '@mui/material';
 
-import { CONTAINER_MAX_WIDTH } from './Page';
+import { CONTAINER_MAX_WIDTH } from '../lib/theme/cssVars/size';
 
 const SECTION_COLOR = {
   yellow: 'accent.light',
