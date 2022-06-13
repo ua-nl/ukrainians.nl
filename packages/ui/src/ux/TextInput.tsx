@@ -1,10 +1,8 @@
 import { Box, InputLabel, TextField, TextFieldProps } from '@mui/material';
 
-type FormFieldProps = TextFieldProps;
-
-export const TextInput = (props: FormFieldProps) => {
+export const TextInput = (props: TextFieldProps) => {
   return (
-    <Box component="div">
+    <Box>
       <InputLabel htmlFor={props.id}>{props.label}</InputLabel>
       <TextField {...props} name={props.id} fullWidth />
     </Box>

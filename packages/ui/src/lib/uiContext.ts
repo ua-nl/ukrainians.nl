@@ -12,16 +12,22 @@ export type UIContext = {
     label: string;
     value: string;
   }>;
+  links: Array<{
+    label: string;
+    slug: string;
+  }>;
   texts: {
     contactHeader: string;
     donateBtn: string;
     followUs: string;
   };
+  copyright: string;
 };
 
 export const UI_CONTEXT_EMPTY: UIContext = {
   lang: 'en',
   menu: [],
+  links: [],
   texts: {
     contactHeader: 'Contacts',
     donateBtn: 'Donate',
@@ -29,6 +35,7 @@ export const UI_CONTEXT_EMPTY: UIContext = {
   },
   l10n: {},
   contactData: [],
+  copyright: '',
 };
 
 const uiContext = createContext<UIContext>(UI_CONTEXT_EMPTY);

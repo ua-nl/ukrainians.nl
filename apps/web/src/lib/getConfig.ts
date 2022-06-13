@@ -3,6 +3,7 @@ import type { UIContext } from 'ui/lib';
 
 import { getConfigContactData } from './getConfigContactData';
 import { AvailableLangs, getConfigL10n } from './getConfigL10n';
+import { getConfigLinksData } from './getConfigLinksData';
 import { getConfigMenu } from './getConfigMenu';
 
 export const getConfig = (lang: AvailableLangs): UIContext => ({
@@ -10,11 +11,13 @@ export const getConfig = (lang: AvailableLangs): UIContext => ({
   l10n: getConfigL10n(lang),
   menu: getConfigMenu(),
   contactData: getConfigContactData(),
+  links: getConfigLinksData(),
   texts: {
     contactHeader: 'links.title',
     followUs: 'followUs',
     donateBtn: 'donate',
   } as Record<keyof UIContext['texts'], L10NKeys>,
+  copyright: 'copyright',
 });
 
 export type Config = ReturnType<typeof getConfig>;

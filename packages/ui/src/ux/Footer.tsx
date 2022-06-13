@@ -9,14 +9,10 @@ import { styled } from '@mui/system';
 
 import { LogoFooter } from '../assets/LogoFooter.svg';
 import { UASysColors } from '../lib/cssVars.color';
-import { UIContext, useUIContext } from '../lib/uiContext';
+import { useUIContext } from '../lib/uiContext';
 
 export interface FooterProps {
   maxWidth: ContainerProps['maxWidth'];
-}
-
-export interface ContactInfoProps {
-  ctx: UIContext;
 }
 
 const FooterContainer = styled('div')(({ theme }) => ({
@@ -40,6 +36,7 @@ const ContactsContainer = styled('div')(({ theme }) => ({
   gap: '24px',
   flexWrap: 'wrap',
   marginBottom: theme.spacing(18),
+
   [theme.breakpoints.down('sm')]: {
     flexDirection: 'column',
     justifyContent: 'flex-start',
@@ -50,6 +47,8 @@ const ContactItem = styled(Grid)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
+  color: 'white',
+
   [theme.breakpoints.down('md')]: {
     flexBasis: '40%',
   },
@@ -71,35 +70,31 @@ const SocialMediaContainer = styled('div')(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     justifySelf: 'start',
   },
+}));
 
-  [theme.breakpoints.down('sm')]: {
-    marginTop: theme.spacing(8),
-  },
+const SocialMediaIconsContainer = styled('div')(({ theme }) => ({
+  display: 'flex',
+  gap: theme.spacing(2),
 }));
 
 const MiddleContainer = styled('div')(({ theme }) => ({
-  display: 'grid',
-  gridTemplateColumns: '1fr 1fr minmax(auto, 260px) auto',
-  gridTemplateAreas: `'logo . links socials'`,
+  display: 'flex',
+  justifyContent: 'space-between',
   width: '100%',
+  gap: theme.spacing(18),
 
   [theme.breakpoints.down('md')]: {
-    gridTemplateRows: '1fr auto',
-    gridTemplateColumns: 'minmax(200px, 600px) auto',
-    gridTemplateAreas: `
-    'logo logo'
-    'links socials'
-    `,
+    flexDirection: 'column',
   },
+}));
+
+const LinksAndSocialsContainer = styled('div')(({ theme }) => ({
+  display: 'flex',
+  gap: theme.spacing(30),
 
   [theme.breakpoints.down('sm')]: {
-    gridTemplateRows: '1fr auto auto',
-    gridTemplateColumns: 'minmax(200px, 400px)',
-    gridTemplateAreas: `
-    'logo'
-    'links'
-    'socials'
-    `,
+    flexDirection: 'column',
+    gap: theme.spacing(9),
   },
 }));
 
@@ -108,6 +103,12 @@ const Copyright = styled(Typography)(({ theme }) => ({
   justifyContent: 'center',
   marginTop: theme.spacing(20),
   marginBottom: theme.spacing(2),
+}));
+
+const FooterLink = styled('a')(() => ({
+  '&:hover': {
+    textDecoration: 'underline',
+  },
 }));
 
 const IconBox = ({ size }: { size: number }) => {
@@ -123,84 +124,81 @@ const IconBox = ({ size }: { size: number }) => {
   );
 };
 
-const ContactInfo = ({ ctx }: ContactInfoProps) => {
+const ContactInfo = () => {
+  const ctx = useUIContext();
+
   return (
     <ContactsContainer>
       {ctx.contactData.map(({ key, label, value }) => (
         <ContactItem key={key}>
           <IconBox size={24} />
-          <Typography
-            variant="body1"
-            sx={{ mr: 1, ml: 2 }}
-            gutterBottom={false}
-          >
+          <Typography variant="body1" mr={1} ml={2} gutterBottom={false}>
             {ctx.l10n[label]}:
           </Typography>
-          {key === 'email' ? (
-            <a href={`mailto:${value}`}>{value}</a>
-          ) : key === 'phone' ? (
-            <a href={`phone:${value}`}>{value}</a>
-          ) : (
-            <Typography variant="h4" gutterBottom={false}>
-              {value}
-            </Typography>
-          )}
+          <Typography variant="h4" gutterBottom={false}>
+            {key === 'email' ? (
+              <FooterLink href={`mailto:${value}`}>{value}</FooterLink>
+            ) : key === 'phone' ? (
+              <FooterLink href={`phone:${value}`}>{value}</FooterLink>
+            ) : (
+              value
+            )}
+          </Typography>
         </ContactItem>
       ))}
     </ContactsContainer>
   );
 };
 
-const Links = ({ ctx }: ContactInfoProps) => {
+const Links = () => {
+  const ctx = useUIContext();
+
   return (
     <LinksContainer>
-      <Typography variant="h2" mb={4}>
+      <Typography variant="h2" mb={2}>
         {ctx.l10n[ctx.texts.contactHeader]}
       </Typography>
-      <Typography variant="body1" mb={4}>
-        Vacancies
-      </Typography>
-      <Typography variant="body1" mb={4}>
-        Schools
-      </Typography>
-      <Typography variant="body1" mb={4}>
-        Churches
-      </Typography>
+      {ctx.links.map(({ label, slug }, index) => (
+        <FooterLink href={slug} key={index} mb={4}>
+          {ctx.l10n[label]}
+        </FooterLink>
+      ))}
     </LinksContainer>
   );
 };
 
-const SocialMedia = ({ ctx }: ContactInfoProps) => {
+const SocialMedia = () => {
+  const ctx = useUIContext();
+
   return (
     <SocialMediaContainer>
       <Typography variant="h2" mb={4}>
         {ctx.l10n[ctx.texts.followUs]}
       </Typography>
-      <Box sx={{ display: 'flex', gap: 2 }}>
+      <SocialMediaIconsContainer>
         {Array.from({ length: 6 }).map((_, index) => (
           <IconBox key={index} size={40} />
         ))}
-      </Box>
+      </SocialMediaIconsContainer>
     </SocialMediaContainer>
   );
 };
 
 export const Footer = ({ maxWidth }: FooterProps) => {
   const ctx = useUIContext();
+
   return (
     <FooterContainer>
       <ContentContainer maxWidth={maxWidth}>
-        <ContactInfo ctx={ctx} />
+        <ContactInfo />
         <MiddleContainer>
-          <Box sx={{ gridArea: 'logo', mb: 18 }}>
-            <LogoFooter />
-          </Box>
-          <Links ctx={ctx} />
-          <SocialMedia ctx={ctx} />
+          <LogoFooter />
+          <LinksAndSocialsContainer>
+            <Links />
+            <SocialMedia />
+          </LinksAndSocialsContainer>
         </MiddleContainer>
-        <Copyright variant="body2">
-          Copyright © 2014, All Right Reserved Stichting Oekraïners in Nederland
-        </Copyright>
+        <Copyright variant="body2">{ctx.l10n[ctx.copyright]}</Copyright>
       </ContentContainer>
     </FooterContainer>
   );

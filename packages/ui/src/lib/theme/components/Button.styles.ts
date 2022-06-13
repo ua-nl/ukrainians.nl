@@ -3,13 +3,16 @@ import { Components, Theme } from '@mui/material';
 export const ButtonStyles = (theme: Theme): Partial<Components> => {
   return {
     MuiButton: {
+      defaultProps: {
+        disableElevation: true,
+      },
       styleOverrides: {
         root: {
           textTransform: 'none',
           opacity: 1,
           fontWeight: 700,
           lineHeight: 1,
-          padding: `10px 36px`,
+          padding: theme.spacing(3, 4),
           fontSize: `1rem`,
           letterSpacing: `-0.02rem`,
         },

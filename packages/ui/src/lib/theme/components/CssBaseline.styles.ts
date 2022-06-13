@@ -5,12 +5,10 @@ export const CssBaselineStyles = (theme: Theme): Partial<Components> => {
     MuiCssBaseline: {
       styleOverrides: {
         a: {
-          color: theme.palette.primary.main,
-          fontWeight: 700,
           textDecoration: 'none',
-          '&:hover': {
-            color: theme.palette.primary.dark,
-          },
+          color: 'inherit',
+          paddingTop: theme.spacing(2),
+          paddingBottom: theme.spacing(2),
         },
       },
     },
