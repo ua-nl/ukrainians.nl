@@ -7,12 +7,13 @@ import { useState } from 'react';
 import { LogoMenu } from '../assets/LogoMenu.svg';
 import { useScreen } from '../hooks/useScreen';
 import { useUIContext } from '../lib';
+import { UASysColors } from '../lib/cssVars.color';
 import { CONTAINER_MAX_WIDTH } from '../lib/cssVars.width';
 
 const TopMenuContainer = styled('div')(({ theme }) => ({
   position: 'static',
   width: '100%',
-  backgroundColor: '#fff',
+  backgroundColor: UASysColors.white,
   zIndex: theme.zIndex.appBar,
 }));
 
