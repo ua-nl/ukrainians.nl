@@ -1,11 +1,11 @@
 import { createTheme, PaletteColorOptions } from '@mui/material';
 
-import { ButtonStyles } from './components/Button.styles';
-import { CssBaselineStyles } from './components/CssBaseline.styles';
-import { InputStyles } from './components/Input.styles';
-import { TypographyStyle } from './components/Typography.styles';
-import { palette } from './palette';
-import { typography } from './typography';
+import { ButtonStyles } from './theme/components/Button.styles';
+import { CssBaselineStyles } from './theme/components/CssBaseline.styles';
+import { InputStyles } from './theme/components/Input.styles';
+import { TypographyStyle } from './theme/components/Typography.styles';
+import { palette } from './theme/palette';
+import { typography } from './theme/typography';
 
 declare module '@mui/material' {
   interface ButtonPropsColorOverrides {
