@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { Box, Container } from '@mui/material';
 
 import { UASysColors } from '../lib/cssVars.color';
-import { CONTAINER_MAX_WIDTH } from './Page';
+import { CONTAINER_MAX_WIDTH } from '../lib/cssVars.width';
 
 const SECTION_COLOR = {
   yellow: UASysColors.yellow30,

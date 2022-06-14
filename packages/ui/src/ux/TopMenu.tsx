@@ -1,19 +1,13 @@
+import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Button, Collapse, Container, IconButton, styled } from '@mui/material';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 import { LogoMenu } from '../assets/LogoMenu.svg';
 import { useScreen } from '../hooks/useScreen';
 import { useUIContext } from '../lib';
 import { CONTAINER_MAX_WIDTH } from '../lib/cssVars.width';
-
-export interface TopMenuProps {
-  currentSlug?: string;
-}
-
-type DesktopProps = {
-  isDesktop: boolean;
-};
 
 const TopMenuContainer = styled('div')(({ theme }) => ({
   position: 'static',
@@ -35,12 +29,14 @@ const LogoContainer = styled('div')(({ theme }) => ({
   padding: theme.spacing(4, 0),
 }));
 
-const LinksContainer = styled('div')<DesktopProps>(({ theme, isDesktop }) => ({
+const LinksContainer = styled('div', {
+  shouldForwardProp: (propName) => propName !== 'isDesktop',
+})<{ isDesktop: boolean }>(({ theme, isDesktop }) => ({
   display: 'flex',
   flexDirection: isDesktop ? 'row' : 'column',
   alignItems: 'center',
   justifyContent: 'space-between',
-  gap: theme.spacing(8),
+  gap: isDesktop ? theme.spacing(8) : theme.spacing(2),
   paddingBottom: theme.spacing(6),
 }));
 
@@ -56,24 +52,48 @@ const MobileNavbarContent = styled('div')(() => ({
   alignItems: 'center',
 }));
 
-const NavbarLink = styled('a')(() => ({
+const NavbarLink = styled('a', {
+  shouldForwardProp: (propName) => propName !== 'isSelected',
+})<{ isSelected: boolean }>(({ isSelected }) => ({
+  fontWeight: isSelected ? 700 : 400,
+
   '&:hover': {
-    textShadow: '1px 0 0 black',
+    fontWeight: 700,
   },
+  '&::before': {
+    display: 'block',
+    content: 'attr(title)',
+    fontWeight: 700,
+    height: 0,
+    overflow: 'hidden',
+    visibility: 'hidden',
+  },
+}));
+
+const DonateButton = styled(Button)(({ theme }) => ({
+  margin: theme.spacing(2, 0),
 }));
 
 const NavbarLinks = () => {
   const ctx = useUIContext();
   const isDesktop = useScreen();
+  const { pathname } = useRouter();
 
   return (
     <LinksContainer isDesktop={isDesktop}>
       {ctx.menu.map((page) => (
-        <NavbarLink key={page.slug} href="/">
+        <NavbarLink
+          title={ctx.l10n[page.label]}
+          key={page.slug}
+          href={page.slug}
+          isSelected={page.slug === pathname}
+        >
           {ctx.l10n[page.label]}
         </NavbarLink>
       ))}
-      <Button variant="contained">{ctx.l10n[ctx.texts.donateBtn]}</Button>
+      <DonateButton variant="contained">
+        {ctx.l10n[ctx.texts.donateBtn]}
+      </DonateButton>
     </LinksContainer>
   );
 };
@@ -89,7 +109,7 @@ const MobileNavbar = () => {
         </LogoContainer>
 
         <IconButton onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
-          <MenuIcon />
+          {isDrawerOpen ? <CloseIcon /> : <MenuIcon />}
         </IconButton>
       </MobileNavbarContent>
 
@@ -111,7 +131,7 @@ const DesktopNavbar = () => {
   );
 };
 
-export const TopMenu = ({ currentSlug }: TopMenuProps) => {
+export const TopMenu = () => {
   const isDesktop = useScreen();
 
   return (

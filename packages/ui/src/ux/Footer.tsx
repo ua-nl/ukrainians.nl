@@ -1,19 +1,10 @@
-import {
-  Box,
-  Container,
-  ContainerProps,
-  Grid,
-  Typography,
-} from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 
 import { LogoFooter } from '../assets/LogoFooter.svg';
 import { UASysColors } from '../lib/cssVars.color';
+import { CONTAINER_MAX_WIDTH } from '../lib/cssVars.width';
 import { useUIContext } from '../lib/uiContext';
-
-export interface FooterProps {
-  maxWidth: ContainerProps['maxWidth'];
-}
 
 const FooterContainer = styled('div')(({ theme }) => ({
   padding: theme.spacing(8, 0),
@@ -184,12 +175,12 @@ const SocialMedia = () => {
   );
 };
 
-export const Footer = ({ maxWidth }: FooterProps) => {
+export const Footer = () => {
   const ctx = useUIContext();
 
   return (
     <FooterContainer>
-      <ContentContainer maxWidth={maxWidth}>
+      <ContentContainer maxWidth={CONTAINER_MAX_WIDTH}>
         <ContactInfo />
         <MiddleContainer>
           <LogoFooter />
