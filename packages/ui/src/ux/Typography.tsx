@@ -26,9 +26,7 @@ export const H1 = createTypography('h1');
 export const H2 = createTypography('h2');
 export const H3 = createTypography('h3');
 export const H4 = createTypography('h4');
-export const Para = createTypography('body1', {
-  gutterBottom: true,
-  mb: '16px',
-});
+export const Subtitle = createTypography('subtitle1');
+export const Para = createTypography('body1', { mb: '16px' });
 export const Para2 = createTypography('body2');
 export const Caption = createTypography('caption', { gutterBottom: false });

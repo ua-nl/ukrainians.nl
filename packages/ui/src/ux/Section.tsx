@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 
-import { Box, Container } from '@mui/material';
+import { Box, Breakpoint, Container, SxProps, Theme } from '@mui/material';
 
-import { UASysColors } from '../lib/cssVars.color';
+import { UASysColorKeys, UASysColors } from '../lib/cssVars.color';
 import { CONTAINER_MAX_WIDTH } from '../lib/cssVars.width';
 
 const SECTION_COLOR = {
@@ -13,13 +13,27 @@ const SECTION_COLOR = {
 export interface SectionProps {
   children: ReactNode;
   first?: boolean;
-  bg?: keyof typeof SECTION_COLOR;
+  maxWidth?: Breakpoint;
+  bgColor?: keyof typeof SECTION_COLOR;
+  bgImage?: string;
+  color?: UASysColorKeys;
 }
+
+const container = (
+  bgColor?: keyof typeof SECTION_COLOR,
+  bgImage?: string,
+  color?: UASysColorKeys,
+): SxProps<Theme> => ({
+  background: bgImage ? `url(${bgImage})` : undefined,
+  backgroundColor: bgColor ? SECTION_COLOR[bgColor] : undefined,
+  color: color,
+});
+
 export const Section = (props: SectionProps) => (
   <Box mt={props.first ? undefined : '100px'}>
-    <Box bgcolor={props.bg ? SECTION_COLOR[props.bg] : undefined}>
-      <Container maxWidth={CONTAINER_MAX_WIDTH}>
-        {!props.bg ? (
+    <Box sx={container(props.bgColor, props.bgImage, props.color)}>
+      <Container maxWidth={props.maxWidth || CONTAINER_MAX_WIDTH}>
+        {!props.bgColor && !props.bgImage ? (
           props.children
         ) : (
           <Box pt="100px" pb="100px">

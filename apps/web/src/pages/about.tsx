@@ -37,7 +37,7 @@ export default function Index() {
         <ActionCards />
       </Section>
 
-      <Section bg="blue">
+      <Section bgColor="blue">
         <H1 center>Our achievements</H1>
         <Col.Container>
           <Col.Item>
