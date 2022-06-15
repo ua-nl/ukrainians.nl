@@ -16,6 +16,8 @@ export const getConfig = (lang: AvailableLangs): UIContext => ({
     contactHeader: 'links.title',
     followUs: 'followUs',
     donateBtn: 'donate',
+    volunteer: 'volunteer',
+    readMore: 'readMore',
   } as Record<keyof UIContext['texts'], L10NKeys>,
   copyright: 'copyright',
 });

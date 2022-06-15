@@ -20,6 +20,8 @@ export type UIContext = {
     contactHeader: string;
     donateBtn: string;
     followUs: string;
+    volunteer: string;
+    readMore: string;
   };
   copyright: string;
 };
@@ -32,6 +34,8 @@ export const UI_CONTEXT_EMPTY: UIContext = {
     contactHeader: 'Contacts',
     donateBtn: 'Donate',
     followUs: 'Follow us',
+    volunteer: 'Volunteer',
+    readMore: 'Read more',
   },
   l10n: {},
   contactData: [],
