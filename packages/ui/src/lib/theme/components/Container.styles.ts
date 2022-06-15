@@ -1,6 +1,10 @@
 import { Components, Theme } from '@mui/material';
 
 const containerBreakPoints = (theme: Theme) => ({
+  [theme.breakpoints.down('xl')]: {
+    paddingLeft: theme.spacing(8),
+    paddingRight: theme.spacing(8),
+  },
   [theme.breakpoints.down('md')]: {
     paddingLeft: theme.spacing(8),
     paddingRight: theme.spacing(8),
@@ -17,6 +21,10 @@ export const ContainerStyles = (theme: Theme): Partial<Components> => {
   return {
     MuiContainer: {
       styleOverrides: {
+        root: {
+          paddingLeft: theme.spacing(6),
+          paddingRight: theme.spacing(6),
+        },
         maxWidthXl: containerBreakPoints(theme),
         maxWidthLg: containerBreakPoints(theme),
         maxWidthMd: {

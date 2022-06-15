@@ -32,7 +32,7 @@ const container = (
 });
 
 export const Section = (props: SectionProps) => (
-  <Box mt={props.first ? undefined : '100px'}>
+  <Box mt={!props.mt ? (props.first ? undefined : '100px') : undefined}>
     <Box sx={container(props.bgColor, props.bgImage, props.color, props.mt)}>
       <Container maxWidth={props.maxWidth}>
         {!props.bgColor && !props.bgImage ? (
