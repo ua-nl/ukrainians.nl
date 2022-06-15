@@ -1,12 +1,12 @@
 import { Box } from '@mui/material';
 import Image from 'next/image';
 import { Col, H2, Para, Section } from 'ui/ux';
-
 import GroupPhoto from '../../../public/photo/group-photo.jpg';
+
 
 export const OurMissionSection = () => {
   return (
-    <Section first maxWidth="lg" mt={10}>
+    <Section maxWidth="lg" mt={10}>
       <Col.Container columns={{ sm: 12 }}>
         <Col.Item sm={6}>
           <H2>Our mission</H2>
