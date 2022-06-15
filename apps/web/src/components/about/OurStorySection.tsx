@@ -8,7 +8,7 @@ export const OurStorySection = () => {
   return (
     <Section bgColor="gray" maxWidth="lg">
       <Col.Container columns={{ sm: 12 }}>
-        <Col.Item sm={6} vAlign="center">
+        <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
           <Box mt={{ xs: 8, sm: 6 }}>
             <Image src={GroupPhoto} />
           </Box>
@@ -17,7 +17,7 @@ export const OurStorySection = () => {
           </Box>
         </Col.Item>
 
-        <Col.Item sm={6} vAlign="center">
+        <Col.Item sm={6} vAlign="center" order={{ xs: 1, sm: 2 }}>
           <H2>Our story</H2>
           <Para>
             Ukrainians in the Netherlands Foundation is a non-profit
