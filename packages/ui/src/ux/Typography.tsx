@@ -5,6 +5,7 @@ import { Typography, TypographyProps } from '@mui/material';
 export interface TypographyUAProps {
   children: ReactNode;
   center?: boolean;
+  mb?: number;
 }
 const createTypography = (
   variant: TypographyProps['variant'],
@@ -15,6 +16,7 @@ const createTypography = (
       variant={variant}
       gutterBottom={tProps.gutterBottom}
       textAlign={props.center ? 'center' : undefined}
+      mb={props.mb ? props.mb : undefined}
     >
       {props.children}
     </Typography>
@@ -29,4 +31,4 @@ export const H4 = createTypography('h4');
 export const Subtitle = createTypography('subtitle1');
 export const Para = createTypography('body1', { mb: '16px' });
 export const Para2 = createTypography('body2');
-export const Caption = createTypography('caption', { gutterBottom: false });
+export const Caption = createTypography('caption');

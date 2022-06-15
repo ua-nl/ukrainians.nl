@@ -35,5 +35,7 @@ export const palette: PaletteOptions = {
     700: UASysColors.black60,
     500: UASysColors.black30,
     300: UASysColors.black10,
+    200: UASysColors.grey,
+    100: UASysColors.lightGrey,
   },
 };

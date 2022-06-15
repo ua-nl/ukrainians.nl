@@ -1,6 +1,7 @@
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Button, Collapse, Container, IconButton, styled } from '@mui/material';
+import { Button, Collapse, IconButton, styled } from '@mui/material';
+import { Container } from '@mui/system';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
@@ -22,8 +23,7 @@ const MainContent = styled(Container)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'space-between',
   width: '100%',
-  marginTop: theme.spacing(10),
-  marginBottom: theme.spacing(6),
+  padding: theme.spacing(10, 6, 6, 6),
 }));
 
 const LogoContainer = styled('div')(({ theme }) => ({

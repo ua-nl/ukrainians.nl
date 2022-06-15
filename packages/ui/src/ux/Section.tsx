@@ -1,9 +1,8 @@
-import type { ReactNode } from 'react';
-
 import { Box, Breakpoint, Container, SxProps, Theme } from '@mui/material';
-
+import type { ReactNode } from 'react';
 import { UASysColorKeys, UASysColors } from '../lib/cssVars.color';
-import { CONTAINER_MAX_WIDTH } from '../lib/cssVars.width';
+
+
 
 const SECTION_COLOR = {
   yellow: UASysColors.yellow30,
@@ -32,7 +31,7 @@ const container = (
 export const Section = (props: SectionProps) => (
   <Box mt={props.first ? undefined : '100px'}>
     <Box sx={container(props.bgColor, props.bgImage, props.color)}>
-      <Container maxWidth={props.maxWidth || CONTAINER_MAX_WIDTH}>
+      <Container maxWidth={props.maxWidth}>
         {!props.bgColor && !props.bgImage ? (
           props.children
         ) : (
