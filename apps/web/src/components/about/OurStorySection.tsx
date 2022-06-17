@@ -10,7 +10,7 @@ export const OurStorySection = () => {
     <Section bgColor="gray" maxWidth="lg">
       <Col.Container columns={{ sm: 12 }}>
         <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
-          <Box mt={{ xs: 8, sm: 6 }}>
+          <Box mt={{ xs: 8, sm: 0 }}>
             <Image src={MomWithKid} />
           </Box>
           <Box mt={{ xs: 8, sm: 6 }}>

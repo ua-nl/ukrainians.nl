@@ -1,11 +1,11 @@
-import { Col, H1, Para, Section } from 'ui/ux';
+import { Col, H1, H2, Para, Section } from 'ui/ux';
 
 export const AchievementsSection = () => {
   return (
     <Section maxWidth="md">
-      <H1 center mb={12}>
+      <H2 center mb={12}>
         Our achievements
-      </H1>
+      </H2>
       <Col.Container>
         <Col.Item xs={12} sm={4}>
           <H1 center>150K kg+</H1>

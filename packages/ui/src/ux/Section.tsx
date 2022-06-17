@@ -31,18 +31,16 @@ const container = (
   mt: mt,
 });
 
-export const Section = (props: SectionProps) => (
-  <Box mt={!props.mt ? (props.first ? undefined : '100px') : undefined}>
+export const Section = (props: SectionProps) => {
+  const hasBackground = props.bgColor || props.bgImage;
+
+  return (
     <Box sx={container(props.bgColor, props.bgImage, props.color, props.mt)}>
       <Container maxWidth={props.maxWidth}>
-        {!props.bgColor && !props.bgImage ? (
-          props.children
-        ) : (
-          <Box pt="100px" pb="100px">
-            {props.children}
-          </Box>
-        )}
+        <Box pb="100px" pt={props.first && !hasBackground ? '40px' : '100px'}>
+          {props.children}
+        </Box>
       </Container>
     </Box>
-  </Box>
-);
+  );
+};

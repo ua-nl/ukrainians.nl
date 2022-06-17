@@ -27,7 +27,7 @@ const CardContainer = styled('div')(({ theme }) => ({
 
 export const CardItem = ({ image, children }: CardProps) => (
   <CardContainer>
-    <CardMedia component="img" image={image} alt="green iguana" />
+    <CardMedia component="img" image={image} alt={image} />
     {children}
   </CardContainer>
 );

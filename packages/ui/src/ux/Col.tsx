@@ -14,7 +14,7 @@ const ColContainer = (props: ColContainerProps) => (
     container
     direction={props.direction}
     columns={props.columns}
-    rowSpacing={{ xs: 4, sm: 4, md: 5 }}
+    rowSpacing={{ xs: 8, sm: 4, md: 5 }}
     columnSpacing={{ xs: 4, sm: 10, md: 25 }}
     justifyContent="center"
   >

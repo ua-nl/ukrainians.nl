@@ -18,6 +18,8 @@ export const getConfig = (lang: AvailableLangs): UIContext => ({
     donateBtn: 'donate',
     volunteer: 'volunteer',
     readMore: 'readMore',
+    humanitarianAid: 'menu.humanitarianAid',
+    collectionPoints: 'collectionPoints',
   } as Record<keyof UIContext['texts'], L10NKeys>,
   copyright: 'copyright',
 });

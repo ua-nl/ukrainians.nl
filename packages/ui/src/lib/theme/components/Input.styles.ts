@@ -30,7 +30,8 @@ export const InputStyles = (theme: Theme): Partial<Components> => {
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
-          border: `1px solid ${theme.palette.grey?.[700]}`,
+          minWidth: 165,
+          border: `1px solid ${theme.palette.grey?.[200]}`,
           padding: 0,
           '&:hover': {
             border: `1px solid ${theme.palette.primary.light}`,

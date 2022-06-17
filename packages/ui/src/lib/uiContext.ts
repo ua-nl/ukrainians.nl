@@ -22,6 +22,8 @@ export type UIContext = {
     followUs: string;
     volunteer: string;
     readMore: string;
+    humanitarianAid: string;
+    collectionPoints: string;
   };
   copyright: string;
 };
@@ -36,6 +38,8 @@ export const UI_CONTEXT_EMPTY: UIContext = {
     followUs: 'Follow us',
     volunteer: 'Volunteer',
     readMore: 'Read more',
+    humanitarianAid: 'Humanitarian aid',
+    collectionPoints: 'Collection points',
   },
   l10n: {},
   contactData: [],

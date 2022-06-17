@@ -9,7 +9,7 @@ const containerBreakPoints = (theme: Theme) => ({
   [theme.breakpoints.down('sm')]: {
     paddingLeft: theme.spacing(4),
     paddingRight: theme.spacing(4),
-    maxWidth: 550,
+    maxWidth: 700,
   },
 });
 
@@ -23,7 +23,7 @@ export const ContainerStyles = (theme: Theme): Partial<Components> => {
           [theme.breakpoints.only('xs')]: {
             paddingLeft: theme.spacing(4),
             paddingRight: theme.spacing(4),
-            maxWidth: 550,
+            maxWidth: 700,
           },
           [theme.breakpoints.up('sm')]: {
             paddingLeft: theme.spacing(8),
