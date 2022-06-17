@@ -1,8 +1,9 @@
 import { Box } from '@mui/material';
 import Image from 'next/image';
-import { Col, H2, Para, Section } from 'ui/ux';
+import { Col, H1, Para, Section } from 'ui/ux';
 
-import GroupPhoto from '../../../public/photo/group-photo.jpg';
+import MomWithKid from '../../../public/photo/mom-with-kid.jpeg';
+import TwoGirls from '../../../public/photo/two-girls.jpeg';
 
 export const OurStorySection = () => {
   return (
@@ -10,15 +11,15 @@ export const OurStorySection = () => {
       <Col.Container columns={{ sm: 12 }}>
         <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
           <Box mt={{ xs: 8, sm: 6 }}>
-            <Image src={GroupPhoto} />
+            <Image src={MomWithKid} />
           </Box>
           <Box mt={{ xs: 8, sm: 6 }}>
-            <Image src={GroupPhoto} />
+            <Image src={TwoGirls} />
           </Box>
         </Col.Item>
 
         <Col.Item sm={6} vAlign="center" order={{ xs: 1, sm: 2 }}>
-          <H2>Our story</H2>
+          <H1>Our story</H1>
           <Para>
             Ukrainians in the Netherlands Foundation is a non-profit
             organization established during the Euromaidan Uprising in 2014.
