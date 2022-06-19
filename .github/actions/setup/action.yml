@@ -1,0 +1,28 @@
+name: Setup Job
+description: 'Sets up a job with the required versions of Node and yarn'
+inputs:
+  node_version:
+    description: Target major version of Node used.
+    required: false
+    default: '16'
+  github_token:
+    description: Github Token
+    required: true
+runs:
+  using: composite
+  steps:
+    - uses: actions/cache@v2
+      id: npm-cache
+      with:
+        path: ./node_modules
+        key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-npm-
+    - name: Install modules
+      if: steps.npm-cache.outputs.cache-hit != 'true'
+      shell: bash
+      run: |-
+        git config --global --add url."https://${{ inputs.github_token }}@github.com/".insteadOf "ssh://git@github.com/"
+        git config --global --add url."https://${{ inputs.github_token }}@github.com/".insteadOf "ssh://git@github.com:"
+        git config --global --add url."https://${{ inputs.github_token }}@github.com/".insteadOf "git@github.com:"
+        npm ci

@@ -1,0 +1,33 @@
+name: Branch workflow
+on:
+  push:
+    branches-ignore: ['main']
+    tags-ignore: ['**']
+
+jobs:
+  sanity-check:
+    name: Build and test
+    runs-on: ubuntu-20.04
+    timeout-minutes: 35
+    steps:
+      - name: ⬇️ Checkout repository
+        uses: actions/checkout@v3
+
+      - name: ⬇️ Setup node 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: 🏗️ Setup Job
+        uses: ./.github/actions/setup
+
+      - name: 🪥 Lint
+        run: npm run lint
+
+      - name: Build
+        run: |
+          npm run build
+
+      # - name: 🪥 Check formatting
+      #   run: |-
+      #     npm run fmt
