@@ -2,8 +2,8 @@ import { Box } from '@mui/material';
 import Image from 'next/image';
 import { Col, H1, Para, Section } from 'ui/ux';
 
-import MomWithKid from '../../../public/photo/mom-with-kid.jpeg';
-import TwoGirls from '../../../public/photo/two-girls.jpeg';
+import MomWithKid from '../../../public/photo/mom-with-kid.jpg';
+import TwoGirls from '../../../public/photo/two-girls.jpg';
 
 export const OurStorySection = () => {
   return (

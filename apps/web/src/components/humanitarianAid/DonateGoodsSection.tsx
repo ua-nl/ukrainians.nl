@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Col, H1, Para, Section } from 'ui/ux';
 
-import TwoGirls from '../../../public/photo/two-girls.jpeg';
+import TwoGirls from '../../../public/photo/two-girls.jpg';
 
 export const DonateGoodsSection = () => {
   return (

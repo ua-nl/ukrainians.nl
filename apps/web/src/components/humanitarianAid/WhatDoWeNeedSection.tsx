@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useUIContext } from 'ui/lib';
 import { Button, Col, H1, Para, Section } from 'ui/ux';
 
-import StorehouseImg from '../../../public/photo/Storehouse.jpeg';
+import StorehouseImg from '../../../public/photo/storehouse.jpg';
 
 const ImgBox = styled('div')(() => ({
   width: 139,
