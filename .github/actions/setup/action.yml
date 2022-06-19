@@ -1,4 +1,4 @@
-name: Setup Job
+name: 🏗️ Prepare
 description: 'Sets up a job with the required versions of Node and yarn'
 inputs:
   node_version:
@@ -11,6 +11,12 @@ inputs:
 runs:
   using: composite
   steps:
+    - name: ⬇️ Checkout repository
+      uses: actions/checkout@v3
+    - name: ⬇️ Setup node 16
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
     - uses: actions/cache@v2
       id: npm-cache
       with:

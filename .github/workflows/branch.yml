@@ -6,25 +6,20 @@ on:
 
 jobs:
   sanity-check:
-    name: Build and test
+    name: 👀 Sanity chech
     runs-on: ubuntu-20.04
-    timeout-minutes: 35
+    timeout-minutes: 5
     steps:
       - name: ⬇️ Checkout repository
         uses: actions/checkout@v3
 
-      - name: ⬇️ Setup node 16
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-
       - name: 🏗️ Setup Job
         uses: ./.github/actions/setup
 
-      - name: 🪥 Lint
+      - name: 💅 Lint
         run: npm run lint
 
-      - name: Build
+      - name: 🛠 Build
         run: |
           npm run build
 
