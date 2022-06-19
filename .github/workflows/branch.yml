@@ -6,7 +6,7 @@ on:
 
 jobs:
   sanity-check:
-    name: 👀 Sanity chech
+    name: 👀 Sanity check
     runs-on: ubuntu-20.04
     timeout-minutes: 5
     steps:
