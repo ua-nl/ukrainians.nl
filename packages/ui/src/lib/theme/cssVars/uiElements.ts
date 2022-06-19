@@ -1,6 +1,6 @@
 import { CSSObject } from '@mui/material';
 
-import { UASysColors } from './cssVars.color';
+import { UASysColors } from './color';
 
 export type UASysStylePartsKeys = 'shadow' | 'boxRadius' | 'elementRadius';
 export const UASysStyleParts: Record<UASysStylePartsKeys, CSSObject> = {

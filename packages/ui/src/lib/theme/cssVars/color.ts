@@ -18,8 +18,9 @@ export type UASysColorKeys =
   | 'black30'
   | 'black10'
   | 'darkBlue'
+  | 'lightGrey'
   | 'white'
-  | 'lightGray'
+  | 'black'
   | 'shadow';
 
 export const UASysColors: Record<UASysColorKeys, ColorString> = {
@@ -32,11 +33,12 @@ export const UASysColors: Record<UASysColorKeys, ColorString> = {
   yellow60: `#FFE766`,
   yellow30: `#FFF3B3`,
   black100: `#333333`,
-  black60: `#000000`,
+  black60: `#858585`,
   black30: `#C2C2C2`,
   black10: `#EBEBEB`,
   darkBlue: `#0E0E2C`,
+  lightGrey: `#FAFAFA`,
   white: `#FFFFFF`,
-  lightGray: `#FAFAFA`,
+  black: `#000000`,
   shadow: `rgba(0, 0, 0, 0.08)`,
 };

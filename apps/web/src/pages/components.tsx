@@ -13,6 +13,7 @@ import {
   Bread,
   Button,
   Caption,
+  Col,
   H1,
   H2,
   H3,
@@ -21,7 +22,7 @@ import {
   Para,
   Para2,
   Section,
-  Col,
+  TextInput,
 } from 'ui/ux';
 
 import { ActionCards } from '../components/ActionSection';
@@ -106,7 +107,7 @@ export default function Index() {
       </Section>
 
       <Section>
-        <H1>Buttons</H1>
+        <H1>Buttons and inputs</H1>
         <H4>Normal size</H4>
         <Button type="primary" onClick={() => alert('primary')}>
           Primary
@@ -141,6 +142,7 @@ export default function Index() {
         <Button type="outline" size="small" onClick={() => alert('outline')}>
           Outline
         </Button>
+        <TextInput id="label" label="Label" placeholder="Placeholder text" />
       </Section>
 
       <Section bg="yellow">

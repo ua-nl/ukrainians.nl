@@ -1,6 +1,9 @@
 {
   "menu.about": "About us",
   "menu.home": "Home",
+  "menu.humanitarianAid": "Humanitarian aid",
+  "menu.financialAid": "Financial aid",
+  "menu.displacedPeople": "Displaced People",
 
   "info.email": "Email",
   "info.phone": "Phone",
@@ -16,5 +19,6 @@
   "links.contact": "Contact",
 
   "donate": "Donate",
-  "followUs": "Follow us"
+  "followUs": "Follow us",
+  "copyright": "Copyright © 2014, All Right Reserved Stichting Oekraïners in Nederland"
 }
