@@ -3,6 +3,7 @@ import {
   Container,
   ContainerProps,
   Grid,
+  Link,
   Typography,
 } from '@mui/material';
 import { styled } from '@mui/system';
@@ -19,6 +20,14 @@ const FooterContainer = styled('div')(({ theme }) => ({
   padding: theme.spacing(8, 0),
   backgroundColor: UASysColors.darkBlue,
   color: UASysColors.white,
+}));
+
+const FooterLink = styled(Link)(() => ({
+  color: UASysColors.white,
+  textDecoration: 'none',
+  '&:hover': {
+    textDecoration: 'underline',
+  },
 }));
 
 const ContentContainer = styled(Container)(({ theme }) => ({
@@ -103,12 +112,6 @@ const Copyright = styled(Typography)(({ theme }) => ({
   justifyContent: 'center',
   marginTop: theme.spacing(20),
   marginBottom: theme.spacing(2),
-}));
-
-const FooterLink = styled('a')(() => ({
-  '&:hover': {
-    textDecoration: 'underline',
-  },
 }));
 
 const IconBox = ({ size }: { size: number }) => {

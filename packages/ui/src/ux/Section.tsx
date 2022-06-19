@@ -2,14 +2,14 @@ import type { ReactNode } from 'react';
 
 import { Box, Container } from '@mui/material';
 
-import { UASysColors } from '../lib/theme/cssVars/color';
 import { CONTAINER_MAX_WIDTH } from './Page';
 
 const SECTION_COLOR = {
-  yellow: UASysColors.yellow30,
-  blue: UASysColors.blue30,
-  gray: UASysColors.black10,
-};
+  yellow: 'accent.light',
+  blue: 'secondary.light',
+  grey: 'grey.300',
+} as const;
+
 export interface SectionProps {
   children: ReactNode;
   first?: boolean;
