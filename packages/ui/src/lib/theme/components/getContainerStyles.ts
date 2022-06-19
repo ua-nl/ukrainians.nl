@@ -13,7 +13,9 @@ const containerBreakPoints = (theme: Theme) => ({
   },
 });
 
-export const ContainerStyles = (theme: Theme): Partial<Components> => {
+export const getContainerStyles = (
+  theme: Theme,
+): Pick<Components, 'MuiContainer'> => {
   return {
     MuiContainer: {
       styleOverrides: {

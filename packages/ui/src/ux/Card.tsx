@@ -2,7 +2,7 @@ import { CardMedia } from '@mui/material';
 import { styled } from '@mui/system';
 import { ReactNode } from 'react';
 
-import { UASysColors } from '../lib/cssVars.color';
+import { UASysColors } from '../lib/theme/cssVars/color';
 
 type CardProps = {
   image: string;
