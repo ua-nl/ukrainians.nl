@@ -2,8 +2,8 @@ import Image from 'next/image';
 import { Bread, Col, H1, ImgBox, Page, Para, Section } from 'ui/ux';
 
 import partners from '../../public/img/partners.png';
-import atTheTruck from '../../public/photo/at-the-truck.jpeg';
-import groupWithFlag from '../../public/photo/group-with-flag.jpeg';
+import atTheTruck from '../../public/photo/at-the-truck.jpg';
+import groupWithFlag from '../../public/photo/group-with-flag.jpg';
 import { ActionCards } from '../components/ActionSection';
 
 export default function Index() {
