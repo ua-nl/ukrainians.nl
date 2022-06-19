@@ -1,20 +1,10 @@
-import {
-  Box,
-  Container,
-  ContainerProps,
-  Grid,
-  Link,
-  Typography,
-} from '@mui/material';
+import { Box, Container, Grid, Link, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 
 import { LogoFooter } from '../assets/LogoFooter.svg';
 import { UASysColors } from '../lib/theme/cssVars/color';
+import { CONTAINER_MAX_WIDTH } from '../lib/theme/cssVars/size';
 import { useUIContext } from '../lib/uiContext';
-
-export interface FooterProps {
-  maxWidth: ContainerProps['maxWidth'];
-}
 
 const FooterContainer = styled('div')(({ theme }) => ({
   padding: theme.spacing(8, 0),
@@ -129,7 +119,6 @@ const IconBox = ({ size }: { size: number }) => {
 
 const ContactInfo = () => {
   const ctx = useUIContext();
-
   return (
     <ContactsContainer>
       {ctx.contactData.map(({ key, label, value }) => (
@@ -172,7 +161,6 @@ const Links = () => {
 
 const SocialMedia = () => {
   const ctx = useUIContext();
-
   return (
     <SocialMediaContainer>
       <Typography variant="h2" mb={4}>
@@ -187,12 +175,11 @@ const SocialMedia = () => {
   );
 };
 
-export const Footer = ({ maxWidth }: FooterProps) => {
+export const Footer = () => {
   const ctx = useUIContext();
-
   return (
     <FooterContainer>
-      <ContentContainer maxWidth={maxWidth}>
+      <ContentContainer maxWidth={CONTAINER_MAX_WIDTH}>
         <ContactInfo />
         <MiddleContainer>
           <LogoFooter />
