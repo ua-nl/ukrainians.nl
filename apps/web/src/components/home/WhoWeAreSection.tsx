@@ -6,7 +6,7 @@ import Logo from '../../../public/img/logo.png';
 
 export const WhoWeAreSection = () => {
   return (
-    <Section thin bgColor="gray">
+    <Section thin bgColor="grey">
       <Col.Container columns={{ sm: 12 }}>
         <Col.Item sm={6}>
           <H2>WHO WE ARE</H2>

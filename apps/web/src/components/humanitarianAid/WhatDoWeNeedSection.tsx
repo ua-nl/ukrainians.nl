@@ -22,7 +22,7 @@ export const WhatDoWeNeedSection = () => {
   const ctx = useUIContext();
 
   return (
-    <Section thin bgColor="gray">
+    <Section thin bgColor="grey">
       <Col.Container columns={{ sm: 12 }}>
         <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
           <Box mb={{ xs: 8, sm: 0 }} display="flex" justifyContent="center">

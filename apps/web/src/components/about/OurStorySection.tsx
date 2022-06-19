@@ -7,7 +7,7 @@ import TwoGirls from '../../../public/photo/two-girls.jpeg';
 
 export const OurStorySection = () => {
   return (
-    <Section bgColor="gray">
+    <Section bgColor="grey">
       <Col.Container columns={{ sm: 12 }}>
         <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
           <Box mt={{ xs: 8, sm: 0 }}>
