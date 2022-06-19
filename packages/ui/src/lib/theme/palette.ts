@@ -1,6 +1,24 @@
-import { PaletteOptions } from '@mui/material';
+import { PaletteColorOptions, PaletteOptions } from '@mui/material';
 
-import { UASysColors } from '../cssVars.color';
+import { UASysColors } from './cssVars/color';
+
+declare module '@mui/material' {
+  interface ButtonPropsColorOverrides {
+    accent: true;
+  }
+}
+
+declare module '@mui/material/styles' {
+  interface CustomPalette {
+    accent: PaletteColorOptions;
+  }
+  interface PaletteOptions {
+    accent: PaletteColorOptions;
+  }
+  interface Palette {
+    accent: PaletteColorOptions;
+  }
+}
 
 export const palette: PaletteOptions = {
   primary: {

@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { Box, Container } from '@mui/material';
 
-import { UASysColors } from '../lib/cssVars.color';
+import { UASysColors } from '../lib/theme/cssVars/color';
 import { CONTAINER_MAX_WIDTH } from './Page';
 
 const SECTION_COLOR = {

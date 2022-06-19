@@ -8,7 +8,7 @@ import {
 import { styled } from '@mui/system';
 
 import { LogoFooter } from '../assets/LogoFooter.svg';
-import { UASysColors } from '../lib/cssVars.color';
+import { UASysColors } from '../lib/theme/cssVars/color';
 import { useUIContext } from '../lib/uiContext';
 
 export interface FooterProps {
