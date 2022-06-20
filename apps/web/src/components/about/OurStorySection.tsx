@@ -11,10 +11,10 @@ export const OurStorySection = () => {
       <Col.Container columns={{ sm: 12 }}>
         <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
           <Box mt={{ xs: 8, sm: 0 }}>
-            <Image src={MomWithKid} />
+            <Image src={MomWithKid} alt="Mom with kid" />
           </Box>
           <Box mt={{ xs: 8, sm: 6 }}>
-            <Image src={TwoGirls} />
+            <Image src={TwoGirls} alt="Two girls" />
           </Box>
         </Col.Item>
 

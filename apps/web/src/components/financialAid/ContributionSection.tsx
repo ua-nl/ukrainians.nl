@@ -73,7 +73,7 @@ export const ContributionSection = () => {
 
         <Col.Item sm={6} vAlign="center">
           <Box mt={{ xs: 8, sm: 0 }}>
-            <Image src={HandsRisedImg} />
+            <Image src={HandsRisedImg} alt="Hands rised" />
           </Box>
         </Col.Item>
       </Col.Container>

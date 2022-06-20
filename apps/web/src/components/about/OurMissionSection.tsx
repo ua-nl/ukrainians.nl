@@ -25,7 +25,7 @@ export const OurMissionSection = () => {
 
         <Col.Item sm={6} vAlign="center">
           <Box mt={{ xs: 8, sm: 0 }}>
-            <Image src={GroupPhoto} />
+            <Image src={GroupPhoto} alt="Group photo" />
           </Box>
         </Col.Item>
       </Col.Container>

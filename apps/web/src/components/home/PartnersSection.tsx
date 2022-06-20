@@ -9,7 +9,7 @@ export const PartnersSection = () => {
       <H2 center mb={8}>
         Our partners &amp; sponsors
       </H2>
-      <Image src={partners} />
+      <Image src={partners} alt="Partners" />
     </Section>
   );
 };
