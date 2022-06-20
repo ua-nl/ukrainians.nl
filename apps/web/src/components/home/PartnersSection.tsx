@@ -5,7 +5,7 @@ import partners from '../../../public/img/partners.png';
 
 export const PartnersSection = () => {
   return (
-    <Section bgColor="gray" maxWidth="md">
+    <Section thin bgColor="grey">
       <H2 center mb={8}>
         Our partners &amp; sponsors
       </H2>

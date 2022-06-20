@@ -18,7 +18,7 @@ const Box = styled('div')(({ theme }) => ({
 
 export const BlockSection = () => {
   return (
-    <Section maxWidth="lg">
+    <Section>
       <Container>
         <Box>
           <H2>

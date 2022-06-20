@@ -1,13 +1,13 @@
 import { Box } from '@mui/material';
 import Image from 'next/image';
 import { Col, H1, Para, Section } from 'ui/ux';
+import MomWithKid from '../../../public/photo/mom-with-kid.jpg';
+import TwoGirls from '../../../public/photo/two-girls.jpg';
 
-import MomWithKid from '../../../public/photo/mom-with-kid.jpeg';
-import TwoGirls from '../../../public/photo/two-girls.jpeg';
 
 export const OurStorySection = () => {
   return (
-    <Section bgColor="gray" maxWidth="lg">
+    <Section bgColor="grey">
       <Col.Container columns={{ sm: 12 }}>
         <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
           <Box mt={{ xs: 8, sm: 0 }}>

@@ -6,28 +6,17 @@ export interface TypographyUAProps {
   children: ReactNode;
   center?: boolean;
   mb?: number;
-  gutterBottom?: boolean;
 }
 
 const createTypography = (
   variant: TypographyProps['variant'],
-  tProps: Partial<Pick<TypographyProps, 'letterSpacing' | 'mb'>> = {},
+  tProps: TypographyProps = {},
 ) => {
   const TypographyUA = (props: TypographyUAProps) => (
     <Typography
       variant={variant}
-      gutterBottom={
-        props.gutterBottom === undefined ? true : props.gutterBottom
-      }
       textAlign={props.center ? 'center' : undefined}
-      mb={
-        props.mb || props.mb === 0
-          ? props.mb
-          : tProps.mb
-          ? tProps.mb
-          : undefined
-      }
-      letterSpacing={tProps.letterSpacing}
+      mb={props.mb ?? tProps.mb}
     >
       {props.children}
     </Typography>
@@ -35,13 +24,12 @@ const createTypography = (
   return TypographyUA;
 };
 
-export const H1 = createTypography('h1');
-export const H2 = createTypography('h2');
-export const H3 = createTypography('h3');
-export const H4 = createTypography('h4');
-export const Subtitle = createTypography('subtitle1', {
-  letterSpacing: '-1px',
-});
-export const Para = createTypography('body1', { mb: '16px' });
+export const H1 = createTypography('h1', { mb: 4 });
+export const H2 = createTypography('h2', { mb: 3 });
+export const H3 = createTypography('h3', { mb: 2 });
+export const H4 = createTypography('h4', { mb: 1 });
+
+export const Para = createTypography('body1', { mb: 2 });
 export const Para2 = createTypography('body2');
+export const Subtitle = createTypography('subtitle1');
 export const Caption = createTypography('caption');

@@ -3,6 +3,9 @@ import type { L10NStrings } from './@types';
 export const l10nRU: L10NStrings = {
   'menu.about': 'О нас',
   'menu.home': 'Главная',
+  'menu.humanitarianAid': 'Гуманитарная помощь',
+  'menu.financialAid': 'Финансовая помощь',
+  'menu.displacedPeople': 'Перемещенные люди',
 
   'info.email': 'Электронная почта',
   'info.phone': 'Телефон',
@@ -19,4 +22,9 @@ export const l10nRU: L10NStrings = {
 
   donate: 'Пожертвовать',
   followUs: 'Следите за нами',
+  readMore: 'Читать далее',
+  collectionPoints: 'Пункты сбора',
+  volunteer: 'Волонтёрство',
+  copyright:
+    'Copyright © 2014, Все права защищены Фонд "Украинцы в Нидерландах"',
 };

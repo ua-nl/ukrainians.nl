@@ -6,7 +6,7 @@ import GroupPhoto from '../../../public/photo/group-photo.jpg';
 
 export const OurMissionSection = () => {
   return (
-    <Section maxWidth="lg" first>
+    <Section first>
       <Col.Container columns={{ sm: 12 }}>
         <Col.Item sm={6}>
           <H1>Our mission</H1>

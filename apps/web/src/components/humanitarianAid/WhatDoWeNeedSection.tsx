@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useUIContext } from 'ui/lib';
 import { Button, Col, H1, Para, Section } from 'ui/ux';
 
-import StorehouseImg from '../../../public/photo/Storehouse.jpeg';
+import StorehouseImg from '../../../public/photo/storehouse.jpg';
 
 const ImgBox = styled('div')(() => ({
   width: 139,
@@ -22,7 +22,7 @@ export const WhatDoWeNeedSection = () => {
   const ctx = useUIContext();
 
   return (
-    <Section bgColor="gray" maxWidth="lg">
+    <Section thin bgColor="grey">
       <Col.Container columns={{ sm: 12 }}>
         <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
           <Box mb={{ xs: 8, sm: 0 }} display="flex" justifyContent="center">

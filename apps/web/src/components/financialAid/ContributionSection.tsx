@@ -38,7 +38,7 @@ export const ContributionSection = () => {
   };
 
   return (
-    <Section maxWidth="lg" first>
+    <Section first>
       <Col.Container columns={{ sm: 12 }}>
         <Col.Item sm={6}>
           <H1 mb={12}>Your contribution can save lives</H1>

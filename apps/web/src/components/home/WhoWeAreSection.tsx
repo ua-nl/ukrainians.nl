@@ -1,12 +1,10 @@
 import { Box } from '@mui/material';
-import Image from 'next/image';
+import { LogoMenu } from 'ui/assets';
 import { Button, Col, H2, Para, Section } from 'ui/ux';
-
-import Logo from '../../../public/img/logo.png';
 
 export const WhoWeAreSection = () => {
   return (
-    <Section bgColor="gray" maxWidth="md">
+    <Section thin bgColor="grey">
       <Col.Container columns={{ sm: 12 }}>
         <Col.Item sm={6}>
           <H2>WHO WE ARE</H2>
@@ -22,7 +20,7 @@ export const WhoWeAreSection = () => {
 
         <Col.Item sm={6} vAlign="center">
           <Box mt={{ xs: 8, sm: 0 }}>
-            <Image src={Logo} />
+            <LogoMenu width={511} height={151} />
           </Box>
         </Col.Item>
       </Col.Container>

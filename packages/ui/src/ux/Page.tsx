@@ -11,7 +11,7 @@ export interface PageProps {
 export const Page = ({ children }: PageProps) => (
   <>
     <TopMenu />
-    <Box pb="52px">{children}</Box>
+    <Box pb="120px">{children}</Box>
     <Footer />
   </>
 );

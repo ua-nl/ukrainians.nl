@@ -1,6 +1,6 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography';
 
-import { UASysColors } from '../cssVars.color';
+import { UASysColors } from './cssVars/color';
 
 const getTypografyFontSize = (base: number) =>
   `${((base / 16) * 100).toFixed(0)}%`;
@@ -33,6 +33,7 @@ export const typography: TypographyOptions = {
   subtitle1: {
     fontSize: getTypografyFontSize(20),
     fontWeight: 500,
+    letterSpacing: '-1px',
   },
   body1: {
     fontSize: getTypografyFontSize(16),

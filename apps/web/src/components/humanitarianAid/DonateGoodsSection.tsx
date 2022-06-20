@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import { Col, H1, Para, Section } from 'ui/ux';
 
-import TwoGirls from '../../../public/photo/two-girls.jpeg';
+import TwoGirls from '../../../public/photo/two-girls.jpg';
 
 export const DonateGoodsSection = () => {
   return (
-    <Section maxWidth="lg" first>
+    <Section first>
       <Col.Container columns={{ sm: 12 }}>
         <Col.Item sm={6}>
           <H1>Help us do good: donate goods</H1>

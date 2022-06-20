@@ -6,7 +6,7 @@ import { BankAccountDetails } from '../BankAccountDetails';
 
 export const HelpSection = () => {
   return (
-    <Section bgColor="gray" maxWidth="lg">
+    <Section bgColor="grey">
       <Col.Container columns={{ sm: 12 }}>
         <Col.Item sm={6}>
           <H2 mb={8}>Help where it’s needed most</H2>

@@ -1,15 +1,14 @@
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Button, Collapse, IconButton, styled } from '@mui/material';
-import { Container } from '@mui/system';
+import { Button, Collapse, Container, IconButton, styled } from '@mui/material';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 import { LogoMenu } from '../assets/LogoMenu.svg';
 import { useScreen } from '../hooks/useScreen';
-import { useUIContext } from '../lib';
-import { UASysColors } from '../lib/cssVars.color';
-import { CONTAINER_MAX_WIDTH } from '../lib/cssVars.width';
+import { UASysColors } from '../lib/theme/cssVars/color';
+import { CONTAINER_MAX_WIDTH } from '../lib/theme/cssVars/size';
+import { useUIContext } from '../lib/uiContext';
 
 const TopMenuContainer = styled('div')(({ theme }) => ({
   position: 'static',
@@ -32,7 +31,9 @@ const LogoContainer = styled('div')(({ theme }) => ({
 
 const LinksContainer = styled('div', {
   shouldForwardProp: (propName) => propName !== 'isDesktop',
-})<{ isDesktop: boolean }>(({ theme, isDesktop }) => ({
+})<{
+  isDesktop: boolean;
+}>(({ theme, isDesktop }) => ({
   display: 'flex',
   flexDirection: isDesktop ? 'row' : 'column',
   alignItems: 'center',
@@ -55,7 +56,9 @@ const MobileNavbarContent = styled('div')(() => ({
 
 const NavbarLink = styled('a', {
   shouldForwardProp: (propName) => propName !== 'isSelected',
-})<{ isSelected: boolean }>(({ isSelected }) => ({
+})<{
+  isSelected: boolean;
+}>(({ isSelected }) => ({
   fontWeight: isSelected ? 700 : 400,
 
   '&:hover': {

@@ -15,7 +15,7 @@ export const MainHeaderSection = () => {
   const ctx = useUIContext();
 
   return (
-    <Section first bgImage={CoverImage.src} color="white" maxWidth="md">
+    <Section thin first bgImage={CoverImage.src} color="white">
       <Box maxWidth={550}>
         <H1>
           Stand with us to support peace and freedom in Ukraine – and beyond

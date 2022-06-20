@@ -24,7 +24,7 @@ const ContactBox = styled('div')(() => ({
 
 export const ForOrganizationsSection = () => {
   return (
-    <Section maxWidth="lg">
+    <Section>
       <Col.Container columns={{ sm: 12 }}>
         <Col.Item sm={6}>
           <H1>For organizations</H1>

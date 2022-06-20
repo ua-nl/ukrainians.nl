@@ -2,7 +2,7 @@ import { Col, H1, H2, Para, Section } from 'ui/ux';
 
 export const AchievementsSection = () => {
   return (
-    <Section maxWidth="md">
+    <Section thin>
       <H2 center mb={12}>
         Our achievements
       </H2>

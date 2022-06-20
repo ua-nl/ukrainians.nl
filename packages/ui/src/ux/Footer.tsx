@@ -1,10 +1,11 @@
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Grid, Link, Typography } from '@mui/material';
 import { styled } from '@mui/system';
-import { LogoFooter } from '../assets/LogoFooter.svg';
-import { UASysColors } from '../lib/cssVars.color';
-import { CONTAINER_MAX_WIDTH } from '../lib/cssVars.width';
-import { useUIContext } from '../lib/uiContext';
 
+import { LogoFooter } from '../assets/LogoFooter.svg';
+import { UASysColors } from '../lib/theme/cssVars/color';
+import { CONTAINER_MAX_WIDTH } from '../lib/theme/cssVars/size';
+import { useUIContext } from '../lib/uiContext';
+import { H4 } from './Typography';
 
 const FooterContainer = styled('div')(({ theme }) => ({
   padding: theme.spacing(8, 0),
@@ -14,6 +15,14 @@ const FooterContainer = styled('div')(({ theme }) => ({
   justifyContent: 'center',
   width: '100%',
 }));
+
+const FooterLink = styled(Link)({
+  color: UASysColors.white,
+  textDecoration: 'none',
+  '&:hover': {
+    textDecoration: 'underline',
+  },
+});
 
 const ContactsContainer = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -39,12 +48,12 @@ const ContactItem = styled(Grid)(({ theme }) => ({
   },
 }));
 
-const LinksContainer = styled('div')(() => ({
+const LinksContainer = styled('div')({
   gridArea: 'links',
   display: 'flex',
   flexDirection: 'column',
   whiteSpace: 'nowrap',
-}));
+});
 
 const SocialMediaContainer = styled('div')(({ theme }) => ({
   gridArea: 'socials',
@@ -90,12 +99,6 @@ const Copyright = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(2),
 }));
 
-const FooterLink = styled('a')(() => ({
-  '&:hover': {
-    textDecoration: 'underline',
-  },
-}));
-
 const IconBox = ({ size }: { size: number }) => {
   return (
     <Box
@@ -111,16 +114,15 @@ const IconBox = ({ size }: { size: number }) => {
 
 const ContactInfo = () => {
   const ctx = useUIContext();
-
   return (
     <ContactsContainer>
       {ctx.contactData.map(({ key, label, value }) => (
         <ContactItem key={key}>
           <IconBox size={24} />
-          <Typography variant="body1" mr={1} ml={2}>
+          <Typography variant="body1" mr={1} ml={2} mb={0}>
             {ctx.l10n[label]}:
           </Typography>
-          <Typography variant="h4">
+          <H4 mb={0}>
             {key === 'email' ? (
               <FooterLink href={`mailto:${value}`}>{value}</FooterLink>
             ) : key === 'phone' ? (
@@ -128,7 +130,7 @@ const ContactInfo = () => {
             ) : (
               value
             )}
-          </Typography>
+          </H4>
         </ContactItem>
       ))}
     </ContactsContainer>
