@@ -1,4 +1,4 @@
-import { Breadcrumbs, Link, Typography, Box } from '@mui/material';
+import { Box, Breadcrumbs, Link, Typography } from '@mui/material';
 
 import { Section } from './Section';
 
@@ -7,7 +7,7 @@ export const Bread = (props: {
   current: string;
 }) => (
   <Section first>
-    <Box mt="50px" mb="24px">
+    <Box mt={14} mb={6}>
       <Breadcrumbs component="div">
         {props.history.map((item) => (
           <Link
@@ -20,7 +20,9 @@ export const Bread = (props: {
             {item.label}
           </Link>
         ))}
-        <Typography fontWeight="bold">{props.current}</Typography>
+        <Typography fontWeight="bold" mb={0}>
+          {props.current}
+        </Typography>
       </Breadcrumbs>
     </Box>
   </Section>
