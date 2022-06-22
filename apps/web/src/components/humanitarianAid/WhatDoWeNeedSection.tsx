@@ -1,67 +1,46 @@
 import { Box } from '@mui/material';
-import { styled } from '@mui/system';
 import Image from 'next/image';
 import { useUIContext } from 'ui/lib';
-import { Button, Col, H1, Para, Section } from 'ui/ux';
+import { Button, Col, H1, ImgBox, Para, Section } from 'ui/ux';
+import LoadTruckImg from '../../../public/photo/load-truck.jpg';
+import PackedTruckImg from '../../../public/photo/packed-truck.jpg';
 
-import StorehouseImg from '../../../public/photo/storehouse.jpg';
 
-const ImgBox = styled('div')(() => ({
-  width: 139,
-  height: 107,
-  backgroundColor: '#fff',
-  opacity: 0.3,
-  borderRadius: '8px',
-}));
-
-const Img = styled(Image)(() => ({
-  borderRadius: '8px',
-}));
 
 export const WhatDoWeNeedSection = () => {
   const ctx = useUIContext();
 
   return (
-    <Section thin bgColor="grey">
+    <Section bgColor="grey">
       <Col.Container columns={{ sm: 12 }}>
-        <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
-          <Box mb={{ xs: 8, sm: 0 }} display="flex" justifyContent="center">
-            <ImgBox />
-          </Box>
-          <Box mt={{ xs: 0, sm: 6 }} borderRadius="8px">
-            <Img src={StorehouseImg} />
-          </Box>
-          <Box mt={{ xs: 8, sm: 6 }} display="flex" justifyContent="center">
-            <ImgBox />
-          </Box>
-        </Col.Item>
 
-        <Col.Item sm={6} vAlign="center" order={{ xs: 1, sm: 2 }}>
+        <Col.Item sm={6} vAlign="center">
           <H1>What do we need</H1>
-          <Para>
+          <Para mb={5}>
             Relief efforts encompass the procurement, collection and transport
             of urgently needed medical supplies, protective equipment, and
             humanitarian aid. Follow us for regular updates on goods accepted.
           </Para>
-          <Para>The current priorities can be found here:</Para>
-          <Box mt={8} mb={14}>
-            <Button type="primary">
-              {' '}
-              {ctx.l10n[ctx.texts.humanitarianAid]}
-            </Button>
-          </Box>
+          <Para mb={16}>The current priorities can be found here:</Para>
+          
           <H1>Where to drop off</H1>
           <Para>
-            We have more than 20 collection points throughout the Netherlands
-            where goods can be donated, also in bulk. For very large quantities,
-            please contact our helpline for possible pickup.
+          We have more than 20 collection points throughout the Netherlands where goods can be donated, also in bulk. For very large quantities, please contact our helpline for possible pickup.
           </Para>
-          <Para>The current priorities can be found here:</Para>
           <Box mt={8}>
-            <Button type="accent">
+            <Button>
               {ctx.l10n[ctx.texts.collectionPoints]}
             </Button>
           </Box>
+        </Col.Item>
+
+        <Col.Item sm={6} vAlign="center">
+          <ImgBox sx={{ float: 'right', marginLeft: '25%' }}>
+            <Image src={PackedTruckImg} />
+          </ImgBox>
+          <ImgBox sx={{ float: 'left', width: '50%', marginTop: '-30%' }}>
+            <Image src={LoadTruckImg} />
+          </ImgBox>
         </Col.Item>
       </Col.Container>
     </Section>
