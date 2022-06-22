@@ -2,10 +2,9 @@ import { Box } from '@mui/material';
 import Image from 'next/image';
 import { useUIContext } from 'ui/lib';
 import { Button, Col, H1, ImgBox, Para, Section } from 'ui/ux';
+
 import LoadTruckImg from '../../../public/photo/load-truck.jpg';
 import PackedTruckImg from '../../../public/photo/packed-truck.jpg';
-
-
 
 export const WhatDoWeNeedSection = () => {
   const ctx = useUIContext();
@@ -13,7 +12,6 @@ export const WhatDoWeNeedSection = () => {
   return (
     <Section bgColor="grey">
       <Col.Container columns={{ sm: 12 }}>
-
         <Col.Item sm={6} vAlign="center">
           <H1>What do we need</H1>
           <Para mb={5}>
@@ -22,15 +20,15 @@ export const WhatDoWeNeedSection = () => {
             humanitarian aid. Follow us for regular updates on goods accepted.
           </Para>
           <Para mb={16}>The current priorities can be found here:</Para>
-          
+
           <H1>Where to drop off</H1>
           <Para>
-          We have more than 20 collection points throughout the Netherlands where goods can be donated, also in bulk. For very large quantities, please contact our helpline for possible pickup.
+            We have more than 20 collection points throughout the Netherlands
+            where goods can be donated, also in bulk. For very large quantities,
+            please contact our helpline for possible pickup.
           </Para>
           <Box mt={8}>
-            <Button>
-              {ctx.l10n[ctx.texts.collectionPoints]}
-            </Button>
+            <Button>{ctx.l10n[ctx.texts.collectionPoints]}</Button>
           </Box>
         </Col.Item>
 
