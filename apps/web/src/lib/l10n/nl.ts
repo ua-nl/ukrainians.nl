@@ -4,7 +4,7 @@ export const l10nNL: L10NStrings = {
   'menu.about': 'Over ons',
   'menu.home': 'Thuis',
   'menu.humanitarianAid': 'Humanitaire hulp',
-  'menu.financialAid': 'Financiële steun',
+  'menu.financialSupport': 'Financiële steun',
   'menu.displacedPeople': 'Ontheemden',
 
   'info.email': 'Email',
