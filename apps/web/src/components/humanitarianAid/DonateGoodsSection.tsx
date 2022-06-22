@@ -5,7 +5,7 @@ import Storehouse from '../../../public/photo/storehouse.jpg';
 
 export const DonateGoodsSection = () => {
   return (
-    <Section second>
+    <Section first>
       <Col.Container columns={{ sm: 12 }}>
         <Col.Item sm={6} vAlign="center">
           <Image src={Storehouse} alt="Two girls" />
