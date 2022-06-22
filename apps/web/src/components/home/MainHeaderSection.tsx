@@ -1,4 +1,3 @@
-import { Box } from '@mui/material';
 import { styled } from '@mui/system';
 import { useUIContext } from 'ui/lib';
 import { Button, MainHeader, Section, Subtitle } from 'ui/ux';
@@ -11,11 +10,22 @@ const ButtonsContainer = styled('div')(({ theme }) => ({
   marginTop: theme.spacing(12),
 }));
 
-const BackgroundImageContainer = styled('div')(() => ({
+const BackgroundImageContainer = styled('div')({
   backgroundImage: `url(${CoverImage.src})`,
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
+});
+
+const BackgroundImageContent = styled('div')({
+  height: '70vh',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+});
+
+const AccentHeader = styled('span')(({ theme }) => ({
+  color: theme.palette.primary.contrastText,
 }));
 
 export const MainHeaderSection = () => {
@@ -24,16 +34,9 @@ export const MainHeaderSection = () => {
   return (
     <BackgroundImageContainer>
       <Section first color="white">
-        <Box
-          sx={{
-            height: '50vh',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-          }}
-        >
+        <BackgroundImageContent>
           <MainHeader>
-            <span style={{ color: 'white' }}>#</span>StandWithUkraine
+            <AccentHeader>#</AccentHeader>StandWithUkraine
           </MainHeader>
           <Subtitle>Stichting Oekraïners in Nederland</Subtitle>
 
@@ -41,7 +44,7 @@ export const MainHeaderSection = () => {
             <Button type="primary">{ctx.l10n[ctx.texts.donateBtn]}</Button>
             <Button type="accent">{ctx.l10n[ctx.texts.volunteer]}</Button>
           </ButtonsContainer>
-        </Box>
+        </BackgroundImageContent>
       </Section>
     </BackgroundImageContainer>
   );

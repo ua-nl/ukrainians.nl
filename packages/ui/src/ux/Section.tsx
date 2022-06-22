@@ -40,7 +40,7 @@ export const Section = (props: SectionProps) => {
       <Container
         maxWidth={props.thin ? CONTAINER_SHORT_WIDTH : CONTAINER_MAX_WIDTH}
       >
-        <Box pb="100px" pt={props.first && !props.bgColor ? '40px' : '100px'}>
+        <Box py={props.first && !props.bgColor ? '0px' : '100px'}>
           {props.children}
         </Box>
       </Container>
