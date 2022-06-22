@@ -5,7 +5,7 @@ import GroupPhotoImg from '../../../public/photo/group-photo.jpg';
 
 export const OurMissionSection = () => {
   return (
-    <Section second>
+    <Section first>
       <Col.Container columns={{ sm: 12 }}>
         <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
           <Image src={GroupPhotoImg} alt="Group photo" />
