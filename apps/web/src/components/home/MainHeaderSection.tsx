@@ -33,7 +33,7 @@ export const MainHeaderSection = () => {
 
   return (
     <BackgroundImageContainer>
-      <Section first color="white">
+      <Section breadcrumbs color="white">
         <BackgroundImageContent>
           <MainHeader>
             <AccentHeader>#</AccentHeader>StandWithUkraine

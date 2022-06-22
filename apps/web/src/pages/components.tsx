@@ -35,7 +35,7 @@ export default function Index() {
         ]}
         current="Current"
       />
-      <Section first>
+      <Section>
         <H1>Typografy</H1>
 
         <H1>Header 1</H1>

@@ -1,4 +1,3 @@
-import { Box } from '@mui/material';
 import Image from 'next/image';
 import { Col, H1, Para, Section } from 'ui/ux';
 
@@ -8,18 +7,11 @@ import TwoGirls from '../../../public/photo/two-girls.jpg';
 export const OurStorySection = () => {
   return (
     <Section bgColor="grey">
+      <H1 center mb={16}>
+        Our story
+      </H1>
       <Col.Container columns={{ sm: 12 }}>
-        <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
-          <Box mt={{ xs: 8, sm: 0 }}>
-            <Image src={MomWithKid} alt="Mom with kid" />
-          </Box>
-          <Box mt={{ xs: 8, sm: 6 }}>
-            <Image src={TwoGirls} alt="Two girls" />
-          </Box>
-        </Col.Item>
-
-        <Col.Item sm={6} vAlign="center" order={{ xs: 1, sm: 2 }}>
-          <H1>Our story</H1>
+        <Col.Item sm={6}>
           <Para>
             Ukrainians in the Netherlands Foundation is a non-profit
             organization established during the Euromaidan Uprising in 2014.
@@ -31,7 +23,10 @@ export const OurStorySection = () => {
             schools and churches and organising numerous cultural and
             educational events.
           </Para>
-          <Para>
+        </Col.Item>
+
+        <Col.Item sm={6}>
+          <Para mb={10}>
             From the moment the Russian Federation unjustly invaded Ukraine on
             24 February 2022, our foundation has been at forefront of urgent
             humanitarian assistance for Ukrainian civilians and the Armed Forces
@@ -41,6 +36,14 @@ export const OurStorySection = () => {
             volunteer organisations, public-sector organisations and
             foundations, as well as commercial enterprises.
           </Para>
+        </Col.Item>
+
+        <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
+          <Image src={MomWithKid} alt="Mom with kid" />
+        </Col.Item>
+
+        <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
+          <Image src={TwoGirls} alt="Two girls" />
         </Col.Item>
       </Col.Container>
     </Section>

@@ -1,4 +1,4 @@
-import { Page } from 'ui/ux';
+import { Bread, Page } from 'ui/ux';
 
 import { DonateGoodsSection } from '../components/humanitarianAid/DonateGoodsSection';
 import { ForOrganizationsSection } from '../components/humanitarianAid/ForOrganizationsSection';
@@ -7,6 +7,11 @@ import { WhatDoWeNeedSection } from '../components/humanitarianAid/WhatDoWeNeedS
 export default function Index() {
   return (
     <Page>
+      <Bread
+        history={[{ label: 'Home', href: '/' }]}
+        current="Humanitarian Aid"
+      />
+
       <DonateGoodsSection />
       <WhatDoWeNeedSection />
       <ForOrganizationsSection />
