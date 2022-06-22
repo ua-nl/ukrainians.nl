@@ -8,7 +8,7 @@ const cteateMenuItem = (slug: string, label: L10NKeys) => ({
 export const getConfigMenu = () => [
   cteateMenuItem('/', 'menu.home'),
   cteateMenuItem('/about', 'menu.about'),
-  cteateMenuItem('/humanitarianAid', 'menu.humanitarianAid'),
-  cteateMenuItem('/financialAid', 'menu.financialAid'),
-  cteateMenuItem('/displacedPeople', 'menu.displacedPeople'),
+  cteateMenuItem('/humanitarian-aid', 'menu.humanitarianAid'),
+  cteateMenuItem('/financial-aid', 'menu.financialAid'),
+  cteateMenuItem('/displaced-people', 'menu.displacedPeople'),
 ];
