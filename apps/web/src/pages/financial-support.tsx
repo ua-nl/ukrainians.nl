@@ -1,8 +1,8 @@
 import { Bread, Page } from 'ui/ux';
 
-import { BlockSection } from '../components/financialAid/BlockSection';
-import { ContributionSection } from '../components/financialAid/ContributionSection';
-import { HelpSection } from '../components/financialAid/HelpSection';
+import { BlockSection } from '../components/financialSupport/BlockSection';
+import { ContributionSection } from '../components/financialSupport/ContributionSection';
+import { HelpSection } from '../components/financialSupport/HelpSection';
 
 export default function Index() {
   return (
