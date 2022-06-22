@@ -22,7 +22,7 @@ const MainContent = styled(Container)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'space-between',
   width: '100%',
-  padding: theme.spacing(10, 6, 6, 6),
+  padding: theme.spacing(0, 6),
 }));
 
 const LogoContainer = styled('div')(({ theme }) => ({
@@ -39,7 +39,10 @@ const LinksContainer = styled('div', {
   alignItems: 'center',
   justifyContent: 'space-between',
   gap: isDesktop ? theme.spacing(8) : theme.spacing(2),
-  paddingBottom: theme.spacing(6),
+
+  [theme.breakpoints.down('md')]: {
+    paddingBottom: theme.spacing(6),
+  },
 }));
 
 const MobileNavbarContainer = styled('div')(() => ({
