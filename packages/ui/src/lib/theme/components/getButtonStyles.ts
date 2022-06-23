@@ -1,5 +1,7 @@
 import { Components, Theme } from '@mui/material';
 
+import { UASysColors } from '../cssVars/color';
+
 export const getButtonStyles = (
   theme: Theme,
 ): Pick<
@@ -55,10 +57,10 @@ export const getButtonStyles = (
         marginRight: theme.spacing(2),
         border: `1px solid ${theme.palette.grey[200]}`,
         '&.Mui-selected': {
-          backgroundColor: theme.palette.accent.main,
+          backgroundColor: UASysColors.yellow60,
           color: theme.palette.primary.main,
           '&:hover': {
-            backgroundColor: theme.palette.accent.dark,
+            backgroundColor: UASysColors.yellow100,
           },
         },
         '&.Mui-disabled': {
