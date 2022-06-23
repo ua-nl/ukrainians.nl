@@ -9,8 +9,8 @@ import TwoGirlsImg from '../../../public/photo/two-girls.jpg';
 
 export const EventsSection = () => {
   return (
-    <Section first>
-      <Col.Container columns={{ sm: 12 }}>
+    <Section breadcrumbs>
+      <Col.Container>
         <Col.Item sm={6}>
           <H1>Events</H1>
           <Para mb={8}>General text</Para>

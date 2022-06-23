@@ -25,7 +25,7 @@ const ContactBox = styled('div')(() => ({
 export const ForOrganizationsSection = () => {
   return (
     <Section>
-      <Col.Container columns={{ sm: 12 }}>
+      <Col.Container>
         <Col.Item sm={6}>
           <H1>For organizations</H1>
           <Para mb={8}>

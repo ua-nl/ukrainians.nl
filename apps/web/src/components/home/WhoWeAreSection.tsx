@@ -5,7 +5,7 @@ import { Button, Col, H2, Para, Section } from 'ui/ux';
 export const WhoWeAreSection = () => {
   return (
     <Section thin bgColor="grey">
-      <Col.Container columns={{ sm: 12 }}>
+      <Col.Container>
         <Col.Item sm={6}>
           <H2>WHO WE ARE</H2>
           <Para>
