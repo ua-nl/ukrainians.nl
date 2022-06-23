@@ -6,9 +6,9 @@ import { BankAccountDetails } from '../BankAccountDetails';
 
 export const HelpSection = () => {
   return (
-    <Section bgColor="grey">
-      <Col.Container columns={{ sm: 12 }}>
-        <Col.Item sm={6}>
+    <Section>
+      <Col.Container>
+        <Col.Item sm={12} md={6} vAlign="center" order={{ xs: 1, md: 2 }}>
           <H2 mb={8}>Help where it’s needed most</H2>
           <Para>
             Financial contributions in any amount are vital for humanitarian
@@ -27,11 +27,8 @@ export const HelpSection = () => {
             </Button>
           </Box>
         </Col.Item>
-
-        <Col.Item sm={6} vAlign="center">
-          <Box sx={{ display: 'flex', width: '100%', flexGrow: 1 }}>
-            <BankAccountDetails />
-          </Box>
+        <Col.Item sm={12} md={6} vAlign="center" order={{ xs: 2, md: 1 }}>
+          <BankAccountDetails />
         </Col.Item>
       </Col.Container>
     </Section>
