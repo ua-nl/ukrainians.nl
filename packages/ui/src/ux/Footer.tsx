@@ -5,7 +5,7 @@ import { LogoFooter } from '../assets/LogoFooter.svg';
 import { UASysColors } from '../lib/theme/cssVars/color';
 import { CONTAINER_MAX_WIDTH } from '../lib/theme/cssVars/size';
 import { useUIContext } from '../lib/uiContext';
-import { H4 } from './Typography';
+import { H2, H4 } from './Typography';
 
 const FooterContainer = styled('div')(({ theme }) => ({
   padding: theme.spacing(8, 0),
@@ -19,6 +19,8 @@ const FooterContainer = styled('div')(({ theme }) => ({
 const FooterLink = styled(Link)({
   color: UASysColors.white,
   textDecoration: 'none',
+  padding: 0,
+
   '&:hover': {
     textDecoration: 'underline',
   },
@@ -142,9 +144,7 @@ const Links = () => {
 
   return (
     <LinksContainer>
-      <Typography variant="h2" mb={2}>
-        {ctx.l10n[ctx.texts.contactHeader]}
-      </Typography>
+      <H2 mb={4}>{ctx.l10n[ctx.texts.contactHeader]}</H2>
       {ctx.links.map(({ label, slug }, index) => (
         <FooterLink href={slug} key={index} mb={4}>
           {ctx.l10n[label]}
