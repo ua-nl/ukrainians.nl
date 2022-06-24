@@ -35,6 +35,7 @@ export const typography: TypographyOptions = {
     fontSize: getTypografyFontSize(20),
     fontWeight: 500,
     letterSpacing: '-1px',
+    wordBreak: 'break-word',
   },
   body1: {
     fontSize: getTypografyFontSize(16),

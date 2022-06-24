@@ -18,7 +18,7 @@ export const getButtonStyles = (
         opacity: 1,
         fontWeight: 700,
         lineHeight: 1,
-        padding: theme.spacing(3, 4),
+        padding: theme.spacing(3, 8),
         fontSize: `1rem`,
         letterSpacing: `-0.02rem`,
       },
