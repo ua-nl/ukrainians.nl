@@ -8,10 +8,10 @@ export const ContributionSection = () => {
   return (
     <Section first bgColor="grey">
       <Col.Container>
-        <Col.Item sm={6} vAlign="center">
+        <Col.Item sm={12} md={6} vAlign="center">
           <Image src={SunflowersImg} alt="Kids" />
         </Col.Item>
-        <Col.Item sm={6} vAlign="center">
+        <Col.Item sm={12} md={6} vAlign="center">
           <H1>Your financial support help us to continue providing Ukraine</H1>
           <Para>
             Whether you are an individual or an organization , we invite you to
