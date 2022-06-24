@@ -10,5 +10,5 @@ export const getConfigMenu = () => [
   cteateMenuItem('/about', 'menu.about'),
   cteateMenuItem('/humanitarian-aid', 'menu.humanitarianAid'),
   cteateMenuItem('/financial-support', 'menu.financialSupport'),
-  cteateMenuItem('/displaced-people', 'menu.displacedPeople'),
+  cteateMenuItem('/latest-news', 'menu.latestNews'),
 ];

@@ -8,7 +8,7 @@ export const DonateGoodsSection = () => {
     <Section first>
       <Col.Container>
         <Col.Item sm={6} vAlign="center">
-          <Image src={Storehouse} alt="Two girls" />
+          <Image src={Storehouse} alt="Storehouse" />
         </Col.Item>
         <Col.Item sm={6} vAlign="center">
           <H1>Help us do good: donate goods</H1>

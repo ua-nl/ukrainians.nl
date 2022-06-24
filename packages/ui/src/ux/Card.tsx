@@ -2,7 +2,7 @@ import { CardMedia } from '@mui/material';
 import { styled } from '@mui/system';
 import { ReactNode } from 'react';
 
-import { UASysColors } from '../lib/theme/cssVars/color';
+import { UASysStyleParts } from '../lib/theme/cssVars/uiElements';
 
 type CardProps = {
   image: string;
@@ -10,15 +10,29 @@ type CardProps = {
 };
 
 const CardContainer = styled('div')(({ theme }) => ({
-  padding: '32px',
-  borderRadius: '4px',
-  border: `1px solid ${UASysColors.grey}`,
-  boxShadow: 'none',
+  borderRadius: UASysStyleParts.boxRadius.borderRadius,
+  boxShadow: UASysStyleParts.shadow.boxShadow,
   display: 'flex',
   flexDirection: 'column',
-  gap: '16px',
-  marginBottom: '32px',
-  maxWidth: 360,
+  maxWidth: 370,
+  marginBottom: theme.spacing(5),
+  paddingBottom: theme.spacing(3),
+
+  [theme.breakpoints.only('xs')]: {
+    maxWidth: '100%',
+  },
+}));
+
+const CardImage = styled(CardMedia)({
+  borderTopRightRadius: '12px',
+  borderTopLeftRadius: '12px',
+});
+
+const CardContent = styled('div')(({ theme }) => ({
+  padding: theme.spacing(5),
+  display: 'flex',
+  flexDirection: 'column',
+  maxWidth: 365,
 
   [theme.breakpoints.only('xs')]: {
     maxWidth: '100%',
@@ -27,7 +41,7 @@ const CardContainer = styled('div')(({ theme }) => ({
 
 export const CardItem = ({ image, children }: CardProps) => (
   <CardContainer>
-    <CardMedia component="img" image={image} alt={image} />
-    {children}
+    <CardImage component="img" image={image} alt={image} />
+    <CardContent>{children}</CardContent>
   </CardContainer>
 );

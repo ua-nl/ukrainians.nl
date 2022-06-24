@@ -5,6 +5,7 @@ export * from './ux/Button';
 export * from './ux/Card';
 export * from './ux/Col';
 export * from './ux/Divider';
+export * from './ux/FilterTabs';
 export * from './ux/IconCard';
 export * from './ux/ImgBox';
 export * from './ux/Page';
