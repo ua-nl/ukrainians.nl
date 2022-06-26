@@ -1,4 +1,3 @@
-import { CardMedia } from '@mui/material';
 import { styled } from '@mui/system';
 import { ReactNode } from 'react';
 
@@ -23,25 +22,21 @@ const CardContainer = styled('div')(({ theme }) => ({
   },
 }));
 
-const CardImage = styled(CardMedia)({
+const CardImage = styled('img')({
   borderTopRightRadius: '12px',
   borderTopLeftRadius: '12px',
+  width: '100%',
 });
 
 const CardContent = styled('div')(({ theme }) => ({
   padding: theme.spacing(5),
   display: 'flex',
   flexDirection: 'column',
-  maxWidth: 365,
-
-  [theme.breakpoints.only('xs')]: {
-    maxWidth: '100%',
-  },
 }));
 
 export const CardItem = ({ image, children }: CardProps) => (
   <CardContainer>
-    <CardImage component="img" image={image} alt={image} />
+    <CardImage src={image} alt={image} />
     <CardContent>{children}</CardContent>
   </CardContainer>
 );
