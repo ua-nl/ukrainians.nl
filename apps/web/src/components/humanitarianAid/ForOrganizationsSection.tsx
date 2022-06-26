@@ -1,25 +1,8 @@
 import { styled } from '@mui/system';
-import { UASysColors } from 'ui/lib';
 import { Banner, Button, Col, H1, H2, Para, Section } from 'ui/ux';
 
 const List = styled('ul')(() => ({
   marginBlock: 0,
-}));
-
-const ContactBoxContainer = styled('div')(() => ({
-  display: 'flex',
-  justifyContent: 'center',
-  width: '100%',
-}));
-
-const ContactBox = styled('div')(() => ({
-  backgroundColor: UASysColors.black10,
-  borderRadius: '8px',
-  padding: '40px',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  width: 400,
 }));
 
 export const ForOrganizationsSection = () => {
@@ -49,13 +32,11 @@ export const ForOrganizationsSection = () => {
         </Col.Item>
 
         <Col.Item sm={6} vAlign="center">
-          <ContactBoxContainer>
-            <Banner>
-              <H2 mb={4}>Contact us</H2>
-              <Para mb={6}>Humanitarian Coordination team</Para>
-              <Button>Contact us</Button>
-            </Banner>
-          </ContactBoxContainer>
+          <Banner>
+            <H2 mb={4}>Contact us</H2>
+            <Para mb={6}>Humanitarian Coordination team</Para>
+            <Button>Contact us</Button>
+          </Banner>
         </Col.Item>
       </Col.Container>
     </Section>
