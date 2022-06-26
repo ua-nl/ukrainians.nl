@@ -1,6 +1,6 @@
 import { styled } from '@mui/system';
 import { ReactNode } from 'react';
-import { UASysColors } from 'ui/lib';
+import { UASysColors, UASysStyleParts } from 'ui/lib';
 
 type BannerProps = {
   children: ReactNode;
@@ -11,7 +11,7 @@ const BannerContainer = styled('div')(({ theme }) => ({
   flexDirection: 'column',
   alignItems: 'center',
   backgroundColor: UASysColors.yellow30,
-  borderRadius: '12px',
+  borderRadius: UASysStyleParts.boxRadius.borderRadius,
   padding: theme.spacing(10, 15),
   color: UASysColors.blue100,
   width: '100%',

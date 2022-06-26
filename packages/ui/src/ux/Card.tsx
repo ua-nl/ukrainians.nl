@@ -22,8 +22,8 @@ const CardContainer = styled('div')(({ theme }) => ({
 }));
 
 const CardImage = styled('img')({
-  borderTopRightRadius: '12px',
-  borderTopLeftRadius: '12px',
+  borderTopRightRadius: UASysStyleParts.boxRadius.borderRadius,
+  borderTopLeftRadius: UASysStyleParts.boxRadius.borderRadius,
   width: '100%',
 });
 
