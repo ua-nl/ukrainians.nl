@@ -1,5 +1,6 @@
 export * from './ux/AppHead';
 export * from './ux/AppWrapper';
+export * from './ux/Banner';
 export * from './ux/Breadcrumbs';
 export * from './ux/Button';
 export * from './ux/Card';

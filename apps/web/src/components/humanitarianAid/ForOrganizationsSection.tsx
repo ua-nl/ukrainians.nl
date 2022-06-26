@@ -1,6 +1,6 @@
 import { styled } from '@mui/system';
 import { UASysColors } from 'ui/lib';
-import { Button, Col, H1, H3, Para, Section } from 'ui/ux';
+import { Banner, Button, Col, H1, H2, Para, Section } from 'ui/ux';
 
 const List = styled('ul')(() => ({
   marginBlock: 0,
@@ -50,11 +50,11 @@ export const ForOrganizationsSection = () => {
 
         <Col.Item sm={6} vAlign="center">
           <ContactBoxContainer>
-            <ContactBox>
-              <H3 mb={4}>Contact us</H3>
+            <Banner>
+              <H2 mb={4}>Contact us</H2>
               <Para mb={6}>Humanitarian Coordination team</Para>
-              <Button type="accent">Contact us</Button>
-            </ContactBox>
+              <Button>Contact us</Button>
+            </Banner>
           </ContactBoxContainer>
         </Col.Item>
       </Col.Container>
