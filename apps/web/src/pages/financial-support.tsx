@@ -1,5 +1,6 @@
-import { Banner, Bread, Button, H1, Page } from 'ui/ux';
+import { Bread, Page } from 'ui/ux';
 
+import { BannerSection } from '../components/financialSupport/BannerSection';
 import { ContributionSection } from '../components/financialSupport/ContributionSection';
 import { HelpSection } from '../components/financialSupport/HelpSection';
 
@@ -13,14 +14,7 @@ export default function Index() {
       />
       <ContributionSection />
       <HelpSection />
-      <Banner>
-        <H1 center mb={10}>
-          Do you want to support by non-financial matters?
-        </H1>
-        <div>
-          <Button>Contact us</Button>
-        </div>
-      </Banner>
+      <BannerSection />
     </Page>
   );
 }

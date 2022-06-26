@@ -1,13 +1,12 @@
 import { styled } from '@mui/system';
 import { ReactNode } from 'react';
 import { UASysColors } from 'ui/lib';
-import { Section } from 'ui/ux';
 
 type BannerProps = {
   children: ReactNode;
 };
 
-const Container = styled('div')(({ theme }) => ({
+const BannerContainer = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -15,9 +14,10 @@ const Container = styled('div')(({ theme }) => ({
   borderRadius: '12px',
   padding: theme.spacing(10, 15),
   color: UASysColors.blue100,
+  width: '100%',
 }));
 
-const Content = styled('div')(() => ({
+const BannerContent = styled('div')(() => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -26,10 +26,8 @@ const Content = styled('div')(() => ({
 
 export const Banner = ({ children }: BannerProps) => {
   return (
-    <Section>
-      <Container>
-        <Content>{children}</Content>
-      </Container>
-    </Section>
+    <BannerContainer>
+      <BannerContent>{children}</BannerContent>
+    </BannerContainer>
   );
 };
