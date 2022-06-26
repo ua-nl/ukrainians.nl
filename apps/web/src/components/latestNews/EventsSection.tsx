@@ -27,7 +27,7 @@ export const EventsSection = () => {
     <Section bgColor="lightGrey">
       <FilterTabs value={value} handleChange={handleChange} tabs={tabs}>
         <TabPanel value={value} index={0}>
-          <Col.Container columnSpacing={{ sm: 3, md: 5 }} hAlign="flex-start">
+          <Col.Container columnSpacing={{ sm: 10 }} hAlign="flex-start">
             <Col.Item sm={6} md={4}>
               <CardItem image={MomWithKid.src}>
                 <Para2 mb={5}>11 April 2022</Para2>

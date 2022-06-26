@@ -14,7 +14,6 @@ const CardContainer = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   maxWidth: 370,
-  marginBottom: theme.spacing(5),
   paddingBottom: theme.spacing(3),
 
   [theme.breakpoints.only('xs')]: {
