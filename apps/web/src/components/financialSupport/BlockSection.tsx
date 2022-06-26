@@ -14,8 +14,8 @@ const Content = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  borderRadius: '8px',
-  maxWidth: 800,
+  borderRadius: '12px',
+  width: '100%',
 }));
 
 export const BlockSection = () => {
