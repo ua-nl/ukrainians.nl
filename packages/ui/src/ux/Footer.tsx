@@ -16,6 +16,13 @@ const FooterContainer = styled('div')(({ theme }) => ({
   width: '100%',
 }));
 
+const LinksContainer = styled('div')({
+  gridArea: 'links',
+  display: 'flex',
+  flexDirection: 'column',
+  whiteSpace: 'nowrap',
+});
+
 const FooterLink = styled(Link)({
   color: UASysColors.white,
   textDecoration: 'none',
@@ -49,13 +56,6 @@ const ContactItem = styled(Grid)(({ theme }) => ({
     flexBasis: '40%',
   },
 }));
-
-const LinksContainer = styled('div')({
-  gridArea: 'links',
-  display: 'flex',
-  flexDirection: 'column',
-  whiteSpace: 'nowrap',
-});
 
 const SocialMediaContainer = styled('div')(({ theme }) => ({
   gridArea: 'socials',
@@ -146,9 +146,9 @@ const Links = () => {
     <LinksContainer>
       <H2 mb={4}>{ctx.l10n[ctx.texts.contactHeader]}</H2>
       {ctx.links.map(({ label, slug }, index) => (
-        <FooterLink href={slug} key={index} mb={4}>
-          {ctx.l10n[label]}
-        </FooterLink>
+        <Box key={index} mb={4}>
+          <FooterLink href={slug}>{ctx.l10n[label]}</FooterLink>
+        </Box>
       ))}
     </LinksContainer>
   );
