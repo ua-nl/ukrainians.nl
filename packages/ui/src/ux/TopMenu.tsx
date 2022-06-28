@@ -6,9 +6,9 @@ import { useState } from 'react';
 
 import { LogoMenu } from '../assets/LogoMenu.svg';
 import { useScreen } from '../hooks/useScreen';
-import { useUIContext } from '../lib';
 import { UASysColors } from '../lib/theme/cssVars/color';
 import { CONTAINER_MAX_WIDTH } from '../lib/theme/cssVars/size';
+import { useUIContext } from '../lib/uiContext';
 
 const TopMenuContainer = styled('div')(({ theme }) => ({
   position: 'static',
@@ -22,8 +22,7 @@ const MainContent = styled(Container)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'space-between',
   width: '100%',
-  marginTop: theme.spacing(10),
-  marginBottom: theme.spacing(6),
+  padding: theme.spacing(10, 6, 6, 6),
 }));
 
 const LogoContainer = styled('div')(({ theme }) => ({

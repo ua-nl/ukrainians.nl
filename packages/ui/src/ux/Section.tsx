@@ -1,8 +1,12 @@
 import type { ReactNode } from 'react';
 
-import { Box, Container } from '@mui/material';
+import { Box, Container, SxProps, Theme } from '@mui/material';
 
-import { CONTAINER_MAX_WIDTH } from '../lib/theme/cssVars/size';
+import { UASysColorKeys } from '../lib/theme/cssVars/color';
+import {
+  CONTAINER_MAX_WIDTH,
+  CONTAINER_SHORT_WIDTH,
+} from '../lib/theme/cssVars/size';
 
 const SECTION_COLOR = {
   yellow: 'accent.light',
@@ -13,20 +17,36 @@ const SECTION_COLOR = {
 export interface SectionProps {
   children: ReactNode;
   first?: boolean;
-  bg?: keyof typeof SECTION_COLOR;
+  thin?: boolean;
+  bgColor?: keyof typeof SECTION_COLOR;
+  bgImage?: string;
+  color?: UASysColorKeys;
+  mt?: number;
 }
-export const Section = (props: SectionProps) => (
-  <Box mt={props.first ? undefined : '100px'}>
-    <Box bgcolor={props.bg ? SECTION_COLOR[props.bg] : undefined}>
-      <Container maxWidth={CONTAINER_MAX_WIDTH}>
-        {!props.bg ? (
-          props.children
-        ) : (
-          <Box pt="100px" pb="100px">
-            {props.children}
-          </Box>
-        )}
+
+const container = (
+  bgColor?: keyof typeof SECTION_COLOR,
+  bgImage?: string,
+  color?: UASysColorKeys,
+  mt?: number,
+): SxProps<Theme> => ({
+  background: bgImage ? `url(${bgImage})` : undefined,
+  backgroundColor: bgColor ? SECTION_COLOR[bgColor] : undefined,
+  color: color,
+  mt: mt,
+});
+
+export const Section = (props: SectionProps) => {
+  const hasBackground = Boolean(props.bgColor || props.bgImage);
+  return (
+    <Box sx={container(props.bgColor, props.bgImage, props.color, props.mt)}>
+      <Container
+        maxWidth={props.thin ? CONTAINER_SHORT_WIDTH : CONTAINER_MAX_WIDTH}
+      >
+        <Box pb="100px" pt={props.first && !hasBackground ? '40px' : '100px'}>
+          {props.children}
+        </Box>
       </Container>
     </Box>
-  </Box>
-);
+  );
+};
