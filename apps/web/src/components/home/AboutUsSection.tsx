@@ -1,27 +1,34 @@
 import Image from 'next/image';
 import { Col, H1, ImgBox, Para, Section } from 'ui/ux';
 
-import atTheTruck from '../../../public/photo/at-the-truck.jpg';
-import groupWithFlag from '../../../public/photo/group-with-flag.jpg';
+import { PageContent } from '../../types/strapi-data';
 
-export const AboutUsSection = () => {
+export const AboutUsSection = ({
+  title,
+  description,
+  pictures,
+}: Partial<PageContent>) => {
   return (
     <Section>
       <Col.Container>
         <Col.Item vAlign="center" sm={6}>
-          <H1>About us</H1>
-          <Para>
-            Ukrainians in the Netherlands Foundation supports the needs of the
-            Dutch-Ukrainian diaspora and is also working tirelessly to counter
-            the catastrophic consequences of Russia’s war on Ukraine
-          </Para>
+          <H1>{title}</H1>
+          <Para>{description}</Para>
         </Col.Item>
         <Col.Item sm={6}>
           <ImgBox sx={{ float: 'right', marginLeft: '25%' }}>
-            <Image src={atTheTruck} />
+            <Image
+              src={pictures?.[0].url}
+              width={pictures?.[0].width}
+              height={pictures?.[1].height}
+            />
           </ImgBox>
           <ImgBox sx={{ float: 'left', width: '50%', marginTop: '-30%' }}>
-            <Image src={groupWithFlag} />
+            <Image
+              src={pictures?.[1].url}
+              width={pictures?.[1].width}
+              height={pictures?.[1].height}
+            />
           </ImgBox>
         </Col.Item>
       </Col.Container>

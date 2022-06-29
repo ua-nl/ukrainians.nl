@@ -2,7 +2,7 @@ import { styled } from '@mui/system';
 import { useUIContext } from 'ui/lib';
 import { Button, MainHeader, Section, Subtitle } from 'ui/ux';
 
-import CoverImage from '../../../public/img/carousel/cover1.png';
+import { PageContent } from '../../types/strapi-data';
 
 const ButtonsContainer = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -10,12 +10,14 @@ const ButtonsContainer = styled('div')(({ theme }) => ({
   marginTop: theme.spacing(12),
 }));
 
-const BackgroundImageContainer = styled('div')({
-  backgroundImage: `url(${CoverImage.src})`,
+const BackgroundImageContainer = styled('div', {
+  shouldForwardProp: (prop) => prop !== 'src',
+})<{ src?: string }>(({ src }) => ({
+  backgroundImage: `url(${src})`,
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
-});
+}));
 
 const BackgroundImageContent = styled('div')({
   height: '70vh',
@@ -24,21 +26,19 @@ const BackgroundImageContent = styled('div')({
   justifyContent: 'center',
 });
 
-const AccentHeader = styled('span')(({ theme }) => ({
-  color: theme.palette.primary.contrastText,
-}));
-
-export const MainHeaderSection = () => {
+export const MainHeaderSection = ({
+  title,
+  description,
+  pictures,
+}: Partial<PageContent>) => {
   const ctx = useUIContext();
 
   return (
-    <BackgroundImageContainer>
+    <BackgroundImageContainer src={pictures?.[0].url}>
       <Section breadcrumbs color="white">
         <BackgroundImageContent>
-          <MainHeader>
-            <AccentHeader>#</AccentHeader>StandWithUkraine
-          </MainHeader>
-          <Subtitle>Stichting Oekraïners in Nederland</Subtitle>
+          <MainHeader>{title}</MainHeader>
+          <Subtitle>{description}</Subtitle>
 
           <ButtonsContainer>
             <Button type="primary">{ctx.l10n[ctx.texts.donateBtn]}</Button>

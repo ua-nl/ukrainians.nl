@@ -5,9 +5,10 @@ import { Box } from '@mui/material';
 import { Footer } from './Footer';
 import { TopMenu } from './TopMenu';
 
-export interface PageProps {
+interface PageProps {
   children: ReactNode;
 }
+
 export const Page = ({ children }: PageProps) => (
   <>
     <TopMenu />
