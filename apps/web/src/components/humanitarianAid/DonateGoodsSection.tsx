@@ -1,22 +1,27 @@
 import Image from 'next/image';
 import { Col, H1, Para, Section } from 'ui/ux';
 
-import Storehouse from '../../../public/photo/storehouse.jpg';
+import { PageContent } from '../../types/strapi-data';
 
-export const DonateGoodsSection = () => {
+export const DonateGoodsSection = ({
+  title,
+  description,
+  pictures,
+}: Pick<PageContent, 'title' | 'description' | 'pictures'>) => {
   return (
     <Section first>
       <Col.Container>
         <Col.Item sm={6} vAlign="center">
-          <Image src={Storehouse} alt="Storehouse" />
+          <Image
+            src={pictures?.[0].url}
+            alt={title}
+            width={pictures?.[0].width}
+            height={pictures?.[0].height}
+          />
         </Col.Item>
         <Col.Item sm={6} vAlign="center">
-          <H1>Help us do good: donate goods</H1>
-          <Para>
-            Our foundation provides aid for areas most impacted by Russia’s war.
-            We also support the Armed Forces of Ukraine, including wounded
-            soldiers and their families.
-          </Para>
+          <H1>{title}</H1>
+          <Para>{description}</Para>
         </Col.Item>
       </Col.Container>
     </Section>

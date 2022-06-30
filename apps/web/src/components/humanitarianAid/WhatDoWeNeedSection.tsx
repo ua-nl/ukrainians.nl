@@ -3,40 +3,45 @@ import Image from 'next/image';
 import { useUIContext } from 'ui/lib';
 import { Button, Col, H1, ImgBox, Para, Section } from 'ui/ux';
 
-import LoadTruckImg from '../../../public/photo/load-truck.jpg';
-import PackedTruckImg from '../../../public/photo/packed-truck.jpg';
+import { PageContent } from '../../types/strapi-data';
 
-export const WhatDoWeNeedSection = () => {
+export const WhatDoWeNeedSection = ({
+  cards,
+  pictures,
+}: Pick<PageContent, 'cards' | 'pictures'>) => {
   const ctx = useUIContext();
 
   return (
     <Section bgColor="grey">
       <Col.Container>
         <Col.Item sm={6} vAlign="center">
-          <H1>What do we need</H1>
-          <Para mb={5}>
-            Relief efforts encompass the procurement, collection and transport
-            of urgently needed medical supplies, protective equipment, and
-            humanitarian aid. Follow us for regular updates on goods accepted.
-          </Para>
-          <Para mb={16}>The current priorities can be found here:</Para>
-          <H1>Where to drop off</H1>
-          <Para>
-            We have more than 20 collection points throughout the Netherlands
-            where goods can be donated, also in bulk. For very large quantities,
-            please contact our helpline for possible pickup.
-          </Para>
+          {cards.map((card) => (
+            <>
+              <H1>{card.title}</H1>
+              <Para mb={16}>{card.description}</Para>
+            </>
+          ))}
           <Box mt={8}>
             <Button>{ctx.l10n[ctx.texts.collectionPoints]}</Button>
           </Box>
         </Col.Item>
 
         <Col.Item sm={6} vAlign="center">
-          <ImgBox sx={{ float: 'right', marginLeft: '25%' }}>
-            <Image src={PackedTruckImg} />
+          <ImgBox sx={{ float: 'right', marginLeft: '20%' }}>
+            <Image
+              src={pictures?.[0].url}
+              alt={cards[0].title}
+              width={pictures?.[0].width}
+              height={pictures?.[0].height}
+            />
           </ImgBox>
-          <ImgBox sx={{ float: 'left', width: '50%', marginTop: '-30%' }}>
-            <Image src={LoadTruckImg} />
+          <ImgBox sx={{ float: 'left', width: '70%', marginTop: '-30%' }}>
+            <Image
+              src={pictures?.[1].url}
+              alt={cards[1].title}
+              width={pictures?.[1].width}
+              height={pictures?.[1].height}
+            />
           </ImgBox>
         </Col.Item>
       </Col.Container>

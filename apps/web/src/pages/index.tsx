@@ -1,4 +1,5 @@
 import { Page } from 'ui/ux';
+
 import { AboutUsSection } from '../components/home/AboutUsSection';
 import { AchievementsSection } from '../components/home/AchievementsSection';
 import { MainHeaderSection } from '../components/home/MainHeaderSection';
@@ -6,7 +7,6 @@ import { PartnersSection } from '../components/home/PartnersSection';
 import { WhatWeDoSection } from '../components/home/WhatWeDoSection';
 import { getStrapiContent } from '../lib/strapiRequest';
 import { PageContent } from '../types/strapi-data';
-
 
 type PageProps = {
   data: PageContent[];
@@ -40,11 +40,11 @@ export default function Index({ data }: PageProps) {
 export async function getStaticProps(): Promise<{
   props: PageProps;
 }> {
-  const homePageContent = await getStrapiContent('/homepage');
+  const response = await getStrapiContent('/homepage');
 
   return {
     props: {
-      data: homePageContent,
+      data: response,
     },
   };
 }

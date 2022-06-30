@@ -36,11 +36,11 @@ export default function Index({ data }: PageProps) {
 export async function getStaticProps(): Promise<{
   props: PageProps;
 }> {
-  const homePageContent = await getStrapiContent('/about-us');
+  const response = await getStrapiContent('/about-us');
 
   return {
     props: {
-      data: homePageContent,
+      data: response,
     },
   };
 }
