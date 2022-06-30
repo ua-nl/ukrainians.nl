@@ -1,7 +1,8 @@
 {
   "collectionName": "components_components_sections",
   "info": {
-    "displayName": "Section",
+    "displayName": "section",
+    "icon": "bars",
     "description": ""
   },
   "options": {},
@@ -12,12 +13,18 @@
     "description": {
       "type": "richtext"
     },
+    "description2": {
+      "type": "richtext"
+    },
     "pictures": {
       "type": "media",
       "multiple": true,
       "required": false,
       "allowedTypes": [
-        "images"
+        "images",
+        "files",
+        "videos",
+        "audios"
       ]
     },
     "cards": {

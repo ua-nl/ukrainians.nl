@@ -10,9 +10,9 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-i18n": "4.2.0",
-    "@strapi/plugin-users-permissions": "4.2.0",
-    "@strapi/strapi": "4.2.0",
+    "@strapi/plugin-i18n": "4.2.2",
+    "@strapi/plugin-users-permissions": "4.2.2",
+    "@strapi/strapi": "4.2.2",
     "better-sqlite3": "7.4.6",
     "strapi-plugin-populate-deep": "^0.1.2"
   },
@@ -20,7 +20,7 @@
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "546e022f-d2ff-4064-a109-538c057e02d0"
+    "uuid": "95db4e36-1922-4f5a-817f-49a8402761fd"
   },
   "engines": {
     "node": ">=12.x.x <=16.x.x",

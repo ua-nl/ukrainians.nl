@@ -2,8 +2,7 @@
   "collectionName": "components_components_cards",
   "info": {
     "displayName": "card",
-    "icon": "bullhorn",
-    "description": ""
+    "icon": "expand"
   },
   "options": {},
   "attributes": {

@@ -1,6 +1,7 @@
 export type PageContent = {
   cards: Card[];
   description: string;
+  description2: string;
   id: number;
   pictures: Pictures[] | null;
   title: string;

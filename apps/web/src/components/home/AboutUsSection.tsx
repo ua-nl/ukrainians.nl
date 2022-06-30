@@ -16,14 +16,14 @@ export const AboutUsSection = ({
           <Para>{description}</Para>
         </Col.Item>
         <Col.Item sm={6}>
-          <ImgBox sx={{ float: 'right', marginLeft: '25%' }}>
+          <ImgBox sx={{ float: 'right', marginLeft: '15%' }}>
             <Image
               src={pictures?.[0].url}
               width={pictures?.[0].width}
-              height={pictures?.[1].height}
+              height={pictures?.[0].height}
             />
           </ImgBox>
-          <ImgBox sx={{ float: 'left', width: '50%', marginTop: '-30%' }}>
+          <ImgBox sx={{ float: 'left', width: '60%', marginTop: '-30%' }}>
             <Image
               src={pictures?.[1].url}
               width={pictures?.[1].width}

@@ -1,5 +1,4 @@
 import { Page } from 'ui/ux';
-
 import { AboutUsSection } from '../components/home/AboutUsSection';
 import { AchievementsSection } from '../components/home/AchievementsSection';
 import { MainHeaderSection } from '../components/home/MainHeaderSection';
@@ -8,14 +7,13 @@ import { WhatWeDoSection } from '../components/home/WhatWeDoSection';
 import { getStrapiContent } from '../lib/strapiRequest';
 import { PageContent } from '../types/strapi-data';
 
+
 type PageProps = {
   data: PageContent[];
 };
 
 export default function Index({ data }: PageProps) {
   const [mainHeader, aboutUs, whatWeDo, achievements, sponsors] = data;
-
-  console.log(sponsors);
 
   return (
     <Page>

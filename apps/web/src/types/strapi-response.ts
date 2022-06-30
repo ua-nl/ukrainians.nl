@@ -13,6 +13,7 @@ export type StrapiResponse = {
 type StrapiSection = {
   cards: StrapiCard[];
   description: string;
+  description2: string;
   id: number;
   pictures: StrapiPictures;
   title: string;
