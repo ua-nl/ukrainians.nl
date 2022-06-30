@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "financial_aids",
+  "info": {
+    "singularName": "financial-aid",
+    "pluralName": "financial-aids",
+    "displayName": "Financial aid"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "components.section"
+      ]
+    }
+  }
+}
