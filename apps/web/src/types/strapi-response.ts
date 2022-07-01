@@ -1,3 +1,10 @@
+export enum Category {
+  ALL,
+  NEWS,
+  EVENTS,
+  PRESS,
+}
+
 export type StrapiResponse = {
   data: {
     attributes: {
@@ -8,6 +15,13 @@ export type StrapiResponse = {
     };
     id: number;
   };
+};
+
+export type StrapiPictures = {
+  data: {
+    attributes: StrapiImageAttributes;
+    id: number;
+  }[];
 };
 
 type StrapiSection = {
@@ -24,13 +38,7 @@ type StrapiCard = {
   description: string;
   id: number;
   pictures: StrapiPictures;
-};
-
-type StrapiPictures = {
-  data: {
-    attributes: StrapiImageAttributes;
-    id: number;
-  }[];
+  category?: Category;
 };
 
 type StrapiImageAttributes = {

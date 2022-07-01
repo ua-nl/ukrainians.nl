@@ -7,7 +7,7 @@ export const AboutUsSection = ({
   title,
   description,
   pictures,
-}: Partial<PageContent>) => {
+}: Pick<PageContent, 'title' | 'description' | 'pictures'>) => {
   return (
     <Section>
       <Col.Container>

@@ -1,3 +1,5 @@
+import { Category } from './strapi-response';
+
 export type PageContent = {
   cards: Card[];
   description: string;
@@ -18,4 +20,5 @@ export type Card = {
   description: string;
   id: number;
   pictures: Pictures[] | null;
+  category?: Category;
 };

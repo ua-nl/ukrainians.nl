@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "about_uses",
+  "collectionName": "latest_newses",
   "info": {
-    "singularName": "about-us",
-    "pluralName": "about-uses",
-    "displayName": "About us",
+    "singularName": "latest-news",
+    "pluralName": "latest-newses",
+    "displayName": "Latest news",
     "description": ""
   },
   "options": {

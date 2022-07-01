@@ -1,3 +1,4 @@
+import { styled } from '@mui/system';
 import { SyntheticEvent, useState } from 'react';
 import {
   CardItem,
@@ -10,129 +11,49 @@ import {
   TabPanel,
 } from 'ui/ux';
 
-import Kids from '../../../public/photo/kids.jpg';
-import MomWithKid from '../../../public/photo/mom-with-kid.jpg';
-import TwoGirls from '../../../public/photo/two-girls.jpg';
+import { PageContent } from '../../types/strapi-data';
+
+const Description = styled(Para)({
+  display: '-webkit-box',
+  textOverflow: 'ellipsis',
+  WebkitBoxOrient: 'vertical',
+  overflow: 'hidden',
+  WebkitLineClamp: 4,
+  lineClamp: 4,
+  alignSelf: 'baseline',
+  height: 100,
+});
 
 const tabs = ['All', 'News', 'Events', 'Press'];
 
-export const EventsSection = () => {
-  const [value, setValue] = useState(0);
+export const EventsSection = ({ cards }: Partial<PageContent>) => {
+  const [currentTab, setCurrentTab] = useState(0);
 
-  const handleChange = (_: SyntheticEvent, newValue: number) => {
-    setValue(newValue);
+  console.log(cards);
+
+  const handleChange = (_: SyntheticEvent, currentTab: number) => {
+    setCurrentTab(currentTab);
   };
 
   return (
     <Section bgColor="lightGrey">
-      <FilterTabs value={value} handleChange={handleChange} tabs={tabs}>
-        <TabPanel value={value} index={0}>
-          <Col.Container columnSpacing={{ sm: 10 }} hAlign="flex-start">
-            <Col.Item sm={6} md={4}>
-              <CardItem image={MomWithKid.src}>
-                <Para2 mb={5}>11 April 2022</Para2>
-                <Subtitle mb={3}>
-                  #UKRAINIANFREEDOMSTAGE НА ГОЛОВНІЙ ПЛОЩІ АМСТЕРДАМУ
-                </Subtitle>
-                <Para>
-                  Ukraine is an integral part of Europe culturally,
-                  geographically, and historically. However, our country was not
-                  part of the European...
-                </Para>
-              </CardItem>
-            </Col.Item>
-            <Col.Item sm={6} md={4}>
-              <CardItem image={MomWithKid.src}>
-                <Para2 mb={5}>11 April 2022</Para2>
-                <Subtitle mb={3}>
-                  #UKRAINIANFREEDOMSTAGE НА ГОЛОВНІЙ ПЛОЩІ АМСТЕРДАМУ
-                </Subtitle>
-                <Para>
-                  Ukraine is an integral part of Europe culturally,
-                  geographically, and historically. However, our country was not
-                  part of the European...
-                </Para>
-              </CardItem>
-            </Col.Item>
-            <Col.Item sm={6} md={4}>
-              <CardItem image={MomWithKid.src}>
-                <Para2 mb={5}>11 April 2022</Para2>
-                <Subtitle mb={3}>
-                  #UKRAINIANFREEDOMSTAGE НА ГОЛОВНІЙ ПЛОЩІ АМСТЕРДАМУ
-                </Subtitle>
-                <Para>
-                  Ukraine is an integral part of Europe culturally,
-                  geographically, and historically. However, our country was not
-                  part of the European...
-                </Para>
-              </CardItem>
-            </Col.Item>
-            <Col.Item sm={6} md={4}>
-              <CardItem image={TwoGirls.src}>
-                <Para2 mb={5}>11 April 2022</Para2>
-                <Subtitle mb={3}>
-                  #UKRAINIANFREEDOMSTAGE НА ГОЛОВНІЙ ПЛОЩІ АМСТЕРДАМУ
-                </Subtitle>
-                <Para>
-                  Ukraine is an integral part of Europe culturally,
-                  geographically, and historically. However, our country was not
-                  part of the European...
-                </Para>
-              </CardItem>
-            </Col.Item>
-          </Col.Container>
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <Col.Container columnSpacing={{ sm: 3, md: 5 }} hAlign="flex-start">
-            <Col.Item sm={6} md={4}>
-              <CardItem image={Kids.src}>
-                <Para2 mb={5}>11 April 2022</Para2>
-                <Subtitle mb={3}>
-                  #UKRAINIANFREEDOMSTAGE НА ГОЛОВНІЙ ПЛОЩІ АМСТЕРДАМУ
-                </Subtitle>
-                <Para>
-                  Ukraine is an integral part of Europe culturally,
-                  geographically, and historically. However, our country was not
-                  part of the European...
-                </Para>
-              </CardItem>
-            </Col.Item>
-          </Col.Container>
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          <Col.Container columnSpacing={{ sm: 3, md: 5 }} hAlign="flex-start">
-            <Col.Item sm={6} md={4}>
-              <CardItem image={MomWithKid.src}>
-                <Para2 mb={5}>11 April 2022</Para2>
-                <Subtitle mb={3}>
-                  #UKRAINIANFREEDOMSTAGE НА ГОЛОВНІЙ ПЛОЩІ АМСТЕРДАМУ
-                </Subtitle>
-                <Para>
-                  Ukraine is an integral part of Europe culturally,
-                  geographically, and historically. However, our country was not
-                  part of the European...
-                </Para>
-              </CardItem>
-            </Col.Item>
-          </Col.Container>
-        </TabPanel>
-        <TabPanel value={value} index={3}>
-          <Col.Container columnSpacing={{ sm: 3, md: 5 }} hAlign="flex-start">
-            <Col.Item sm={6} md={4}>
-              <CardItem image={Kids.src}>
-                <Para2 mb={5}>11 April 2022</Para2>
-                <Subtitle mb={3}>
-                  #UKRAINIANFREEDOMSTAGE НА ГОЛОВНІЙ ПЛОЩІ АМСТЕРДАМУ
-                </Subtitle>
-                <Para>
-                  Ukraine is an integral part of Europe culturally,
-                  geographically, and historically. However, our country was not
-                  part of the European...
-                </Para>
-              </CardItem>
-            </Col.Item>
-          </Col.Container>
-        </TabPanel>
+      <FilterTabs value={currentTab} handleChange={handleChange} tabs={tabs}>
+        {tabs.map((_, index) => (
+          <TabPanel key={index} value={currentTab} index={index}>
+            <Col.Container columnSpacing={{ sm: 10 }} hAlign="flex-start">
+              {cards &&
+                cards.map((card) => (
+                  <Col.Item key={card.id} sm={6} md={4}>
+                    <CardItem image={card.pictures?.[0].url}>
+                      <Para2 mb={5}>11 April 2022</Para2>
+                      <Subtitle mb={3}>{card.title}</Subtitle>
+                      <Description>{card.description}</Description>
+                    </CardItem>
+                  </Col.Item>
+                ))}
+            </Col.Container>
+          </TabPanel>
+        ))}
       </FilterTabs>
     </Section>
   );

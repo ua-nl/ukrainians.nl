@@ -1,5 +1,6 @@
 import { Box } from '@mui/material';
 import Image from 'next/image';
+import { Fragment } from 'react';
 import { useUIContext } from 'ui/lib';
 import { Button, Col, H1, ImgBox, Para, Section } from 'ui/ux';
 
@@ -16,10 +17,10 @@ export const WhatDoWeNeedSection = ({
       <Col.Container>
         <Col.Item sm={6} vAlign="center">
           {cards.map((card) => (
-            <>
+            <Fragment key={card.id}>
               <H1>{card.title}</H1>
               <Para mb={16}>{card.description}</Para>
-            </>
+            </Fragment>
           ))}
           <Box mt={8}>
             <Button>{ctx.l10n[ctx.texts.collectionPoints]}</Button>

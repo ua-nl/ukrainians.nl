@@ -1,11 +1,11 @@
 import { Box, styled, Tab, Tabs } from '@mui/material';
 import { ReactNode, SyntheticEvent } from 'react';
 
-interface TabPanelProps {
+type TabPanelProps = {
   index: number;
   value: number;
   children?: ReactNode;
-}
+};
 
 type FilterTabsProps = {
   value: number;

@@ -15,6 +15,7 @@ const CardContainer = styled('div')(({ theme }) => ({
   flexDirection: 'column',
   maxWidth: 370,
   paddingBottom: theme.spacing(3),
+  height: 505,
 
   [theme.breakpoints.only('xs')]: {
     maxWidth: '100%',

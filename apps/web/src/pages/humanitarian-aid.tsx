@@ -12,7 +12,6 @@ type PageProps = {
 
 export default function Index({ data }: PageProps) {
   const [goods, whatWeNeed, organizations] = data;
-  console.log(data);
 
   return (
     <Page>

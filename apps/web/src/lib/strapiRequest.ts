@@ -1,5 +1,5 @@
 import { PageContent } from '../types/strapi-data';
-import { StrapiResponse } from '../types/strapi-response';
+import { StrapiPictures, StrapiResponse } from '../types/strapi-response';
 import { getImageURl } from './getImageUrl';
 
 export async function getStrapiContent(url: string): Promise<PageContent[]> {
@@ -8,18 +8,24 @@ export async function getStrapiContent(url: string): Promise<PageContent[]> {
   );
   const { data }: StrapiResponse = await res.json();
 
+  const formatPictures = (pictures: StrapiPictures) => {
+    if (pictures?.data) {
+      return pictures.data.map((picture) => ({
+        url: getImageURl(picture.attributes.url),
+        width: picture.attributes.width,
+        height: picture.attributes.height,
+      }));
+    } else {
+      return null;
+    }
+  };
+
   const pageContent = data.attributes.body.map((section) => {
-    const pictures = section.pictures?.data
-      ? section.pictures.data.map((picture) => ({
-          url: getImageURl(picture.attributes.url),
-          width: picture.attributes.width,
-          height: picture.attributes.height,
-        }))
-      : null;
+    const pictures = formatPictures(section.pictures);
 
     const cards = section.cards.map((card) => ({
       ...card,
-      pictures: pictures,
+      pictures: formatPictures(card.pictures),
     }));
 
     return {
