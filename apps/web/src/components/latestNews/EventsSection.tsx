@@ -1,35 +1,39 @@
-import { styled } from '@mui/system';
-import { SyntheticEvent, useState } from 'react';
-import {
-  CardItem,
-  Col,
-  FilterTabs,
-  Para,
-  Para2,
-  Section,
-  Subtitle,
-  TabPanel,
-} from 'ui/ux';
+import { SyntheticEvent, useEffect, useState } from 'react';
+import { CardItem, Col, FilterTabs, Section, TabPanel } from 'ui/ux';
 
-import { PageContent } from '../../types/strapi-data';
-
-const Description = styled(Para)({
-  display: '-webkit-box',
-  textOverflow: 'ellipsis',
-  WebkitBoxOrient: 'vertical',
-  overflow: 'hidden',
-  WebkitLineClamp: 4,
-  lineClamp: 4,
-  alignSelf: 'baseline',
-  height: 100,
-});
+import { Card, PageContent } from '../../types/strapi-data';
+import { Category } from '../../types/strapi-response';
 
 const tabs = ['All', 'News', 'Events', 'Press'];
 
-export const EventsSection = ({ cards }: Partial<PageContent>) => {
+export const EventsSection = ({ cards }: Pick<PageContent, 'cards'>) => {
   const [currentTab, setCurrentTab] = useState(0);
+  const [filtered, setFiltered] = useState<Card[]>([]);
 
-  console.log(cards);
+  useEffect(() => {
+    if (currentTab === 0) {
+      setFiltered(cards);
+      return;
+    }
+
+    if (currentTab === 1) {
+      const news = cards.filter((card) => card.category === Category.NEWS);
+      setFiltered(news);
+      return;
+    }
+
+    if (currentTab === 2) {
+      const events = cards.filter((card) => card.category === Category.EVENTS);
+      setFiltered(events);
+      return;
+    }
+
+    if (currentTab === 3) {
+      const press = cards.filter((card) => card.category === Category.PRESS);
+      setFiltered(press);
+      return;
+    }
+  }, [cards, currentTab]);
 
   const handleChange = (_: SyntheticEvent, currentTab: number) => {
     setCurrentTab(currentTab);
@@ -41,14 +45,15 @@ export const EventsSection = ({ cards }: Partial<PageContent>) => {
         {tabs.map((_, index) => (
           <TabPanel key={index} value={currentTab} index={index}>
             <Col.Container columnSpacing={{ sm: 10 }} hAlign="flex-start">
-              {cards &&
-                cards.map((card) => (
+              {filtered &&
+                filtered.map((card) => (
                   <Col.Item key={card.id} sm={6} md={4}>
-                    <CardItem image={card.pictures?.[0].url}>
-                      <Para2 mb={5}>11 April 2022</Para2>
-                      <Subtitle mb={3}>{card.title}</Subtitle>
-                      <Description>{card.description}</Description>
-                    </CardItem>
+                    <CardItem
+                      image={card.pictures?.[0]}
+                      date={'11 April 2022'}
+                      title={card.title}
+                      description={card.description}
+                    />
                   </Col.Item>
                 ))}
             </Col.Container>

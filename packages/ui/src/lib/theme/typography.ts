@@ -36,9 +36,11 @@ export const typography: TypographyOptions = {
     fontWeight: 500,
     letterSpacing: '-1px',
     wordBreak: 'break-word',
+    lineHeight: '25px',
   },
   body1: {
     fontSize: getTypografyFontSize(16),
+    lineHeight: '22px',
   },
   body2: {
     fontSize: getTypografyFontSize(14),

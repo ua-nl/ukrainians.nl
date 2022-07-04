@@ -30,8 +30,8 @@ export async function getStrapiContent(url: string): Promise<PageContent[]> {
 
     return {
       ...section,
-      cards: cards,
-      pictures: pictures,
+      cards,
+      pictures,
     };
   });
 

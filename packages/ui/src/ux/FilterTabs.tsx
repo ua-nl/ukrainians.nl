@@ -39,6 +39,13 @@ const StyledTab = styled(Tab)(({ theme }) => ({
   },
 }));
 
+function a11yProps(index: number) {
+  return {
+    id: `tab-${index}`,
+    'aria-controls': `tabpanel-${index}`,
+  };
+}
+
 export const TabPanel = (props: TabPanelProps) => {
   const { children, value, index, ...other } = props;
 
@@ -46,21 +53,14 @@ export const TabPanel = (props: TabPanelProps) => {
     <div
       role="tabpanel"
       hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
+      id={`tabpanel-${index}`}
+      aria-labelledby={`tab-${index}`}
       {...other}
     >
       {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
     </div>
   );
 };
-
-function a11yProps(index: number) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
 
 export const FilterTabs = ({
   value,

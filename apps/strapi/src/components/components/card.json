@@ -27,7 +27,6 @@
     "category": {
       "type": "enumeration",
       "enum": [
-        "all",
         "news",
         "events",
         "press"

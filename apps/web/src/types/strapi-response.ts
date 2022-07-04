@@ -1,8 +1,7 @@
 export enum Category {
-  ALL,
-  NEWS,
-  EVENTS,
-  PRESS,
+  NEWS = 'news',
+  EVENTS = 'events',
+  PRESS = 'press',
 }
 
 export type StrapiResponse = {

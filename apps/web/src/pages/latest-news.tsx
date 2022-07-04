@@ -15,7 +15,6 @@ export default function Index({ data }: PageProps) {
   return (
     <Page>
       <Bread history={[{ label: 'Home', href: '/' }]} current="Latest news" />
-
       <LatestNewsSection
         title={latestNews.title}
         description={latestNews.description}
