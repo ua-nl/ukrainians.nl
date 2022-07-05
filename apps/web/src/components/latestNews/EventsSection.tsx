@@ -1,10 +1,14 @@
 import { SyntheticEvent, useEffect, useState } from 'react';
+import { News } from 'ui/types';
 import { CardItem, Col, FilterTabs, Section, TabPanel } from 'ui/ux';
 
-import { News } from '../../types/strapi-content.types';
-import { Category } from '../../types/strapi-response.types';
-
 const tabs = ['All', 'News', 'Events', 'Press'];
+
+enum Category {
+  NEWS = 'news',
+  EVENTS = 'events',
+  PRESS = 'press',
+}
 
 type EventsSectionProps = {
   cards: News[];

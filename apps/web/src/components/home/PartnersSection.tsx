@@ -1,7 +1,5 @@
-import Image from 'next/image';
-import { H2, Section } from 'ui/ux';
-
-import { PageContent } from '../../types/strapi-content.types';
+import { PageContent } from 'ui/types';
+import { H2, Img, Section } from 'ui/ux';
 
 export const PartnersSection = ({
   title,
@@ -12,12 +10,7 @@ export const PartnersSection = ({
       <H2 center mb={8}>
         {title}
       </H2>
-      <Image
-        src={pictures?.[0].url}
-        alt={title}
-        width={pictures?.[0].width}
-        height={pictures?.[0].height}
-      />
+      <Img picture={pictures?.[0]} alt={title} />
     </Section>
   );
 };

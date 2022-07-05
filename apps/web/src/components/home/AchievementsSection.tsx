@@ -1,6 +1,5 @@
+import { PageContent } from 'ui/types';
 import { Col, Divider, H1, Para, Section } from 'ui/ux';
-
-import { PageContent } from '../../types/strapi-content.types';
 
 export const AchievementsSection = ({
   title,

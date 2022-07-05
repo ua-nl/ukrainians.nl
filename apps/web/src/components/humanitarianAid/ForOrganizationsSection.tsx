@@ -1,10 +1,5 @@
+import { PageContent } from 'ui/types';
 import { Banner, Button, Col, H1, H2, Para, Section } from 'ui/ux';
-
-import { PageContent } from '../../types/strapi-content.types';
-
-// const List = styled('ul')(() => ({
-//   marginBlock: 0,
-// }));
 
 export const ForOrganizationsSection = ({
   title,

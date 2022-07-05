@@ -1,8 +1,6 @@
-import Image from 'next/image';
 import { useUIContext } from 'ui/lib';
-import { Button, IconCard, Para } from 'ui/ux';
-
-import { Card } from '../types/strapi-content.types';
+import { Card } from 'ui/types';
+import { Button, IconCard, Img, Para } from 'ui/ux';
 
 type ActionCardsProps = {
   cards: Card[];
@@ -16,7 +14,7 @@ export const ActionCards = ({ cards }: ActionCardsProps) => {
     <IconCard.Container>
       {cards.map((card) => (
         <IconCard.Item
-          Icon={<Image src={card.pictures?.[0]} />}
+          Icon={card.pictures && <Img picture={card.pictures[0]} />}
           title={card.title}
           key={card.id}
         >

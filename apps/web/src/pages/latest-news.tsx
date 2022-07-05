@@ -1,3 +1,4 @@
+import { News, PageContent, StaticProps } from 'ui/types';
 import { Bread, Page } from 'ui/ux';
 
 import { EventsSection } from '../components/latestNews/EventsSection';
@@ -6,8 +7,6 @@ import {
   getStrapiCollectionTypes,
   getStrapiSingleType,
 } from '../lib/strapiRequest';
-import { StaticProps } from '../types/page-content.types';
-import { News, PageContent } from '../types/strapi-content.types';
 
 type PageProps = {
   pageContent: PageContent[];

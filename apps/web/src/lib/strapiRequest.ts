@@ -1,10 +1,13 @@
-import { News, PageContent, Pictures } from '../types/strapi-content.types';
 import {
+  News,
+  PageContent,
+  Pictures,
   StrapiCollectionTypeResponse,
   StrapiPictures,
   StrapiResponse,
   StrapiSingleTypeResponse,
-} from '../types/strapi-response.types';
+} from 'ui/types';
+
 import { getImageURl } from './getImageUrl';
 
 const formatPictures = (pictures: StrapiPictures): Pictures[] | null => {

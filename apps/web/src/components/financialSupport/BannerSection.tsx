@@ -1,6 +1,5 @@
+import { PageContent } from 'ui/types';
 import { Banner, Button, H1, Section } from 'ui/ux';
-
-import { PageContent } from '../../types/strapi-content.types';
 
 export const BannerSection = ({ title }: Pick<PageContent, 'title'>) => {
   return (

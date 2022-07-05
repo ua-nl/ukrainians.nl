@@ -1,10 +1,8 @@
 import { Box } from '@mui/material';
-import Image from 'next/image';
 import { Fragment } from 'react';
 import { useUIContext } from 'ui/lib';
-import { Button, Col, H1, ImgBox, Para, Section } from 'ui/ux';
-
-import { PageContent } from '../../types/strapi-content.types';
+import { PageContent } from 'ui/types';
+import { Button, Col, H1, Img, ImgBox, Para, Section } from 'ui/ux';
 
 export const WhatDoWeNeedSection = ({
   cards,
@@ -29,20 +27,10 @@ export const WhatDoWeNeedSection = ({
 
         <Col.Item sm={6} vAlign="center">
           <ImgBox sx={{ float: 'right', marginLeft: '20%' }}>
-            <Image
-              src={pictures?.[0].url}
-              alt={cards[0].title}
-              width={pictures?.[0].width}
-              height={pictures?.[0].height}
-            />
+            <Img picture={pictures?.[0]} alt={cards[0].title} />
           </ImgBox>
           <ImgBox sx={{ float: 'left', width: '70%', marginTop: '-30%' }}>
-            <Image
-              src={pictures?.[1].url}
-              alt={cards[1].title}
-              width={pictures?.[1].width}
-              height={pictures?.[1].height}
-            />
+            <Img picture={pictures?.[1]} alt={cards[1].title} />
           </ImgBox>
         </Col.Item>
       </Col.Container>

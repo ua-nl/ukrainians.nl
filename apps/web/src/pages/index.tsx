@@ -1,3 +1,4 @@
+import { PageProps, StaticPageProps } from 'ui/types';
 import { Page } from 'ui/ux';
 
 import { AboutUsSection } from '../components/home/AboutUsSection';
@@ -6,7 +7,6 @@ import { MainHeaderSection } from '../components/home/MainHeaderSection';
 import { PartnersSection } from '../components/home/PartnersSection';
 import { WhatWeDoSection } from '../components/home/WhatWeDoSection';
 import { getStrapiSingleType } from '../lib/strapiRequest';
-import { PageProps, StaticPageProps } from '../types/page-content.types';
 
 export default function Index({ data }: PageProps) {
   const [mainHeader, aboutUs, whatWeDo, achievements, sponsors] = data;

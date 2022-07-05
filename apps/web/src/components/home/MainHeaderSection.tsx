@@ -1,8 +1,7 @@
 import { styled } from '@mui/system';
 import { useUIContext } from 'ui/lib';
+import { PageContent } from 'ui/types';
 import { Button, MainHeader, Section, Subtitle } from 'ui/ux';
-
-import { PageContent } from '../../types/strapi-content.types';
 
 const ButtonsContainer = styled('div')(({ theme }) => ({
   display: 'flex',

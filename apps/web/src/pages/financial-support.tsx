@@ -1,10 +1,10 @@
+import { PageProps, StaticPageProps } from 'ui/types';
 import { Bread, Page } from 'ui/ux';
 
 import { BannerSection } from '../components/financialSupport/BannerSection';
 import { ContributionSection } from '../components/financialSupport/ContributionSection';
 import { HelpSection } from '../components/financialSupport/HelpSection';
 import { getStrapiSingleType } from '../lib/strapiRequest';
-import { PageProps, StaticPageProps } from '../types/page-content.types';
 
 export default function Index({ data }: PageProps) {
   const [contribution, help, nonFinancial] = data;

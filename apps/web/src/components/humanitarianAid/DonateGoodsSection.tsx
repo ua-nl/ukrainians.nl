@@ -1,7 +1,5 @@
-import Image from 'next/image';
-import { Col, H1, Para, Section } from 'ui/ux';
-
-import { PageContent } from '../../types/strapi-content.types';
+import { PageContent } from 'ui/types';
+import { Col, H1, Img, Para, Section } from 'ui/ux';
 
 export const DonateGoodsSection = ({
   title,
@@ -12,12 +10,7 @@ export const DonateGoodsSection = ({
     <Section first>
       <Col.Container>
         <Col.Item sm={6} vAlign="center">
-          <Image
-            src={pictures?.[0].url}
-            alt={title}
-            width={pictures?.[0].width}
-            height={pictures?.[0].height}
-          />
+          <Img picture={pictures?.[0]} alt={title} />
         </Col.Item>
         <Col.Item sm={6} vAlign="center">
           <H1>{title}</H1>

@@ -1,7 +1,5 @@
-import Image from 'next/image';
-import { Col, H1, Para, Section } from 'ui/ux';
-
-import { PageContent } from '../../types/strapi-content.types';
+import { PageContent } from 'ui/types';
+import { Col, H1, Img, Para, Section } from 'ui/ux';
 
 type OurStorySectionProps = Pick<
   PageContent,
@@ -14,7 +12,6 @@ export const OurStorySection = ({
   description,
   description2,
 }: OurStorySectionProps) => {
-  console.log(pictures);
   return (
     <Section bgColor="grey">
       <H1 center mb={16}>
@@ -30,21 +27,11 @@ export const OurStorySection = ({
         </Col.Item>
 
         <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
-          <Image
-            src={pictures?.[0].url}
-            width={pictures?.[0].width}
-            height={pictures?.[0].height}
-            alt="Mom with kid"
-          />
+          <Img picture={pictures?.[0]} alt={title} />
         </Col.Item>
 
         <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
-          <Image
-            src={pictures?.[1].url}
-            width={pictures?.[1].width}
-            height={pictures?.[1].height}
-            alt="Two girls"
-          />
+          <Img picture={pictures?.[1]} alt={title} />
         </Col.Item>
       </Col.Container>
     </Section>
