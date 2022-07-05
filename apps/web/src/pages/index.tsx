@@ -5,7 +5,7 @@ import { AchievementsSection } from '../components/home/AchievementsSection';
 import { MainHeaderSection } from '../components/home/MainHeaderSection';
 import { PartnersSection } from '../components/home/PartnersSection';
 import { WhatWeDoSection } from '../components/home/WhatWeDoSection';
-import { getStrapiContent } from '../lib/strapiRequest';
+import { getStrapiSingleType } from '../lib/strapiRequest';
 import { PageContent } from '../types/strapi-data';
 
 type PageProps = {
@@ -40,7 +40,7 @@ export default function Index({ data }: PageProps) {
 export async function getStaticProps(): Promise<{
   props: PageProps;
 }> {
-  const response = await getStrapiContent('/homepage');
+  const response = await getStrapiSingleType('/homepage');
 
   return {
     props: {

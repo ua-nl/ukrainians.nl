@@ -14,6 +14,7 @@ export const OurStorySection = ({
   description,
   description2,
 }: OurStorySectionProps) => {
+  console.log(pictures);
   return (
     <Section bgColor="grey">
       <H1 center mb={16}>

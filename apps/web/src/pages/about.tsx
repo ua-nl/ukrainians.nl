@@ -3,7 +3,7 @@ import { Bread, Page } from 'ui/ux';
 import { OurMissionSection } from '../components/about/OurMissionSection';
 import { OurStorySection } from '../components/about/OurStorySection';
 import { WhatWeDoSection } from '../components/home/WhatWeDoSection';
-import { getStrapiContent } from '../lib/strapiRequest';
+import { getStrapiSingleType } from '../lib/strapiRequest';
 import { PageContent } from '../types/strapi-data';
 
 type PageProps = {
@@ -36,7 +36,7 @@ export default function Index({ data }: PageProps) {
 export async function getStaticProps(): Promise<{
   props: PageProps;
 }> {
-  const response = await getStrapiContent('/about-us');
+  const response = await getStrapiSingleType('/about-us');
 
   return {
     props: {

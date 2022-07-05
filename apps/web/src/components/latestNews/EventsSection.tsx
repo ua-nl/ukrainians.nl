@@ -1,14 +1,18 @@
 import { SyntheticEvent, useEffect, useState } from 'react';
 import { CardItem, Col, FilterTabs, Section, TabPanel } from 'ui/ux';
 
-import { Card, PageContent } from '../../types/strapi-data';
+import { News } from '../../types/strapi-data';
 import { Category } from '../../types/strapi-response';
 
 const tabs = ['All', 'News', 'Events', 'Press'];
 
-export const EventsSection = ({ cards }: Pick<PageContent, 'cards'>) => {
+type EventsSectionProps = {
+  cards: News[];
+};
+
+export const EventsSection = ({ cards }: EventsSectionProps) => {
   const [currentTab, setCurrentTab] = useState(0);
-  const [filtered, setFiltered] = useState<Card[]>([]);
+  const [filtered, setFiltered] = useState<News[]>([]);
 
   useEffect(() => {
     if (currentTab === 0) {
@@ -46,11 +50,11 @@ export const EventsSection = ({ cards }: Pick<PageContent, 'cards'>) => {
           <TabPanel key={index} value={currentTab} index={index}>
             <Col.Container columnSpacing={{ sm: 10 }} hAlign="flex-start">
               {filtered &&
-                filtered.map((card) => (
-                  <Col.Item key={card.id} sm={6} md={4}>
+                filtered.map((card, index) => (
+                  <Col.Item key={index} sm={6} md={4}>
                     <CardItem
                       image={card.pictures?.[0]}
-                      date={'11 April 2022'}
+                      date={card.createdAt}
                       title={card.title}
                       description={card.description}
                     />

@@ -2,15 +2,19 @@ import { Bread, Page } from 'ui/ux';
 
 import { EventsSection } from '../components/latestNews/EventsSection';
 import { LatestNewsSection } from '../components/latestNews/LatestNewsSection';
-import { getStrapiContent } from '../lib/strapiRequest';
-import { PageContent } from '../types/strapi-data';
+import {
+  getStrapiCollectionTypes,
+  getStrapiSingleType,
+} from '../lib/strapiRequest';
+import { News, PageContent } from '../types/strapi-data';
 
 type PageProps = {
-  data: PageContent[];
+  pageContent: PageContent[];
+  news: News[];
 };
 
-export default function Index({ data }: PageProps) {
-  const [latestNews] = data;
+export default function Index({ pageContent, news }: PageProps) {
+  const [latestNews] = pageContent;
 
   return (
     <Page>
@@ -20,7 +24,7 @@ export default function Index({ data }: PageProps) {
         description={latestNews.description}
         pictures={latestNews.pictures}
       />
-      <EventsSection cards={latestNews.cards} />
+      <EventsSection cards={news} />
     </Page>
   );
 }
@@ -28,11 +32,13 @@ export default function Index({ data }: PageProps) {
 export async function getStaticProps(): Promise<{
   props: PageProps;
 }> {
-  const response = await getStrapiContent('/latest-news');
+  const pageContent = await getStrapiSingleType('/latest-news');
+  const newsCollection = await getStrapiCollectionTypes('/all-news');
 
   return {
     props: {
-      data: response,
+      pageContent,
+      news: newsCollection,
     },
   };
 }

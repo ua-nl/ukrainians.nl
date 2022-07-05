@@ -4,16 +4,31 @@ export enum Category {
   PRESS = 'press',
 }
 
-export type StrapiResponse = {
-  data: {
-    attributes: {
-      body: StrapiSection[];
-      createdAt: string;
-      publishedAt: string;
-      updatedAt: string;
-    };
-    id: number;
+export type StrapiResponse<T> = {
+  data: T;
+};
+
+export type StrapiSingleTypeResponse = {
+  attributes: {
+    body: StrapiSection[];
+    createdAt: string;
+    publishedAt: string;
+    updatedAt: string;
   };
+  id: number;
+};
+
+export type StrapiCollectionTypeResponse = {
+  attributes: {
+    title: string;
+    description: string;
+    category: Category;
+    pictures: StrapiPictures;
+    createdAt: string;
+    publishedAt: string;
+    updatedAt: string;
+  };
+  id: number;
 };
 
 export type StrapiPictures = {

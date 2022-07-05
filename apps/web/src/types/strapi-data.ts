@@ -22,3 +22,13 @@ export type Card = {
   pictures: Pictures[] | null;
   category?: Category;
 };
+
+export type News = {
+  title: string;
+  description: string;
+  category: Category;
+  pictures: Pictures[] | null;
+  createdAt: string;
+  publishedAt: string;
+  updatedAt: string;
+};
