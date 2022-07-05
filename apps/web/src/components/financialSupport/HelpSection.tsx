@@ -2,7 +2,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Box } from '@mui/material';
 import { Button, Col, H2, Para, Section } from 'ui/ux';
 
-import { PageContent } from '../../types/strapi-data';
+import { PageContent } from '../../types/strapi-content.types';
 import { BankAccountDetails } from '../BankAccountDetails';
 
 export const HelpSection = ({

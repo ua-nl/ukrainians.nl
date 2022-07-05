@@ -1,8 +1,8 @@
 import { styled } from '@mui/system';
 import { useUIContext } from 'ui/lib';
 import { Button, MainHeader, Section, Subtitle } from 'ui/ux';
-import { PageContent } from '../../types/strapi-data';
 
+import { PageContent } from '../../types/strapi-content.types';
 
 const ButtonsContainer = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -30,7 +30,7 @@ export const MainHeaderSection = ({
   title,
   description,
   pictures,
-}: Pick<PageContent, "title" | "description" | "pictures">) => {
+}: Pick<PageContent, 'title' | 'description' | 'pictures'>) => {
   const ctx = useUIContext();
 
   return (

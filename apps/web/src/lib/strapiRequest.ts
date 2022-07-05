@@ -1,10 +1,10 @@
-import { News, PageContent, Pictures } from '../types/strapi-data';
+import { News, PageContent, Pictures } from '../types/strapi-content.types';
 import {
   StrapiCollectionTypeResponse,
   StrapiPictures,
   StrapiResponse,
   StrapiSingleTypeResponse,
-} from '../types/strapi-response';
+} from '../types/strapi-response.types';
 import { getImageURl } from './getImageUrl';
 
 const formatPictures = (pictures: StrapiPictures): Pictures[] | null => {

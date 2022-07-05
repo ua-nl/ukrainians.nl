@@ -4,11 +4,7 @@ import { BannerSection } from '../components/financialSupport/BannerSection';
 import { ContributionSection } from '../components/financialSupport/ContributionSection';
 import { HelpSection } from '../components/financialSupport/HelpSection';
 import { getStrapiSingleType } from '../lib/strapiRequest';
-import { PageContent } from '../types/strapi-data';
-
-type PageProps = {
-  data: PageContent[];
-};
+import { PageProps, StaticPageProps } from '../types/page-content.types';
 
 export default function Index({ data }: PageProps) {
   const [contribution, help, nonFinancial] = data;
@@ -31,9 +27,7 @@ export default function Index({ data }: PageProps) {
   );
 }
 
-export async function getStaticProps(): Promise<{
-  props: PageProps;
-}> {
+export async function getStaticProps(): StaticPageProps {
   const response = await getStrapiSingleType('/financial-aid');
 
   return {

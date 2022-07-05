@@ -4,11 +4,7 @@ import { DonateGoodsSection } from '../components/humanitarianAid/DonateGoodsSec
 import { ForOrganizationsSection } from '../components/humanitarianAid/ForOrganizationsSection';
 import { WhatDoWeNeedSection } from '../components/humanitarianAid/WhatDoWeNeedSection';
 import { getStrapiSingleType } from '../lib/strapiRequest';
-import { PageContent } from '../types/strapi-data';
-
-type PageProps = {
-  data: PageContent[];
-};
+import { PageProps, StaticPageProps } from '../types/page-content.types';
 
 export default function Index({ data }: PageProps) {
   const [goods, whatWeNeed, organizations] = data;
@@ -39,9 +35,7 @@ export default function Index({ data }: PageProps) {
   );
 }
 
-export async function getStaticProps(): Promise<{
-  props: PageProps;
-}> {
+export async function getStaticProps(): StaticPageProps {
   const response = await getStrapiSingleType('/humanitarian-aid');
 
   return {

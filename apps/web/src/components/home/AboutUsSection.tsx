@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Col, H1, ImgBox, Para, Section } from 'ui/ux';
 
-import { PageContent } from '../../types/strapi-data';
+import { PageContent } from '../../types/strapi-content.types';
 
 export const AboutUsSection = ({
   title,

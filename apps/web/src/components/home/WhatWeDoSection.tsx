@@ -2,7 +2,7 @@ import { IconHandWithHeart } from 'ui/assets';
 import { useUIContext } from 'ui/lib';
 import { Button, H1, IconCard, Para, Section } from 'ui/ux';
 
-import { PageContent } from '../../types/strapi-data';
+import { PageContent } from '../../types/strapi-content.types';
 
 export const WhatWeDoSection = ({
   title,

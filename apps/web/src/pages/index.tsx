@@ -6,11 +6,7 @@ import { MainHeaderSection } from '../components/home/MainHeaderSection';
 import { PartnersSection } from '../components/home/PartnersSection';
 import { WhatWeDoSection } from '../components/home/WhatWeDoSection';
 import { getStrapiSingleType } from '../lib/strapiRequest';
-import { PageContent } from '../types/strapi-data';
-
-type PageProps = {
-  data: PageContent[];
-};
+import { PageProps, StaticPageProps } from '../types/page-content.types';
 
 export default function Index({ data }: PageProps) {
   const [mainHeader, aboutUs, whatWeDo, achievements, sponsors] = data;
@@ -37,9 +33,7 @@ export default function Index({ data }: PageProps) {
   );
 }
 
-export async function getStaticProps(): Promise<{
-  props: PageProps;
-}> {
+export async function getStaticProps(): StaticPageProps {
   const response = await getStrapiSingleType('/homepage');
 
   return {

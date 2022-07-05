@@ -4,7 +4,7 @@ import { Fragment } from 'react';
 import { useUIContext } from 'ui/lib';
 import { Button, Col, H1, ImgBox, Para, Section } from 'ui/ux';
 
-import { PageContent } from '../../types/strapi-data';
+import { PageContent } from '../../types/strapi-content.types';
 
 export const WhatDoWeNeedSection = ({
   cards,

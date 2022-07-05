@@ -1,6 +1,6 @@
 import { Banner, Button, Col, H1, H2, Para, Section } from 'ui/ux';
 
-import { PageContent } from '../../types/strapi-data';
+import { PageContent } from '../../types/strapi-content.types';
 
 // const List = styled('ul')(() => ({
 //   marginBlock: 0,

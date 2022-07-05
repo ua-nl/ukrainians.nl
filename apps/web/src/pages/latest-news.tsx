@@ -6,7 +6,8 @@ import {
   getStrapiCollectionTypes,
   getStrapiSingleType,
 } from '../lib/strapiRequest';
-import { News, PageContent } from '../types/strapi-data';
+import { StaticProps } from '../types/page-content.types';
+import { News, PageContent } from '../types/strapi-content.types';
 
 type PageProps = {
   pageContent: PageContent[];
@@ -29,9 +30,7 @@ export default function Index({ pageContent, news }: PageProps) {
   );
 }
 
-export async function getStaticProps(): Promise<{
-  props: PageProps;
-}> {
+export async function getStaticProps(): StaticProps<PageProps> {
   const pageContent = await getStrapiSingleType('/latest-news');
   const newsCollection = await getStrapiCollectionTypes('/all-news');
 

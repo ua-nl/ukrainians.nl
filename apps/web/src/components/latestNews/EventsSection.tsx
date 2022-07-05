@@ -1,8 +1,8 @@
 import { SyntheticEvent, useEffect, useState } from 'react';
 import { CardItem, Col, FilterTabs, Section, TabPanel } from 'ui/ux';
 
-import { News } from '../../types/strapi-data';
-import { Category } from '../../types/strapi-response';
+import { News } from '../../types/strapi-content.types';
+import { Category } from '../../types/strapi-response.types';
 
 const tabs = ['All', 'News', 'Events', 'Press'];
 

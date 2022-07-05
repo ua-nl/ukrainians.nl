@@ -1,4 +1,4 @@
-import { Category } from './strapi-response';
+import { Category } from './strapi-response.types';
 
 export type PageContent = {
   cards: Card[];

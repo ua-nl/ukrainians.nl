@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useUIContext } from 'ui/lib';
 import { Button, IconCard, Para } from 'ui/ux';
 
-import { Card } from '../types/strapi-data';
+import { Card } from '../types/strapi-content.types';
 
 type ActionCardsProps = {
   cards: Card[];

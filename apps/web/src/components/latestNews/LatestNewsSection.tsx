@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Col, H1, Para, Section } from 'ui/ux';
 
-import { PageContent } from '../../types/strapi-data';
+import { PageContent } from '../../types/strapi-content.types';
 
 export const LatestNewsSection = ({
   title,
