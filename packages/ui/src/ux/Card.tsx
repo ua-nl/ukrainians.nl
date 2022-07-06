@@ -12,7 +12,7 @@ type Pictures = {
 };
 
 type CardProps = {
-  image?: Pictures;
+  image: Pictures;
   date: string;
   title: string;
   description: string;
@@ -69,7 +69,7 @@ const Description = styled(Typography)({
 export const CardItem = ({ image, title, date, description }: CardProps) => (
   <CardContainer>
     <CardImageContainer>
-      <CardImage src={image?.url} alt={title} layout="fill" objectFit="cover" />
+      <CardImage src={image.url} alt={title} layout="fill" objectFit="cover" />
     </CardImageContainer>
     <CardContent>
       <Para2 mb={4}>{date}</Para2>

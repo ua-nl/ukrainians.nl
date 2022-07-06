@@ -16,7 +16,7 @@ export const Img = ({ picture, ...props }: Props) => {
           width={picture.width}
           height={picture.height}
           placeholder="blur"
-          blurDataURL={placeholderImg}
+          blurDataURL={placeholderImg.src}
           {...props}
         />
       )}
