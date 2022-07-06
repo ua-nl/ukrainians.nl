@@ -23,8 +23,9 @@ const IconCardItem = (props: {
     <Card sx={{ height: '100%' }}>
       <Grid
         container
-        padding={{ xs: 10, md: 14 }}
-        spacing={{ xs: 2, sm: 5, md: 8 }}
+        px={{ xs: 10, md: 7 }}
+        py={{ xs: 10, md: 14 }}
+        spacing={{ xs: 2 }}
       >
         <Grid item xs="auto" sm={12} md={2}>
           {props.Icon}

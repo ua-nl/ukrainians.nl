@@ -8,7 +8,8 @@ import { BankAccountDetails } from '../BankAccountDetails';
 export const HelpSection = ({
   title,
   description,
-}: Pick<PageContent, 'title' | 'description'>) => {
+  cards,
+}: Pick<PageContent, 'title' | 'description' | 'cards'>) => {
   return (
     <Section>
       <Col.Container>
@@ -24,7 +25,7 @@ export const HelpSection = ({
           </Box>
         </Col.Item>
         <Col.Item sm={12} md={6} vAlign="center" order={{ xs: 2, md: 1 }}>
-          <BankAccountDetails />
+          <BankAccountDetails card={cards[0]} />
         </Col.Item>
       </Col.Container>
     </Section>

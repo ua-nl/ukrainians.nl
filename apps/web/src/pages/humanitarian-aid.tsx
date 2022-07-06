@@ -22,13 +22,13 @@ export default function Index({ data }: PageProps) {
         pictures={goods.pictures}
       />
       <WhatDoWeNeedSection
+        description={whatWeNeed.description}
         cards={whatWeNeed.cards}
         pictures={whatWeNeed.pictures}
       />
       <ForOrganizationsSection
         title={organizations.title}
         description={organizations.description}
-        description2={organizations.description2}
         cards={organizations.cards}
       />
     </Page>

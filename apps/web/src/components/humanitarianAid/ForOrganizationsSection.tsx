@@ -1,20 +1,18 @@
 import { PageContent } from 'ui/types';
-import { Banner, Button, Col, H1, H2, Para, Section } from 'ui/ux';
+import { Banner, Button, Col, H1, H2, Markdown, Para, Section } from 'ui/ux';
 
 export const ForOrganizationsSection = ({
   title,
   description,
-  description2,
   cards,
-}: Pick<PageContent, 'title' | 'description' | 'description2' | 'cards'>) => {
+}: Pick<PageContent, 'title' | 'description' | 'cards'>) => {
   const card = cards[0];
   return (
     <Section>
       <Col.Container>
         <Col.Item sm={6}>
           <H1>{title}</H1>
-          <Para mb={8}>{description}</Para>
-          <Para mb={5}>{description2}</Para>
+          <Markdown>{description}</Markdown>
         </Col.Item>
 
         <Col.Item sm={6} vAlign="center">

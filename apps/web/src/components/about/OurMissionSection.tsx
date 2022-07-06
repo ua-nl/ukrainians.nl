@@ -1,5 +1,5 @@
 import { PageContent } from 'ui/types';
-import { Col, H1, Img, Para, Section } from 'ui/ux';
+import { Col, H1, Img, Markdown, Section } from 'ui/ux';
 
 export const OurMissionSection = ({
   title,
@@ -14,7 +14,7 @@ export const OurMissionSection = ({
         </Col.Item>
         <Col.Item sm={6} vAlign="center" order={{ xs: 1, sm: 2 }}>
           <H1>{title}</H1>
-          <Para>{description}</Para>
+          <Markdown>{description}</Markdown>
         </Col.Item>
       </Col.Container>
     </Section>

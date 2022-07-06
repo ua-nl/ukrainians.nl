@@ -1,7 +1,6 @@
-import { IconHandWithHeart } from 'ui/assets';
 import { useUIContext } from 'ui/lib';
 import { PageContent } from 'ui/types';
-import { Button, H1, IconCard, Para, Section } from 'ui/ux';
+import { Button, H1, IconCard, Img, Para, Section } from 'ui/ux';
 
 export const WhatWeDoSection = ({
   title,
@@ -19,7 +18,14 @@ export const WhatWeDoSection = ({
         {cards &&
           cards.map((card) => (
             <IconCard.Item
-              Icon={IconHandWithHeart}
+              Icon={
+                <Img
+                  picture={card.pictures?.[0]}
+                  alt={card.title}
+                  width={90}
+                  height={90}
+                />
+              }
               title={card.title}
               key={card.id}
             >

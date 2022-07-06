@@ -4,7 +4,7 @@ import { Pictures } from 'ui/types';
 import placeholderImg from '../../../../apps/web/public/img/img-placeholder.png';
 
 type Props = {
-  picture?: Pictures;
+  picture?: Pictures | null;
 } & Omit<ImageProps, 'src'>;
 
 export const Img = ({ picture, ...props }: Props) => {

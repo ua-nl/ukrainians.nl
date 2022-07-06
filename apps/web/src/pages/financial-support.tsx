@@ -21,7 +21,11 @@ export default function Index({ data }: PageProps) {
         description={contribution.description}
         pictures={contribution.pictures}
       />
-      <HelpSection title={help.title} description={help.description} />
+      <HelpSection
+        title={help.title}
+        description={help.description}
+        cards={help.cards}
+      />
       <BannerSection title={nonFinancial.title} />
     </Page>
   );

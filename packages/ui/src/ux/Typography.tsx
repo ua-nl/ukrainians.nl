@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { Typography, TypographyProps } from '@mui/material';
+import ReactMarkdown from 'react-markdown';
 
 import { UASysColors } from '../lib';
 
@@ -35,7 +36,6 @@ export const MainHeader = createTypography('h1', {
   color: UASysColors.yellow100,
   textTransform: 'none',
 });
-
 export const H1 = createTypography('h1', { mb: 5 });
 export const H2 = createTypography('h2', { mb: 4 });
 export const H3 = createTypography('h3', { mb: 3 });
@@ -45,3 +45,7 @@ export const Para = createTypography('body1', { mb: 2 });
 export const Para2 = createTypography('body2');
 export const Subtitle = createTypography('subtitle1');
 export const Caption = createTypography('caption');
+
+export const Markdown = ({ children }: { children: string }) => (
+  <ReactMarkdown>{children}</ReactMarkdown>
+);
