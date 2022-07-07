@@ -16,7 +16,6 @@ export const HelpSection = ({
         <Col.Item sm={12} md={6} vAlign="center" order={{ xs: 1, md: 2 }}>
           <H2 mb={8}>{title}</H2>
           <Para>{description}</Para>
-
           <Box my={5}>
             <Button type="accent">
               <Box mr={4}>Procurement report</Box>

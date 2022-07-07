@@ -9,9 +9,9 @@ type BankAccountDetailsProps = {
 
 const Container = styled('div')({
   display: 'flex',
+  justifyContent: 'center',
   width: '100%',
   flexGrow: 1,
-  justifyContent: 'center',
 });
 
 const ContentBox = styled('div')(({ theme }) => ({
