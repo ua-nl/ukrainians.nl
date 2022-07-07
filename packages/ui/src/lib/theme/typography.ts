@@ -17,7 +17,6 @@ export const typography: TypographyOptions = {
   h1: {
     fontSize: getTypografyFontSize(32),
     fontWeight: 700,
-    textTransform: 'uppercase',
   },
   h2: {
     fontSize: getTypografyFontSize(24),
