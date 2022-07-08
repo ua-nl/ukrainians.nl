@@ -17,6 +17,7 @@ export const typography: TypographyOptions = {
   h1: {
     fontSize: getTypografyFontSize(32),
     fontWeight: 700,
+    wordBreak: 'break-word',
   },
   h2: {
     fontSize: getTypografyFontSize(24),
