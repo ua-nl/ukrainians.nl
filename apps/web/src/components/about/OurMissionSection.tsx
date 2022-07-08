@@ -10,7 +10,7 @@ export const OurMissionSection = ({
     <Section first>
       <Col.Container>
         <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
-          <Img picture={pictures?.[0]} alt={title} />
+          {pictures && <Img picture={pictures[0]} alt={title} />}
         </Col.Item>
         <Col.Item sm={6} vAlign="center" order={{ xs: 1, sm: 2 }}>
           <H1>{title}</H1>

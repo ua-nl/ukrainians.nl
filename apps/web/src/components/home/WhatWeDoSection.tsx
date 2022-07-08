@@ -19,12 +19,9 @@ export const WhatWeDoSection = ({
           cards.map((card) => (
             <IconCard.Item
               Icon={
-                <Img
-                  picture={card.pictures?.[0]}
-                  alt={card.title}
-                  width={90}
-                  height={90}
-                />
+                card.pictures && (
+                  <Img picture={card.pictures[0]} alt={card.title} />
+                )
               }
               title={card.title}
               key={card.id}

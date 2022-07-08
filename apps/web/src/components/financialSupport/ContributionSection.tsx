@@ -12,7 +12,7 @@ export const ContributionSection = ({
     <Section first bgColor="grey">
       <Col.Container>
         <Col.Item sm={12} md={6} vAlign="center">
-          <Img picture={pictures?.[0]} alt={title} />
+          {pictures && <Img picture={pictures[0]} alt={title} />}
         </Col.Item>
         <Col.Item sm={12} md={6} vAlign="center">
           <H2>{title}</H2>

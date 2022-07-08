@@ -4,22 +4,19 @@ import { Pictures } from 'ui/types';
 import placeholderImg from '../../../../apps/web/public/img/img-placeholder.png';
 
 type Props = {
-  picture?: Pictures | null;
+  picture: Pictures;
 } & Omit<ImageProps, 'src'>;
 
 export const Img = ({ picture, ...props }: Props) => {
+  console.log(picture.width, picture.height);
   return (
-    <>
-      {picture && (
-        <Image
-          src={picture.url}
-          width={picture.width}
-          height={picture.height}
-          placeholder="blur"
-          blurDataURL={placeholderImg.src}
-          {...props}
-        />
-      )}
-    </>
+    <Image
+      src={picture.url}
+      width={picture.width}
+      height={picture.height}
+      placeholder="blur"
+      blurDataURL={placeholderImg.src}
+      {...props}
+    />
   );
 };

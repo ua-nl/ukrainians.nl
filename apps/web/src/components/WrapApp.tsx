@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 import Head from 'next/head';
-import { AppWrapper, AppWrapperProps, AppHeader } from 'ui/ux';
+import { AppHeader, AppWrapper, AppWrapperProps } from 'ui/ux';
 
 import { META_TAGS } from '../lib/metaTags';
 import { MetaTags } from './MetaTags';

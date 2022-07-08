@@ -10,7 +10,7 @@ export const LatestNewsSection = ({
     <Section first>
       <Col.Container>
         <Col.Item sm={6} vAlign="center">
-          <Img picture={pictures?.[0]} alt={title} />
+          {pictures && <Img picture={pictures[0]} alt={title} />}
         </Col.Item>
         <Col.Item sm={6} vAlign="center">
           <H1>{title}</H1>
