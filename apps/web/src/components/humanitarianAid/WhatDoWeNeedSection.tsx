@@ -4,10 +4,10 @@ import { PageContent } from 'ui/types';
 import { Button, Col, Img, ImgBox, Markdown, Section } from 'ui/ux';
 
 export const WhatDoWeNeedSection = ({
-  cards,
+  title,
   pictures,
   description,
-}: Pick<PageContent, 'cards' | 'pictures' | 'description'>) => {
+}: Pick<PageContent, 'title' | 'pictures' | 'description'>) => {
   const ctx = useUIContext();
 
   return (
@@ -22,10 +22,10 @@ export const WhatDoWeNeedSection = ({
 
         <Col.Item sm={6} vAlign="center">
           <ImgBox sx={{ float: 'right', marginLeft: '20%' }}>
-            <Img picture={pictures?.[0]} alt={cards[0].title} />
+            <Img picture={pictures?.[0]} alt={title} />
           </ImgBox>
           <ImgBox sx={{ float: 'left', width: '70%', marginTop: '-30%' }}>
-            <Img picture={pictures?.[1]} alt={cards[1].title} />
+            <Img picture={pictures?.[1]} alt={title} />
           </ImgBox>
         </Col.Item>
       </Col.Container>
