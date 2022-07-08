@@ -24,7 +24,6 @@ export const l10nUA: L10NStrings = {
   followUs: 'Слідкуйте за нами',
   readMore: 'Читати далі',
   collectionPoints: 'Пункти збору',
-  volunteer: 'Волонтерство',
   copyright:
     'Copyright © 2014, Всі права захищені. Фонд "Українці в Нідерландах"',
 };

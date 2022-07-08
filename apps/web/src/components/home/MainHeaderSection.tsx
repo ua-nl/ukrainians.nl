@@ -7,6 +7,10 @@ const ButtonsContainer = styled('div')(({ theme }) => ({
   display: 'flex',
   gap: theme.spacing(3),
   marginTop: theme.spacing(12),
+
+  [theme.breakpoints.only('xs')]: {
+    flexDirection: 'column',
+  },
 }));
 
 const BackgroundImageContainer = styled('div', {
@@ -41,7 +45,7 @@ export const MainHeaderSection = ({
 
           <ButtonsContainer>
             <Button type="primary">{ctx.l10n[ctx.texts.donateBtn]}</Button>
-            <Button type="accent">{ctx.l10n[ctx.texts.volunteer]}</Button>
+            <Button>{ctx.l10n[ctx.texts.results]}</Button>
           </ButtonsContainer>
         </BackgroundImageContent>
       </Section>
