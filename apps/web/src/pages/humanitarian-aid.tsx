@@ -4,7 +4,7 @@ import { Bread, Page } from 'ui/ux';
 import { DonateGoodsSection } from '../components/humanitarianAid/DonateGoodsSection';
 import { ForOrganizationsSection } from '../components/humanitarianAid/ForOrganizationsSection';
 import { WhatDoWeNeedSection } from '../components/humanitarianAid/WhatDoWeNeedSection';
-import { getStrapiSingleType } from '../lib/strapiRequest';
+import { getStrapiSingleType } from '../lib/getStrapiData';
 
 export default function Index({ data }: PageProps) {
   const [goods, whatWeNeed, organizations] = data;

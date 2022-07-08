@@ -6,7 +6,7 @@ import { AchievementsSection } from '../components/home/AchievementsSection';
 import { MainHeaderSection } from '../components/home/MainHeaderSection';
 import { PartnersSection } from '../components/home/PartnersSection';
 import { WhatWeDoSection } from '../components/home/WhatWeDoSection';
-import { getStrapiSingleType } from '../lib/strapiRequest';
+import { getStrapiSingleType } from '../lib/getStrapiData';
 
 export default function Index({ data }: PageProps) {
   const [mainHeader, aboutUs, whatWeDo, achievements, sponsors] = data;

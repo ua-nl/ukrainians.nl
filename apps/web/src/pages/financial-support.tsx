@@ -4,7 +4,7 @@ import { Bread, Page } from 'ui/ux';
 import { BannerSection } from '../components/financialSupport/BannerSection';
 import { ContributionSection } from '../components/financialSupport/ContributionSection';
 import { HelpSection } from '../components/financialSupport/HelpSection';
-import { getStrapiSingleType } from '../lib/strapiRequest';
+import { getStrapiSingleType } from '../lib/getStrapiData';
 
 export default function Index({ data }: PageProps) {
   const [contribution, help, nonFinancial] = data;

@@ -4,7 +4,7 @@ import { Bread, Page } from 'ui/ux';
 import { OurMissionSection } from '../components/about/OurMissionSection';
 import { OurStorySection } from '../components/about/OurStorySection';
 import { WhatWeDoSection } from '../components/home/WhatWeDoSection';
-import { getStrapiSingleType } from '../lib/strapiRequest';
+import { getStrapiSingleType } from '../lib/getStrapiData';
 
 export default function Index({ data }: PageProps) {
   const [ourMission, ourStory, whatWeDo] = data;

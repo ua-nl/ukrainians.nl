@@ -6,7 +6,7 @@ import { LatestNewsSection } from '../components/latestNews/LatestNewsSection';
 import {
   getStrapiCollectionTypes,
   getStrapiSingleType,
-} from '../lib/strapiRequest';
+} from '../lib/getStrapiData';
 
 type PageProps = {
   pageContent: PageContent[];
