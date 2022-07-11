@@ -2,6 +2,8 @@ import type { ReactNode } from 'react';
 
 import { Typography, TypographyProps } from '@mui/material';
 
+import { UASysColors } from '../lib';
+
 export interface TypographyUAProps {
   children: ReactNode;
   center?: boolean;
@@ -17,12 +19,22 @@ const createTypography = (
       variant={variant}
       textAlign={props.center ? 'center' : undefined}
       mb={props.mb ?? tProps.mb}
+      fontSize={tProps.fontSize}
+      color={tProps.color}
+      textTransform={tProps.textTransform}
     >
       {props.children}
     </Typography>
   );
   return TypographyUA;
 };
+
+export const MainHeader = createTypography('h1', {
+  fontSize: 42,
+  mb: 4,
+  color: UASysColors.yellow100,
+  textTransform: 'none',
+});
 
 export const H1 = createTypography('h1', { mb: 4 });
 export const H2 = createTypography('h2', { mb: 3 });

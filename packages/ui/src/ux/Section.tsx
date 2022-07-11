@@ -12,6 +12,7 @@ const SECTION_COLOR = {
   yellow: 'accent.light',
   blue: 'secondary.light',
   grey: 'grey.300',
+  lightGrey: 'grey.100',
 } as const;
 
 export interface SectionProps {
@@ -19,31 +20,27 @@ export interface SectionProps {
   first?: boolean;
   thin?: boolean;
   bgColor?: keyof typeof SECTION_COLOR;
-  bgImage?: string;
   color?: UASysColorKeys;
   mt?: number;
 }
 
 const container = (
   bgColor?: keyof typeof SECTION_COLOR,
-  bgImage?: string,
   color?: UASysColorKeys,
   mt?: number,
 ): SxProps<Theme> => ({
-  background: bgImage ? `url(${bgImage})` : undefined,
   backgroundColor: bgColor ? SECTION_COLOR[bgColor] : undefined,
   color: color,
   mt: mt,
 });
 
 export const Section = (props: SectionProps) => {
-  const hasBackground = Boolean(props.bgColor || props.bgImage);
   return (
-    <Box sx={container(props.bgColor, props.bgImage, props.color, props.mt)}>
+    <Box sx={container(props.bgColor, props.color, props.mt)}>
       <Container
         maxWidth={props.thin ? CONTAINER_SHORT_WIDTH : CONTAINER_MAX_WIDTH}
       >
-        <Box pb="100px" pt={props.first && !hasBackground ? '40px' : '100px'}>
+        <Box py={props.first && !props.bgColor ? '0px' : '100px'}>
           {props.children}
         </Box>
       </Container>
