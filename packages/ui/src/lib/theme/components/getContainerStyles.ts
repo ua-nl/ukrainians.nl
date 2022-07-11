@@ -9,7 +9,7 @@ const containerBreakPoints = (theme: Theme) => ({
   [theme.breakpoints.down('sm')]: {
     paddingLeft: theme.spacing(4),
     paddingRight: theme.spacing(4),
-    maxWidth: 700,
+    maxWidth: 550,
   },
 });
 
@@ -25,7 +25,7 @@ export const getContainerStyles = (
           [theme.breakpoints.only('xs')]: {
             paddingLeft: theme.spacing(4),
             paddingRight: theme.spacing(4),
-            maxWidth: 700,
+            maxWidth: 550,
           },
           [theme.breakpoints.up('sm')]: {
             paddingLeft: theme.spacing(8),

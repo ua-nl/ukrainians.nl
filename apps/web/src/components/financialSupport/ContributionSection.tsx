@@ -9,7 +9,7 @@ export const ContributionSection = () => {
     <Section first bgColor="grey">
       <Col.Container>
         <Col.Item sm={12} md={6} vAlign="center">
-          <Image src={SunflowersImg} alt="Kids" />
+          <Image src={SunflowersImg} alt="Sunflowers" />
         </Col.Item>
         <Col.Item sm={12} md={6} vAlign="center">
           <H1>Your financial support help us to continue providing Ukraine</H1>

@@ -25,6 +25,8 @@ import {
   TextInput,
 } from 'ui/ux';
 
+import { VacancyForm } from '../components/VacancyForm';
+
 export default function Index() {
   return (
     <Page>
@@ -167,6 +169,10 @@ export default function Index() {
             foundations, as well as commercial enterprises.
           </Col.Item>
         </Col.Container>
+      </Section>
+
+      <Section>
+        <VacancyForm />
       </Section>
     </Page>
   );
