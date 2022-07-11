@@ -24,6 +24,7 @@ export const l10nNL: L10NStrings = {
   followUs: 'Volg ons',
   readMore: 'Lees meer',
   collectionPoints: 'Verzamelpunten',
+  results: 'Resultaten',
   copyright:
     'Copyright © 2014, Alle rechten voorbehouden Stichting Oekraïners in Nederland',
 };
