@@ -1,7 +1,10 @@
+import '@fontsource/montserrat';
+import '@fontsource/montserrat/500.css';
+import '@fontsource/montserrat/700.css';
 import type { ReactNode } from 'react';
 
 import Head from 'next/head';
-import { AppHeader, AppWrapper, AppWrapperProps } from 'ui/ux';
+import { AppWrapper, AppWrapperProps } from 'ui/ux';
 
 import { META_TAGS } from '../lib/metaTags';
 import { MetaTags } from './MetaTags';
@@ -17,7 +20,6 @@ export const WrapApp = (props: {
         {props.title} {props.title ? '⬅' : ''} ukrainians.nl
       </title>
       <link rel="icon" href={META_TAGS.favicon} />
-      <AppHeader />
       <MetaTags />
     </Head>
     {props.children}

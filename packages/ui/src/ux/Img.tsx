@@ -8,7 +8,6 @@ type Props = {
 } & Omit<ImageProps, 'src'>;
 
 export const Img = ({ picture, ...props }: Props) => {
-  console.log(picture.width, picture.height);
   return (
     <Image
       src={picture.url}
