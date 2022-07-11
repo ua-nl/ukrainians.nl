@@ -10,7 +10,7 @@ export const OurStorySection = () => {
       <H1 center mb={16}>
         Our story
       </H1>
-      <Col.Container columns={{ sm: 12 }}>
+      <Col.Container>
         <Col.Item sm={6}>
           <Para>
             Ukrainians in the Netherlands Foundation is a non-profit

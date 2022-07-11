@@ -8,6 +8,7 @@ export const getInputStyles = (
       root: {
         padding: 0,
         fontSize: theme.typography.caption.fontSize,
+        backgroundColor: theme.palette.background.default,
       },
     },
   },

@@ -1,5 +1,7 @@
 import { Components, Theme } from '@mui/material';
 
+import { UASysColors } from '../cssVars/color';
+
 export const getButtonStyles = (
   theme: Theme,
 ): Pick<
@@ -21,7 +23,7 @@ export const getButtonStyles = (
         letterSpacing: `-0.02rem`,
       },
       outlined: {
-        border: `1px solid ${theme.palette.primary.dark}`,
+        border: `1px solid ${theme.palette.primary.main}`,
       },
       sizeSmall: {
         fontSize: `1rem`,
@@ -55,10 +57,10 @@ export const getButtonStyles = (
         marginRight: theme.spacing(2),
         border: `1px solid ${theme.palette.grey[200]}`,
         '&.Mui-selected': {
-          backgroundColor: theme.palette.primary.main,
-          color: theme.palette.primary.contrastText,
+          backgroundColor: UASysColors.yellow60,
+          color: theme.palette.primary.main,
           '&:hover': {
-            backgroundColor: theme.palette.primary.dark,
+            backgroundColor: UASysColors.yellow100,
           },
         },
         '&.Mui-disabled': {
@@ -79,6 +81,7 @@ export const getButtonStyles = (
       root: {
         padding: theme.spacing(2),
         border: `1px solid ${theme.palette.grey[200]}`,
+        backgroundColor: theme.palette.background.default,
         fontWeight: 700,
         color: theme.palette.primary.main,
         whiteSpace: 'nowrap',

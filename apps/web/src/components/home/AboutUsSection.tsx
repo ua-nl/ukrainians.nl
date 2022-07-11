@@ -7,7 +7,7 @@ import groupWithFlag from '../../../public/photo/group-with-flag.jpg';
 export const AboutUsSection = () => {
   return (
     <Section>
-      <Col.Container columns={{ sm: 12 }}>
+      <Col.Container>
         <Col.Item vAlign="center" sm={6}>
           <H1>About us</H1>
           <Para>

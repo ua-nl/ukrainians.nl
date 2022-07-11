@@ -11,7 +11,7 @@ export const WhatDoWeNeedSection = () => {
 
   return (
     <Section bgColor="grey">
-      <Col.Container columns={{ sm: 12 }}>
+      <Col.Container>
         <Col.Item sm={6} vAlign="center">
           <H1>What do we need</H1>
           <Para mb={5}>
@@ -20,7 +20,6 @@ export const WhatDoWeNeedSection = () => {
             humanitarian aid. Follow us for regular updates on goods accepted.
           </Para>
           <Para mb={16}>The current priorities can be found here:</Para>
-
           <H1>Where to drop off</H1>
           <Para>
             We have more than 20 collection points throughout the Netherlands

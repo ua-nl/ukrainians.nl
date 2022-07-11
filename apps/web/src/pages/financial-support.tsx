@@ -10,6 +10,7 @@ export default function Index() {
       <Bread
         history={[{ label: 'Home', href: '/' }]}
         current="Financial support"
+        bgColor="grey"
       />
       <ContributionSection />
       <HelpSection />

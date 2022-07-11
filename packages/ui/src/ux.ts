@@ -11,4 +11,5 @@ export * from './ux/Page';
 export * from './ux/Section';
 export * from './ux/TextInput';
 export * from './ux/TopMenu';
+export * from './ux/TopMenuLinks';
 export * from './ux/Typography';

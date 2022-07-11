@@ -1,17 +1,19 @@
 import { styled } from '@mui/system';
 import { UASysColors } from 'ui/lib';
-import { H2, Section } from 'ui/ux';
+import { Button, H1, Section } from 'ui/ux';
 
 const Container = styled('div')(() => ({
   display: 'flex',
   justifyContent: 'center',
 }));
 
-const Box = styled('div')(({ theme }) => ({
+const Content = styled('div')(({ theme }) => ({
   padding: theme.spacing(27, 15),
-  backgroundColor: UASysColors.black10,
+  backgroundColor: UASysColors.yellow30,
+  color: UASysColors.blue100,
   display: 'flex',
-  justifyContent: 'center',
+  flexDirection: 'column',
+  alignItems: 'center',
   borderRadius: '8px',
   maxWidth: 800,
 }));
@@ -20,12 +22,14 @@ export const BlockSection = () => {
   return (
     <Section>
       <Container>
-        <Box>
-          <H2>
-            A block that would guide users to go to humanitarian aid page, if
-            they want to donate non-financial matters
-          </H2>
-        </Box>
+        <Content>
+          <H1 center mb={10}>
+            Do you want to support by non-financial matters?
+          </H1>
+          <div>
+            <Button>Contact us</Button>
+          </div>
+        </Content>
       </Container>
     </Section>
   );

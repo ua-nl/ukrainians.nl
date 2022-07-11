@@ -8,7 +8,7 @@ import {
   CONTAINER_SHORT_WIDTH,
 } from '../lib/theme/cssVars/size';
 
-const SECTION_COLOR = {
+export const SECTION_COLOR = {
   yellow: 'accent.light',
   blue: 'secondary.light',
   grey: 'grey.300',
