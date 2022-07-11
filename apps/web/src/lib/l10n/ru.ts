@@ -4,7 +4,7 @@ export const l10nRU: L10NStrings = {
   'menu.about': 'О нас',
   'menu.home': 'Главная',
   'menu.humanitarianAid': 'Гуманитарная помощь',
-  'menu.financialAid': 'Финансовая помощь',
+  'menu.financialSupport': 'Финансовая помощь',
   'menu.displacedPeople': 'Перемещенные люди',
 
   'info.email': 'Электронная почта',

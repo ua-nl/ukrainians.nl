@@ -21,7 +21,7 @@ export const getButtonStyles = (
         letterSpacing: `-0.02rem`,
       },
       outlined: {
-        border: `1px solid ${theme.palette.grey[200]}`,
+        border: `1px solid ${theme.palette.primary.dark}`,
       },
       sizeSmall: {
         fontSize: `1rem`,

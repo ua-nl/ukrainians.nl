@@ -6,7 +6,7 @@ export const Bread = (props: {
   history: Array<{ label: string; href: string }>;
   current: string;
 }) => (
-  <Section first>
+  <Section breadcrumbs>
     <Box mt={14} mb={6}>
       <Breadcrumbs component="div">
         {props.history.map((item) => (

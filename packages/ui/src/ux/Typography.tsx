@@ -36,10 +36,10 @@ export const MainHeader = createTypography('h1', {
   textTransform: 'none',
 });
 
-export const H1 = createTypography('h1', { mb: 4 });
-export const H2 = createTypography('h2', { mb: 3 });
-export const H3 = createTypography('h3', { mb: 2 });
-export const H4 = createTypography('h4', { mb: 1 });
+export const H1 = createTypography('h1', { mb: 5 });
+export const H2 = createTypography('h2', { mb: 4 });
+export const H3 = createTypography('h3', { mb: 3 });
+export const H4 = createTypography('h4', { mb: 2 });
 
 export const Para = createTypography('body1', { mb: 2 });
 export const Para2 = createTypography('body2');

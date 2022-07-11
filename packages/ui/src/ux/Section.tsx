@@ -17,6 +17,7 @@ const SECTION_COLOR = {
 
 export interface SectionProps {
   children: ReactNode;
+  breadcrumbs?: boolean;
   first?: boolean;
   thin?: boolean;
   bgColor?: keyof typeof SECTION_COLOR;
@@ -40,7 +41,10 @@ export const Section = (props: SectionProps) => {
       <Container
         maxWidth={props.thin ? CONTAINER_SHORT_WIDTH : CONTAINER_MAX_WIDTH}
       >
-        <Box py={props.first && !props.bgColor ? '0px' : '100px'}>
+        <Box
+          pt={props.breadcrumbs || props.first ? '0px' : '100px'}
+          pb={props.breadcrumbs ? '0px' : '100px'}
+        >
           {props.children}
         </Box>
       </Container>
