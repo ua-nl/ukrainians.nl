@@ -1,4 +1,4 @@
-import type { SVGProps, ReactNode, HTMLAttributes } from 'react';
+import type { HTMLAttributes, ReactNode, SVGProps } from 'react';
 
 export type SvgIconUA = ReturnType<typeof createSvgIconUA>;
 export interface SvgIconUAProps extends SVGProps<SVGSVGElement> {
@@ -14,10 +14,7 @@ export const createSvgIconUA = (content: ReactNode) => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="8 8 72 72"
         {...props}
-        style={{
-          verticalAlign: 'middle',
-          // border: '1px solid red',
-        }}
+        style={{ verticalAlign: 'middle' }}
       >
         {content}
       </svg>

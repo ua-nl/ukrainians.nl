@@ -1,33 +1,80 @@
-import { CardMedia } from '@mui/material';
+import { Typography } from '@mui/material';
 import { styled } from '@mui/system';
-import { ReactNode } from 'react';
+import Image from 'next/image';
 
-import { UASysColors } from '../lib/theme/cssVars/color';
+import { UASysStyleParts } from '../lib/theme/cssVars/uiElements';
+import { Para2, Subtitle } from './Typography';
+
+type Pictures = {
+  url: string;
+  width: number;
+  height: number;
+};
 
 type CardProps = {
-  image: string;
-  children: ReactNode;
+  image: Pictures;
+  date: string;
+  title: string;
+  description: string;
 };
 
 const CardContainer = styled('div')(({ theme }) => ({
-  padding: '32px',
-  borderRadius: '4px',
-  border: `1px solid ${UASysColors.grey}`,
-  boxShadow: 'none',
+  borderRadius: UASysStyleParts.boxRadius.borderRadius,
+  boxShadow: UASysStyleParts.shadow.boxShadow,
   display: 'flex',
   flexDirection: 'column',
-  gap: '16px',
-  marginBottom: '32px',
-  maxWidth: 360,
+  maxWidth: 370,
+  paddingBottom: theme.spacing(5),
+  height: 505,
 
   [theme.breakpoints.only('xs')]: {
     maxWidth: '100%',
   },
 }));
 
-export const CardItem = ({ image, children }: CardProps) => (
+const CardImageContainer = styled('div')(({ theme }) => ({
+  width: '100%',
+  height: 225,
+  objectFit: 'cover',
+  aspectRatio: '16/9',
+  position: 'relative',
+
+  [theme.breakpoints.only('xs')]: {
+    height: 'auto',
+  },
+}));
+
+const CardImage = styled(Image)({
+  borderTopRightRadius: UASysStyleParts.boxRadius.borderRadius,
+  borderTopLeftRadius: UASysStyleParts.boxRadius.borderRadius,
+});
+
+const CardContent = styled('div')(({ theme }) => ({
+  padding: theme.spacing(5),
+  display: 'flex',
+  flexDirection: 'column',
+}));
+
+const Description = styled(Typography)({
+  display: '-webkit-box',
+  textOverflow: 'ellipsis',
+  WebkitBoxOrient: 'vertical',
+  overflow: 'hidden',
+  WebkitLineClamp: 4,
+  lineClamp: 4,
+  height: 'calc(22px * 4)',
+  lineHeight: '22px',
+});
+
+export const CardItem = ({ image, title, date, description }: CardProps) => (
   <CardContainer>
-    <CardMedia component="img" image={image} alt={image} />
-    {children}
+    <CardImageContainer>
+      <CardImage src={image.url} alt={title} layout="fill" objectFit="cover" />
+    </CardImageContainer>
+    <CardContent>
+      <Para2 mb={4}>{date}</Para2>
+      <Subtitle mb={3}>{title}</Subtitle>
+      <Description>{description}</Description>
+    </CardContent>
   </CardContainer>
 );

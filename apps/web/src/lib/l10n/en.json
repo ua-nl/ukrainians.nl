@@ -2,8 +2,8 @@
   "menu.about": "About us",
   "menu.home": "Home",
   "menu.humanitarianAid": "Humanitarian aid",
-  "menu.financialAid": "Financial aid",
-  "menu.displacedPeople": "Displaced People",
+  "menu.financialSupport": "Financial support",
+  "menu.latestNews": "Latest news",
 
   "info.email": "Email",
   "info.phone": "Phone",
@@ -19,7 +19,7 @@
   "links.contact": "Contact",
   
   "donate": "Donate",
-  "volunteer": "Volunteer",
+  "results": "Results",
   "followUs": "Follow us",
   "readMore": "Read more",
   "collectionPoints": "Collection points",

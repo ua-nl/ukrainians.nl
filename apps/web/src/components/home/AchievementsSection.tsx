@@ -1,30 +1,36 @@
-import { Col, H1, H2, Para, Section } from 'ui/ux';
+import { PageContent } from 'ui/types';
+import { Col, Divider, H1, Para, Section } from 'ui/ux';
 
-export const AchievementsSection = () => {
+export const AchievementsSection = ({
+  title,
+  cards,
+}: Pick<PageContent, 'title' | 'cards'>) => {
   return (
-    <Section thin>
-      <H2 center mb={12}>
-        Our achievements
-      </H2>
+    <Section bgColor="blue">
+      <H1 center mb={16}>
+        {title}
+      </H1>
       <Col.Container>
-        <Col.Item xs={12} sm={4}>
-          <H1 center>150K kg+</H1>
-          <Para center>
-            Humanitarian and protective supplies sent to Ukraine
-          </Para>
+        {cards &&
+          cards.map((card) => (
+            <Col.Item sm={6} md={3} key={card.id}>
+              <H1 center>{card.title}</H1>
+              <Para center> {card.description} </Para>
+            </Col.Item>
+          ))}
+      </Col.Container>
+      <Col.Container>
+        <Col.Item sm={6} md={3}>
+          <Divider />
         </Col.Item>
-
-        <Col.Item xs={12} sm={4}>
-          <H1 center>200K€ +</H1>
-          <Para center>Spent on bulk purchases and logistic costs</Para>
+        <Col.Item sm={6} md={3}>
+          <Divider />
         </Col.Item>
-
-        <Col.Item xs={12} sm={4}>
-          <H1 center>300+</H1>
-          <Para center>
-            Involved into humanitarian supplies, logistics, refugee support and
-            more
-          </Para>
+        <Col.Item md={3}>
+          <Divider />
+        </Col.Item>
+        <Col.Item md={3}>
+          <Divider />
         </Col.Item>
       </Col.Container>
     </Section>

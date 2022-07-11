@@ -2,7 +2,7 @@ import { TypographyOptions } from '@mui/material/styles/createTypography';
 
 import { UASysColors } from './cssVars/color';
 
-const getTypografyFontSize = (base: number) =>
+export const getTypografyFontSize = (base: number) =>
   `${((base / 16) * 100).toFixed(0)}%`;
 
 export const typography: TypographyOptions = {
@@ -17,6 +17,7 @@ export const typography: TypographyOptions = {
   h1: {
     fontSize: getTypografyFontSize(32),
     fontWeight: 700,
+    wordBreak: 'break-word',
   },
   h2: {
     fontSize: getTypografyFontSize(24),
@@ -34,9 +35,12 @@ export const typography: TypographyOptions = {
     fontSize: getTypografyFontSize(20),
     fontWeight: 500,
     letterSpacing: '-1px',
+    wordBreak: 'break-word',
+    lineHeight: '25px',
   },
   body1: {
     fontSize: getTypografyFontSize(16),
+    lineHeight: '22px',
   },
   body2: {
     fontSize: getTypografyFontSize(14),

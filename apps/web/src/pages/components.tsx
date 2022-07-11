@@ -25,6 +25,8 @@ import {
   TextInput,
 } from 'ui/ux';
 
+import { VacancyForm } from '../components/VacancyForm';
+
 export default function Index() {
   return (
     <Page>
@@ -35,7 +37,7 @@ export default function Index() {
         ]}
         current="Current"
       />
-      <Section first>
+      <Section>
         <H1>Typografy</H1>
 
         <H1>Header 1</H1>
@@ -162,11 +164,15 @@ export default function Index() {
             humanitarian assistance for Ukrainian civilians and the Armed Forces
             of Ukraine, as well as support for refugees and displaced persons in
             the Netherlands. Consequently, we collaborate with numerous partners
-            both in Ukraine and in the Netherlands, including accredited
-            volunteer organisations, public-sector organisations and
-            foundations, as well as commercial enterprises.
+            both in Ukraine and in the Netherlands, including accredited results
+            organisations, public-sector organisations and foundations, as well
+            as commercial enterprises.
           </Col.Item>
         </Col.Container>
+      </Section>
+
+      <Section>
+        <VacancyForm />
       </Section>
     </Page>
   );

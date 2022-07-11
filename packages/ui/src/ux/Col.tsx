@@ -1,12 +1,16 @@
 import type { ReactNode } from 'react';
 
-import { Grid, GridDirection } from '@mui/material';
+import { Grid, GridDirection, GridSpacing } from '@mui/material';
 import { ResponsiveStyleValue } from '@mui/system';
+
+type JustifyContent = 'flex-start' | 'flex-end' | 'center';
 
 export interface ColContainerProps {
   children: ReactNode;
   columns?: ResponsiveStyleValue<number>;
   direction?: ResponsiveStyleValue<GridDirection>;
+  columnSpacing?: ResponsiveStyleValue<GridSpacing>;
+  hAlign?: JustifyContent;
 }
 
 const ColContainer = (props: ColContainerProps) => (
@@ -14,9 +18,9 @@ const ColContainer = (props: ColContainerProps) => (
     container
     direction={props.direction}
     columns={props.columns}
-    rowSpacing={{ xs: 8, sm: 4, md: 5 }}
-    columnSpacing={{ xs: 4, sm: 10, md: 25 }}
-    justifyContent="center"
+    rowSpacing={{ xs: 10 }}
+    columnSpacing={props.columnSpacing || { xs: 4, sm: 10, md: 25 }}
+    justifyContent={props.hAlign || 'center'}
   >
     {props.children}
   </Grid>
@@ -24,7 +28,7 @@ const ColContainer = (props: ColContainerProps) => (
 
 export interface ColItemProps {
   children: ReactNode;
-  vAlign?: 'flex-start' | 'flex-end' | 'center';
+  vAlign?: JustifyContent;
   order?: ResponsiveStyleValue<number>;
   xs?: number;
   sm?: number;

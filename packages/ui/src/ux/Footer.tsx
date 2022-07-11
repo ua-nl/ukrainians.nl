@@ -5,7 +5,7 @@ import { LogoFooter } from '../assets/LogoFooter.svg';
 import { UASysColors } from '../lib/theme/cssVars/color';
 import { CONTAINER_MAX_WIDTH } from '../lib/theme/cssVars/size';
 import { useUIContext } from '../lib/uiContext';
-import { H4 } from './Typography';
+import { H2, H4 } from './Typography';
 
 const FooterContainer = styled('div')(({ theme }) => ({
   padding: theme.spacing(8, 0),
@@ -16,9 +16,18 @@ const FooterContainer = styled('div')(({ theme }) => ({
   width: '100%',
 }));
 
+const LinksContainer = styled('div')({
+  gridArea: 'links',
+  display: 'flex',
+  flexDirection: 'column',
+  whiteSpace: 'nowrap',
+});
+
 const FooterLink = styled(Link)({
   color: UASysColors.white,
   textDecoration: 'none',
+  padding: 0,
+
   '&:hover': {
     textDecoration: 'underline',
   },
@@ -47,13 +56,6 @@ const ContactItem = styled(Grid)(({ theme }) => ({
     flexBasis: '40%',
   },
 }));
-
-const LinksContainer = styled('div')({
-  gridArea: 'links',
-  display: 'flex',
-  flexDirection: 'column',
-  whiteSpace: 'nowrap',
-});
 
 const SocialMediaContainer = styled('div')(({ theme }) => ({
   gridArea: 'socials',
@@ -142,13 +144,11 @@ const Links = () => {
 
   return (
     <LinksContainer>
-      <Typography variant="h2" mb={2}>
-        {ctx.l10n[ctx.texts.contactHeader]}
-      </Typography>
+      <H2 mb={4}>{ctx.l10n[ctx.texts.contactHeader]}</H2>
       {ctx.links.map(({ label, slug }, index) => (
-        <FooterLink href={slug} key={index} mb={4}>
-          {ctx.l10n[label]}
-        </FooterLink>
+        <Box key={index} mb={4}>
+          <FooterLink href={slug}>{ctx.l10n[label]}</FooterLink>
+        </Box>
       ))}
     </LinksContainer>
   );

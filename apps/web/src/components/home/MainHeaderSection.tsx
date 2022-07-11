@@ -1,32 +1,55 @@
-import { Box } from '@mui/material';
 import { styled } from '@mui/system';
 import { useUIContext } from 'ui/lib';
-import { Button, H1, Section, Subtitle } from 'ui/ux';
-
-import CoverImage from '../../../public/img/carousel/cover1.png';
+import { PageContent } from 'ui/types';
+import { Button, MainHeader, Section, Subtitle } from 'ui/ux';
 
 const ButtonsContainer = styled('div')(({ theme }) => ({
   display: 'flex',
   gap: theme.spacing(3),
-  mt: theme.spacing(12),
+  marginTop: theme.spacing(12),
+
+  [theme.breakpoints.only('xs')]: {
+    flexDirection: 'column',
+  },
 }));
 
-export const MainHeaderSection = () => {
+const BackgroundImageContainer = styled('div', {
+  shouldForwardProp: (prop) => prop !== 'src',
+})<{ src?: string }>(({ src }) => ({
+  backgroundImage: `url(${src})`,
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+}));
+
+const BackgroundImageContent = styled('div')({
+  height: '530px',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  overflow: 'hidden',
+});
+
+export const MainHeaderSection = ({
+  title,
+  description,
+  pictures,
+}: Pick<PageContent, 'title' | 'description' | 'pictures'>) => {
   const ctx = useUIContext();
 
   return (
-    <Section thin first bgImage={CoverImage.src} color="white">
-      <Box maxWidth={550}>
-        <H1>
-          Stand with us to support peace and freedom in Ukraine – and beyond
-        </H1>
-        <Subtitle>Foundation Ukrainians in the Netherlands</Subtitle>
+    <BackgroundImageContainer src={pictures?.[0].url}>
+      <Section breadcrumbs color="white">
+        <BackgroundImageContent>
+          <MainHeader>{title}</MainHeader>
+          <Subtitle>{description}</Subtitle>
 
-        <ButtonsContainer>
-          <Button type="primary">{ctx.l10n[ctx.texts.donateBtn]}</Button>
-          <Button type="accent">{ctx.l10n[ctx.texts.volunteer]}</Button>
-        </ButtonsContainer>
-      </Box>
-    </Section>
+          <ButtonsContainer>
+            <Button type="primary">{ctx.l10n[ctx.texts.donateBtn]}</Button>
+            <Button>{ctx.l10n[ctx.texts.results]}</Button>
+          </ButtonsContainer>
+        </BackgroundImageContent>
+      </Section>
+    </BackgroundImageContainer>
   );
 };

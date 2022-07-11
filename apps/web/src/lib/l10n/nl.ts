@@ -4,8 +4,8 @@ export const l10nNL: L10NStrings = {
   'menu.about': 'Over ons',
   'menu.home': 'Thuis',
   'menu.humanitarianAid': 'Humanitaire hulp',
-  'menu.financialAid': 'Financiële steun',
-  'menu.displacedPeople': 'Ontheemden',
+  'menu.financialSupport': 'Financiële steun',
+  'menu.latestNews': 'Ontheemden',
 
   'info.email': 'Email',
   'info.phone': 'Telefoon',
@@ -24,7 +24,6 @@ export const l10nNL: L10NStrings = {
   followUs: 'Volg ons',
   readMore: 'Lees meer',
   collectionPoints: 'Verzamelpunten',
-  volunteer: 'Vrijwilliger',
   copyright:
     'Copyright © 2014, Alle rechten voorbehouden Stichting Oekraïners in Nederland',
 };

@@ -1,13 +1,14 @@
-import { Breadcrumbs, Link, Typography, Box } from '@mui/material';
+import { Box, Breadcrumbs, Link, Typography } from '@mui/material';
 
-import { Section } from './Section';
+import { Section, SECTION_COLOR } from './Section';
 
 export const Bread = (props: {
   history: Array<{ label: string; href: string }>;
   current: string;
+  bgColor?: keyof typeof SECTION_COLOR;
 }) => (
-  <Section first>
-    <Box mt="50px" mb="24px">
+  <Section breadcrumbs bgColor={props.bgColor}>
+    <Box pt={14} pb={6}>
       <Breadcrumbs component="div">
         {props.history.map((item) => (
           <Link
@@ -20,7 +21,9 @@ export const Bread = (props: {
             {item.label}
           </Link>
         ))}
-        <Typography fontWeight="bold">{props.current}</Typography>
+        <Typography fontWeight="bold" mb={0}>
+          {props.current}
+        </Typography>
       </Breadcrumbs>
     </Box>
   </Section>
