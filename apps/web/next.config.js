@@ -6,6 +6,6 @@ const withTM = require('next-transpile-modules')(['ui']);
 module.exports = withTM({
   reactStrictMode: true,
   images: {
-    domains: [process.env.NEXT_PUBLIC_API_URL],
+    domains: [process.env.NEXT_PUBLIC_API_DOMAIN],
   },
 });
