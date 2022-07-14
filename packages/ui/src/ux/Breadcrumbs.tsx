@@ -4,7 +4,7 @@ import { Section, SECTION_COLOR } from './Section';
 
 export const Bread = (props: {
   history: Array<{ label: string; href: string }>;
-  current: string;
+  current?: string;
   bgColor?: keyof typeof SECTION_COLOR;
 }) => (
   <Section breadcrumbs bgColor={props.bgColor}>
@@ -21,9 +21,11 @@ export const Bread = (props: {
             {item.label}
           </Link>
         ))}
-        <Typography fontWeight="bold" mb={0}>
-          {props.current}
-        </Typography>
+        {props.current && (
+          <Typography fontWeight="bold" mb={0}>
+            {props.current}
+          </Typography>
+        )}
       </Breadcrumbs>
     </Box>
   </Section>
