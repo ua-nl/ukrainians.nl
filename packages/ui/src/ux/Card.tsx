@@ -16,6 +16,11 @@ const CardContainer = styled('div')(({ theme }) => ({
   paddingBottom: theme.spacing(5),
   height: 505,
   cursor: 'pointer',
+  border: '1px solid transparent',
+
+  '&:hover': {
+    border: `1px solid ${theme.palette.primary.dark}`,
+  },
 
   [theme.breakpoints.only('xs')]: {
     maxWidth: '100%',
