@@ -43,7 +43,7 @@ export const H4 = createTypography('h4', { mb: 2 });
 
 export const Para = createTypography('body1', { mb: 2 });
 export const Para2 = createTypography('body2');
-export const Subtitle = createTypography('subtitle1');
+export const Subtitle = createTypography('subtitle1', { lineHeight: '1.3' });
 export const Caption = createTypography('caption');
 
 export const Markdown = ({ children }: { children: string }) => (

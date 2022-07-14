@@ -20,7 +20,7 @@ export const AchievementsSection = ({
           ))}
       </Col.Container>
       <Col.Container>
-        <Col.Item sm={6} md={3}>
+        <Col.Item xs={12} sm={6} md={3}>
           <Divider />
         </Col.Item>
         <Col.Item sm={6} md={3}>
