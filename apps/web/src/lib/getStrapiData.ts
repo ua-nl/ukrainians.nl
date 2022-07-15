@@ -63,6 +63,7 @@ export async function getStrapiCollectionTypes(url: string): Promise<News[]> {
 
   return data.map((item) => ({
     ...item.attributes,
+    id: item.id,
     pictures: formatPictures(item.attributes.pictures),
     createdAt: formatDate(item.attributes.createdAt),
   }));
