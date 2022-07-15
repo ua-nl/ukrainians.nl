@@ -24,6 +24,7 @@ export type Card = {
 };
 
 export type News = {
+  id: number;
   title: string;
   description: string;
   category: Category;

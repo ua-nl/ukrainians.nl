@@ -1,4 +1,3 @@
-import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import {
   Button,
   Collapse,
@@ -9,6 +8,8 @@ import {
 } from '@mui/material';
 import { Dispatch, MouseEvent, ReactNode, useState } from 'react';
 
+import { IconExpandLess } from '../assets/icons/IconExpandLess.svg';
+import { IconExpandMore } from '../assets/icons/IconExpandMore.svg';
 import { useScreen } from '../hooks/useScreen';
 import { UASysColors, UASysStyleParts, useUIContext } from '../lib';
 
@@ -141,7 +142,7 @@ const DropdownLink = ({
         onClick={handleClick}
       >
         {name}
-        {expandLess ? <ExpandLess /> : <ExpandMore />}
+        {expandLess ? <IconExpandLess /> : <IconExpandMore />}
       </NavbarLink>
 
       {isDesktop ? (

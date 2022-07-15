@@ -23,10 +23,11 @@ const BackgroundImageContainer = styled('div', {
 }));
 
 const BackgroundImageContent = styled('div')({
-  height: '70vh',
+  height: '530px',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
+  overflow: 'hidden',
 });
 
 export const MainHeaderSection = ({

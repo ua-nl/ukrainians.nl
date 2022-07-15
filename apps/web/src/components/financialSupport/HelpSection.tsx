@@ -1,5 +1,5 @@
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Box } from '@mui/material';
+import { IconChevronRight } from 'ui/assets';
 import { PageContent } from 'ui/types';
 import { Button, Col, H2, Para, Section } from 'ui/ux';
 
@@ -19,7 +19,7 @@ export const HelpSection = ({
           <Box my={5}>
             <Button type="accent">
               <Box mr={4}>Procurement report</Box>
-              <ChevronRightIcon />
+              <IconChevronRight />
             </Button>
           </Box>
         </Col.Item>

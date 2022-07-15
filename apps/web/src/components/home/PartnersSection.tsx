@@ -10,7 +10,7 @@ export const PartnersSection = ({
       <H2 center mb={8}>
         {title}
       </H2>
-      <Img picture={pictures?.[0]} alt={title} />
+      {pictures && <Img picture={pictures[0]} alt={title} />}
     </Section>
   );
 };

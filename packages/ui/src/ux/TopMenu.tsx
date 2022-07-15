@@ -1,8 +1,8 @@
-import CloseIcon from '@mui/icons-material/Close';
-import MenuIcon from '@mui/icons-material/Menu';
 import { Collapse, Container, IconButton, styled } from '@mui/material';
 import { useState } from 'react';
 
+import { IconClose } from '../assets/icons/IconClose.svg';
+import { IconMenu } from '../assets/icons/IconMenu.svg';
 import { LogoMenu } from '../assets/LogoMenu.svg';
 import { useScreen } from '../hooks/useScreen';
 import { UASysColors } from '../lib/theme/cssVars/color';
@@ -51,7 +51,7 @@ const MobileNavbar = () => {
         </LogoContainer>
 
         <IconButton onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
-          {isDrawerOpen ? <CloseIcon /> : <MenuIcon />}
+          {isDrawerOpen ? <IconClose /> : <IconMenu />}
         </IconButton>
       </MobileNavbarContent>
 

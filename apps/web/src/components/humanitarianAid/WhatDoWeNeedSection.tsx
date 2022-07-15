@@ -22,10 +22,10 @@ export const WhatDoWeNeedSection = ({
 
         <Col.Item sm={6} vAlign="center">
           <ImgBox sx={{ float: 'right', marginLeft: '20%' }}>
-            <Img picture={pictures?.[0]} alt={title} />
+            {pictures && <Img picture={pictures[0]} alt={title} />}
           </ImgBox>
           <ImgBox sx={{ float: 'left', width: '70%', marginTop: '-30%' }}>
-            <Img picture={pictures?.[1]} alt={title} />
+            {pictures && <Img picture={pictures[1]} alt={title} />}
           </ImgBox>
         </Col.Item>
       </Col.Container>

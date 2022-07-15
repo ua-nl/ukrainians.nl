@@ -56,14 +56,7 @@ export const EventsSection = ({ cards }: EventsSectionProps) => {
               {filtered &&
                 filtered.map((card, index) => (
                   <Col.Item key={index} sm={6} md={4}>
-                    {card.pictures && (
-                      <CardItem
-                        image={card.pictures?.[0]}
-                        date={card.createdAt}
-                        title={card.title}
-                        description={card.description}
-                      />
-                    )}
+                    <CardItem news={card} />
                   </Col.Item>
                 ))}
             </Col.Container>
