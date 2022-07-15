@@ -15,10 +15,10 @@ export const AboutUsSection = ({
         </Col.Item>
         <Col.Item sm={6}>
           <ImgBox sx={{ float: 'right', marginLeft: '15%' }}>
-            <Img picture={pictures?.[0]} alt={title} />
+            {pictures && <Img picture={pictures[0]} alt={title} />}
           </ImgBox>
           <ImgBox sx={{ float: 'left', width: '60%', marginTop: '-30%' }}>
-            <Img picture={pictures?.[1]} alt={title} />
+            {pictures && <Img picture={pictures[1]} alt={title} />}
           </ImgBox>
         </Col.Item>
       </Col.Container>

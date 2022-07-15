@@ -27,11 +27,11 @@ export const OurStorySection = ({
         </Col.Item>
 
         <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
-          <Img picture={pictures?.[0]} alt={title} />
+          {pictures && <Img picture={pictures[0]} alt={title} />}
         </Col.Item>
 
         <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
-          <Img picture={pictures?.[1]} alt={title} />
+          {pictures && <Img picture={pictures[1]} alt={title} />}
         </Col.Item>
       </Col.Container>
     </Section>
