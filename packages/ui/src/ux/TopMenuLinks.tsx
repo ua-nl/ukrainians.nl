@@ -67,6 +67,11 @@ const DropdownMenu = styled((props: MenuProps) => (
 const MenuLink = styled(MenuItem)(({ theme }) => ({
   fontWeight: 500,
 
+  '&:hover': {
+    textDecoration: 'underline',
+    backgroundColor: theme.palette.background.default,
+  },
+
   '& .Mui-focusVisible': {
     backgroundColor: theme.palette.background.default,
   },
@@ -74,11 +79,6 @@ const MenuLink = styled(MenuItem)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     marginLeft: theme.spacing(8),
     borderRadius: '8px',
-
-    '&:hover': {
-      backgroundColor: theme.palette.background.default,
-      textDecoration: 'underline',
-    },
   },
 }));
 

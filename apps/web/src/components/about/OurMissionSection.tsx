@@ -1,28 +1,20 @@
-import Image from 'next/image';
-import { Col, H1, Para, Section } from 'ui/ux';
+import { PageContent } from 'ui/types';
+import { Col, H1, Img, Markdown, Section } from 'ui/ux';
 
-import GroupPhotoImg from '../../../public/photo/group-photo.jpg';
-
-export const OurMissionSection = () => {
+export const OurMissionSection = ({
+  title,
+  description,
+  pictures,
+}: Pick<PageContent, 'title' | 'description' | 'pictures'>) => {
   return (
     <Section first>
       <Col.Container>
         <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
-          <Image src={GroupPhotoImg} alt="Group photo" />
+          <Img picture={pictures?.[0]} alt={title} />
         </Col.Item>
         <Col.Item sm={6} vAlign="center" order={{ xs: 1, sm: 2 }}>
-          <H1>Our mission and values</H1>
-          <Para>
-            We facilitate the integration of Ukrainians living in the
-            Netherlands into Dutch society, while helping them to preserve their
-            distinct identity, language, culture, and religious traditions for
-            future generations.
-          </Para>
-          <Para>
-            Our foundation also aims to provide continuous support and
-            humanitarian aid to Ukraine, especially to areas most affected by
-            Russian occupation and aggression.
-          </Para>
+          <H1>{title}</H1>
+          <Markdown>{description}</Markdown>
         </Col.Item>
       </Col.Container>
     </Section>

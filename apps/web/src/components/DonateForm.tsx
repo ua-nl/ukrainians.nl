@@ -6,10 +6,14 @@ import { Button, TextInput } from 'ui/ux';
 
 const DonateFormContainer = styled('div')(({ theme }) => ({
   display: 'flex',
-  flexWrap: 'wrap',
+  alignItems: 'center',
   gap: '24px',
   marginTop: theme.spacing(12),
   marginBottom: theme.spacing(4),
+
+  [theme.breakpoints.down('sm')]: {
+    flexWrap: 'wrap',
+  },
 }));
 
 const EuroAdornment = styled('div')(() => ({

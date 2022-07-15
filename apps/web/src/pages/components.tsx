@@ -164,9 +164,9 @@ export default function Index() {
             humanitarian assistance for Ukrainian civilians and the Armed Forces
             of Ukraine, as well as support for refugees and displaced persons in
             the Netherlands. Consequently, we collaborate with numerous partners
-            both in Ukraine and in the Netherlands, including accredited
-            volunteer organisations, public-sector organisations and
-            foundations, as well as commercial enterprises.
+            both in Ukraine and in the Netherlands, including accredited results
+            organisations, public-sector organisations and foundations, as well
+            as commercial enterprises.
           </Col.Item>
         </Col.Container>
       </Section>

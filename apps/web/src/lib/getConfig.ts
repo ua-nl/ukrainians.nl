@@ -16,7 +16,7 @@ export const getConfig = (lang: AvailableLangs): UIContext => ({
     contactHeader: 'links.title',
     followUs: 'followUs',
     donateBtn: 'donate',
-    volunteer: 'volunteer',
+    results: 'results',
     readMore: 'readMore',
     humanitarianAid: 'menu.humanitarianAid',
     collectionPoints: 'collectionPoints',
