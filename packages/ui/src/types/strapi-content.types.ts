@@ -3,7 +3,6 @@ import { Category } from './strapi-response.types';
 export type PageContent = {
   cards: Card[];
   description: string;
-  description2: string;
   id: number;
   pictures: Pictures[] | null;
   title: string;
@@ -20,13 +19,13 @@ export type Card = {
   description: string;
   id: number;
   pictures: Pictures[] | null;
-  category?: Category;
 };
 
 export type News = {
   id: number;
   title: string;
-  description: string;
+  shortDescription: string;
+  longDescription: string;
   category: Category;
   pictures: Pictures[] | null;
   createdAt: string;

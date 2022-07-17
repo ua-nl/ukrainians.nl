@@ -81,7 +81,7 @@ export const CardItem = ({ news }: CardItemProps) => (
       <CardContent>
         <Para2 mb={4}>{news.createdAt}</Para2>
         <Subtitle mb={3}>{news.title}</Subtitle>
-        <Description>{news.description}</Description>
+        <Description>{news.shortDescription}</Description>
       </CardContent>
     </CardContainer>
   </Link>

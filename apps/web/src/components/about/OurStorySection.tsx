@@ -1,17 +1,9 @@
 import { PageContent } from 'ui/types';
 import { Col, H1, Img, Para, Section } from 'ui/ux';
 
-type OurStorySectionProps = Pick<
-  PageContent,
-  'title' | 'pictures' | 'description' | 'description2'
->;
+type OurStorySectionProps = Pick<PageContent, 'title' | 'cards'>;
 
-export const OurStorySection = ({
-  title,
-  pictures,
-  description,
-  description2,
-}: OurStorySectionProps) => {
+export const OurStorySection = ({ title, cards }: OurStorySectionProps) => {
   return (
     <Section bgColor="grey">
       <H1 center mb={16}>
@@ -19,19 +11,23 @@ export const OurStorySection = ({
       </H1>
       <Col.Container>
         <Col.Item sm={6}>
-          <Para>{description}</Para>
+          <Para>{cards[0].description}</Para>
         </Col.Item>
 
         <Col.Item sm={6}>
-          <Para mb={10}>{description2}</Para>
+          <Para mb={10}>{cards[1].description}</Para>
         </Col.Item>
 
         <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
-          {pictures && <Img picture={pictures[0]} alt={title} />}
+          {cards[0].pictures && (
+            <Img picture={cards[0].pictures[0]} alt={title} />
+          )}
         </Col.Item>
 
         <Col.Item sm={6} vAlign="center" order={{ xs: 2, sm: 1 }}>
-          {pictures && <Img picture={pictures[1]} alt={title} />}
+          {cards[1].pictures && (
+            <Img picture={cards[1].pictures[0]} alt={title} />
+          )}
         </Col.Item>
       </Col.Container>
     </Section>

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "news",
     "pluralName": "all-news",
-    "displayName": "news"
+    "displayName": "news",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,28 +13,36 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
-    "description": {
-      "type": "richtext"
+    "shortDescription": {
+      "type": "text",
+      "required": true
+    },
+    "longDescription": {
+      "type": "richtext",
+      "required": true
     },
     "pictures": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images",
-        "files",
         "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
+        "audios",
+        "files"
+      ]
     },
     "category": {
       "type": "enumeration",
       "enum": [
         "news",
         "events",
-        "posts"
-      ]
+        "press"
+      ],
+      "required": true
     }
   }
 }

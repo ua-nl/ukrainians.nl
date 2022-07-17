@@ -10,6 +10,14 @@ import {
 
 import { getImageURl } from './getImageUrl';
 
+async function getStrapiData<T>(url: string) {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api${url}?populate=deep`,
+  );
+  const { data }: StrapiResponse<T> = await res.json();
+  return data;
+}
+
 const formatPictures = (pictures: StrapiPictures): Pictures[] | null => {
   if (pictures?.data) {
     return pictures.data.map((picture) => ({
@@ -28,14 +36,6 @@ const formatDate = (date: string) => {
 
   return `${d.getDate()} ${month} ${d.getFullYear()}`;
 };
-
-export async function getStrapiData<T>(url: string) {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api${url}?populate=deep`,
-  );
-  const { data }: StrapiResponse<T> = await res.json();
-  return data;
-}
 
 export async function getStrapiSingleType(url: string): Promise<PageContent[]> {
   const data = await getStrapiData<StrapiSingleTypeResponse>(url);

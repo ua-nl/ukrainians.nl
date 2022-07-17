@@ -41,7 +41,7 @@ export default function NewsPage({ news }: NewsProps) {
                 <Img key={index} picture={picture} />
               ))}
           </div>
-          <Markdown>{news.description}</Markdown>
+          <Markdown>{news.longDescription}</Markdown>
         </NewsContainer>
       </Section>
     </Page>

@@ -18,12 +18,7 @@ export default function Index({ data }: PageProps) {
         description={ourMission.description}
         pictures={ourMission.pictures}
       />
-      <OurStorySection
-        title={ourStory.title}
-        pictures={ourStory.pictures}
-        description={ourStory.description}
-        description2={ourStory.description2}
-      />
+      <OurStorySection title={ourStory.title} cards={ourStory.cards} />
       <WhatWeDoSection title={whatWeDo.title} cards={whatWeDo.cards} />
     </Page>
   );

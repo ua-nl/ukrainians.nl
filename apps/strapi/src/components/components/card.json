@@ -23,14 +23,6 @@
         "videos",
         "audios"
       ]
-    },
-    "category": {
-      "type": "enumeration",
-      "enum": [
-        "news",
-        "events",
-        "press"
-      ]
     }
   }
 }

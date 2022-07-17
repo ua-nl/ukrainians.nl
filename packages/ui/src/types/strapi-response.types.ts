@@ -21,7 +21,8 @@ export type StrapiSingleTypeResponse = {
 export type StrapiCollectionTypeResponse = {
   attributes: {
     title: string;
-    description: string;
+    shortDescription: string;
+    longDescription: string;
     category: Category;
     pictures: StrapiPictures;
     createdAt: string;
@@ -41,7 +42,6 @@ export type StrapiPictures = {
 type StrapiSection = {
   cards: StrapiCard[];
   description: string;
-  description2: string;
   id: number;
   pictures: StrapiPictures;
   title: string;

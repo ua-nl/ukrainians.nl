@@ -28,9 +28,6 @@
       "type": "component",
       "repeatable": true,
       "component": "components.card"
-    },
-    "description2": {
-      "type": "richtext"
     }
   }
 }
