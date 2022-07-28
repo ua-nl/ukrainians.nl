@@ -1,14 +1,36 @@
-import { H1, Section } from 'ui/ux';
+import { useUIContext } from 'ui/lib';
+import { PageContent } from 'ui/types';
+import { Button, H1, IconCard, Img, Para, Section } from 'ui/ux';
 
-import { ActionCards } from '../ActionSection';
+export const WhatWeDoSection = ({
+  title,
+  cards,
+}: Pick<PageContent, 'title' | 'cards'>) => {
+  const ctx = useUIContext();
+  const readMore = ctx.l10n[ctx.texts.readMore];
 
-export const WhatWeDoSection = () => {
   return (
     <Section bgColor="lightGrey">
       <H1 center mb={16}>
-        WHAT WE DO
+        {title}
       </H1>
-      <ActionCards />
+      <IconCard.Container>
+        {cards &&
+          cards.map((card) => (
+            <IconCard.Item
+              Icon={
+                card.pictures && (
+                  <Img picture={card.pictures[0]} alt={card.title} />
+                )
+              }
+              title={card.title}
+              key={card.id}
+            >
+              <Para mb={5}>{card.description}</Para>
+              <Button>{readMore}</Button>
+            </IconCard.Item>
+          ))}
+      </IconCard.Container>
     </Section>
   );
 };

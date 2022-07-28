@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "humanitarian_aids",
+  "info": {
+    "singularName": "humanitarian-aid",
+    "pluralName": "humanitarian-aids",
+    "displayName": "Humanitarian aid"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "components.section"
+      ]
+    }
+  }
+}

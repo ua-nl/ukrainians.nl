@@ -1,15 +1,16 @@
-import Image from 'next/image';
-import { H2, Section } from 'ui/ux';
+import { PageContent } from 'ui/types';
+import { H2, Img, Section } from 'ui/ux';
 
-import partners from '../../../public/img/partners.png';
-
-export const PartnersSection = () => {
+export const PartnersSection = ({
+  title,
+  pictures,
+}: Pick<PageContent, 'title' | 'pictures'>) => {
   return (
     <Section thin bgColor="grey">
       <H2 center mb={8}>
-        Our partners &amp; sponsors
+        {title}
       </H2>
-      <Image src={partners} alt="Partners" />
+      {pictures && <Img picture={pictures[0]} alt={title} />}
     </Section>
   );
 };

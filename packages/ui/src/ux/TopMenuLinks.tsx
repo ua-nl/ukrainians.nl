@@ -1,4 +1,3 @@
-import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import {
   Button,
   Collapse,
@@ -7,10 +6,14 @@ import {
   MenuProps,
   styled,
 } from '@mui/material';
+import { useRouter } from 'next/router';
 import { Dispatch, MouseEvent, ReactNode, useState } from 'react';
 
-import { useScreen } from '../hooks/useScreen';
+import { IconExpandLess } from '../assets/icons/IconExpandLess.svg';
+import { IconExpandMore } from '../assets/icons/IconExpandMore.svg';
 import { UASysColors, UASysStyleParts, useUIContext } from '../lib';
+import { useScreen } from '../lib/hooks/useScreen';
+import { AppLocale } from '../lib/types/app-locale.types';
 
 type DropdownLinkProps = {
   name: string;
@@ -67,6 +70,11 @@ const DropdownMenu = styled((props: MenuProps) => (
 const MenuLink = styled(MenuItem)(({ theme }) => ({
   fontWeight: 500,
 
+  '&:hover': {
+    textDecoration: 'underline',
+    backgroundColor: theme.palette.background.default,
+  },
+
   '& .Mui-focusVisible': {
     backgroundColor: theme.palette.background.default,
   },
@@ -74,11 +82,6 @@ const MenuLink = styled(MenuItem)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     marginLeft: theme.spacing(8),
     borderRadius: '8px',
-
-    '&:hover': {
-      backgroundColor: theme.palette.background.default,
-      textDecoration: 'underline',
-    },
   },
 }));
 
@@ -141,7 +144,7 @@ const DropdownLink = ({
         onClick={handleClick}
       >
         {name}
-        {expandLess ? <ExpandLess /> : <ExpandMore />}
+        {expandLess ? <IconExpandLess /> : <IconExpandMore />}
       </NavbarLink>
 
       {isDesktop ? (
@@ -165,9 +168,12 @@ const DropdownLink = ({
 
 export const NavbarLinks = () => {
   const ctx = useUIContext();
+  const router = useRouter();
+
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
-  const handleClose = () => {
+  const handleClose = (locale: AppLocale) => {
+    router.push(router.asPath, router.asPath, { locale });
     setAnchorEl(null);
   };
 
@@ -182,10 +188,14 @@ export const NavbarLinks = () => {
           {ctx.l10n[page.label]}
         </NavbarLink>
       ))}
-      <DropdownLink name="Test" anchorEl={anchorEl} setAnchorEl={setAnchorEl}>
-        <MenuLink onClick={handleClose}>Item 1</MenuLink>
-        <MenuLink onClick={handleClose}>Item 2</MenuLink>
-        <MenuLink onClick={handleClose}>Item 3</MenuLink>
+      <DropdownLink
+        name="Locale test"
+        anchorEl={anchorEl}
+        setAnchorEl={setAnchorEl}
+      >
+        <MenuLink onClick={() => handleClose(AppLocale.en)}>English</MenuLink>
+        <MenuLink onClick={() => handleClose(AppLocale.uk)}>Ukrainian</MenuLink>
+        <MenuLink onClick={() => handleClose(AppLocale.nl)}>Dutch</MenuLink>
       </DropdownLink>
       <DonateButton variant="contained">
         {ctx.l10n[ctx.texts.donateBtn]}

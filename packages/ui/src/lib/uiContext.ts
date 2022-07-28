@@ -20,7 +20,7 @@ export type UIContext = {
     contactHeader: string;
     donateBtn: string;
     followUs: string;
-    volunteer: string;
+    results: string;
     readMore: string;
     humanitarianAid: string;
     collectionPoints: string;
@@ -36,7 +36,7 @@ export const UI_CONTEXT_EMPTY: UIContext = {
     contactHeader: 'Contacts',
     donateBtn: 'Donate',
     followUs: 'Follow us',
-    volunteer: 'Volunteer',
+    results: 'Results',
     readMore: 'Read more',
     humanitarianAid: 'Humanitarian aid',
     collectionPoints: 'Collection points',

@@ -1,48 +1,52 @@
 import { styled } from '@mui/system';
 import { useUIContext } from 'ui/lib';
+import { PageContent } from 'ui/types';
 import { Button, MainHeader, Section, Subtitle } from 'ui/ux';
-
-import CoverImage from '../../../public/img/carousel/cover1.png';
 
 const ButtonsContainer = styled('div')(({ theme }) => ({
   display: 'flex',
   gap: theme.spacing(3),
   marginTop: theme.spacing(12),
+
+  [theme.breakpoints.only('xs')]: {
+    flexDirection: 'column',
+  },
 }));
 
-const BackgroundImageContainer = styled('div')({
-  backgroundImage: `url(${CoverImage.src})`,
+const BackgroundImageContainer = styled('div', {
+  shouldForwardProp: (prop) => prop !== 'src',
+})<{ src?: string }>(({ src }) => ({
+  backgroundImage: `url(${src})`,
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
-});
+}));
 
 const BackgroundImageContent = styled('div')({
-  height: '70vh',
+  height: '530px',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
+  overflow: 'hidden',
 });
 
-const AccentHeader = styled('span')(({ theme }) => ({
-  color: theme.palette.primary.contrastText,
-}));
-
-export const MainHeaderSection = () => {
+export const MainHeaderSection = ({
+  title,
+  description,
+  pictures,
+}: Pick<PageContent, 'title' | 'description' | 'pictures'>) => {
   const ctx = useUIContext();
 
   return (
-    <BackgroundImageContainer>
+    <BackgroundImageContainer src={pictures?.[0].url}>
       <Section breadcrumbs color="white">
         <BackgroundImageContent>
-          <MainHeader>
-            <AccentHeader>#</AccentHeader>StandWithUkraine
-          </MainHeader>
-          <Subtitle>Stichting Oekraïners in Nederland</Subtitle>
+          <MainHeader>{title}</MainHeader>
+          <Subtitle>{description}</Subtitle>
 
           <ButtonsContainer>
             <Button type="primary">{ctx.l10n[ctx.texts.donateBtn]}</Button>
-            <Button type="accent">{ctx.l10n[ctx.texts.volunteer]}</Button>
+            <Button>{ctx.l10n[ctx.texts.results]}</Button>
           </ButtonsContainer>
         </BackgroundImageContent>
       </Section>

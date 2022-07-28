@@ -14,7 +14,7 @@ export const META_TAGS = {
     'help ukraine',
     'netherlands refugees',
     'nl charity',
-    'humanitarian volunteer',
+    'humanitarian results',
     'aid support 2022',
   ].join(' '),
   url: 'https://ukrainians.nl/',

@@ -1,27 +1,24 @@
-import Image from 'next/image';
-import { Col, H1, ImgBox, Para, Section } from 'ui/ux';
+import { PageContent } from 'ui/types';
+import { Col, H1, Img, ImgBox, Para, Section } from 'ui/ux';
 
-import atTheTruck from '../../../public/photo/at-the-truck.jpg';
-import groupWithFlag from '../../../public/photo/group-with-flag.jpg';
-
-export const AboutUsSection = () => {
+export const AboutUsSection = ({
+  title,
+  description,
+  pictures,
+}: Pick<PageContent, 'title' | 'description' | 'pictures'>) => {
   return (
     <Section>
       <Col.Container>
         <Col.Item vAlign="center" sm={6}>
-          <H1>About us</H1>
-          <Para>
-            Ukrainians in the Netherlands Foundation supports the needs of the
-            Dutch-Ukrainian diaspora and is also working tirelessly to counter
-            the catastrophic consequences of Russia’s war on Ukraine
-          </Para>
+          <H1>{title}</H1>
+          <Para>{description}</Para>
         </Col.Item>
         <Col.Item sm={6}>
-          <ImgBox sx={{ float: 'right', marginLeft: '25%' }}>
-            <Image src={atTheTruck} />
+          <ImgBox sx={{ float: 'right', marginLeft: '15%' }}>
+            {pictures && <Img picture={pictures[0]} alt={title} />}
           </ImgBox>
-          <ImgBox sx={{ float: 'left', width: '50%', marginTop: '-30%' }}>
-            <Image src={groupWithFlag} />
+          <ImgBox sx={{ float: 'left', width: '60%', marginTop: '-30%' }}>
+            {pictures && <Img picture={pictures[1]} alt={title} />}
           </ImgBox>
         </Col.Item>
       </Col.Container>

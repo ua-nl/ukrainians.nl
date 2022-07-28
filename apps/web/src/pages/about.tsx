@@ -1,19 +1,35 @@
+import { PageProps, StaticPageProps } from 'ui/types';
 import { Bread, Page } from 'ui/ux';
 
 import { OurMissionSection } from '../components/about/OurMissionSection';
 import { OurStorySection } from '../components/about/OurStorySection';
-import { ActionCards } from '../components/ActionSection';
 import { WhatWeDoSection } from '../components/home/WhatWeDoSection';
+import { getStrapiSingleType } from '../lib/getStrapiData';
 
-export default function Index() {
+export default function Index({ data }: PageProps) {
+  const [ourMission, ourStory, whatWeDo] = data;
+
   return (
     <Page>
       <Bread history={[{ label: 'Home', href: '/' }]} current="About us" />
 
-      <OurMissionSection />
-      <OurStorySection />
-      <WhatWeDoSection />
-      <ActionCards />
+      <OurMissionSection
+        title={ourMission.title}
+        description={ourMission.description}
+        pictures={ourMission.pictures}
+      />
+      <OurStorySection title={ourStory.title} cards={ourStory.cards} />
+      <WhatWeDoSection title={whatWeDo.title} cards={whatWeDo.cards} />
     </Page>
   );
+}
+
+export async function getStaticProps(): StaticPageProps {
+  const response = await getStrapiSingleType('/about-us');
+
+  return {
+    props: {
+      data: response,
+    },
+  };
 }

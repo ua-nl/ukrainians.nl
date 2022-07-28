@@ -8,6 +8,7 @@ export * from './ux/Col';
 export * from './ux/Divider';
 export * from './ux/FilterTabs';
 export * from './ux/IconCard';
+export * from './ux/Img';
 export * from './ux/ImgBox';
 export * from './ux/Page';
 export * from './ux/Section';
