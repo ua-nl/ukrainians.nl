@@ -1,3 +1,4 @@
+import qs from 'qs';
 import {
   News,
   PageContent,
@@ -6,15 +7,27 @@ import {
   StrapiPictures,
   StrapiResponse,
   StrapiSingleTypeResponse,
-} from 'ui/types';
+} from 'ui/lib';
 
 import { getImageURl } from './getImageUrl';
 
-async function getStrapiData<T>(url: string) {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api${url}?populate=deep`,
-  );
+export async function getStrapiData<T>(
+  url: string,
+  urlParams: Record<string, unknown>,
+) {
+  const queryString = qs.stringify(urlParams);
+  const requestUrl = `${process.env.NEXT_PUBLIC_API_URL}/api${url}${
+    queryString ? `?${queryString}` : ''
+  }`;
+
+  const res = await fetch(requestUrl);
+
+  if (!res.ok) {
+    throw new Error(`An error occured please try again`);
+  }
+
   const { data }: StrapiResponse<T> = await res.json();
+
   return data;
 }
 
@@ -37,8 +50,18 @@ const formatDate = (date: string) => {
   return `${d.getDate()} ${month} ${d.getFullYear()}`;
 };
 
-export async function getStrapiSingleType(url: string): Promise<PageContent[]> {
-  const data = await getStrapiData<StrapiSingleTypeResponse>(url);
+export async function getStrapiSingleType(
+  url: string,
+  urlParams: Record<string, unknown> = {},
+): Promise<PageContent[]> {
+  const data = await getStrapiData<StrapiSingleTypeResponse>(url, {
+    populate: {
+      body: {
+        populate: ['pictures', 'cards', 'cards.pictures'],
+      },
+    },
+    ...urlParams,
+  });
 
   const pageContent = data.attributes.body.map((section) => {
     const pictures = formatPictures(section.pictures);
@@ -58,8 +81,14 @@ export async function getStrapiSingleType(url: string): Promise<PageContent[]> {
   return pageContent;
 }
 
-export async function getStrapiCollectionTypes(url: string): Promise<News[]> {
-  const data = await getStrapiData<StrapiCollectionTypeResponse[]>(url);
+export async function getStrapiCollectionTypes(
+  url: string,
+  urlParams: Record<string, unknown> = {},
+): Promise<News[]> {
+  const data = await getStrapiData<StrapiCollectionTypeResponse[]>(url, {
+    populate: ['pictures'],
+    ...urlParams,
+  });
 
   return data.map((item) => ({
     ...item.attributes,
@@ -69,8 +98,14 @@ export async function getStrapiCollectionTypes(url: string): Promise<News[]> {
   }));
 }
 
-export async function getStrapiItem(url: string): Promise<News> {
-  const data = await getStrapiData<StrapiCollectionTypeResponse>(url);
+export async function getStrapiItem(
+  url: string,
+  urlParams: Record<string, unknown> = {},
+): Promise<News> {
+  const data = await getStrapiData<StrapiCollectionTypeResponse>(url, {
+    populate: ['pictures'],
+    ...urlParams,
+  });
 
   return {
     ...data.attributes,

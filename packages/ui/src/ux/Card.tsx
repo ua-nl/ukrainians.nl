@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { UASysStyleParts } from '../lib/theme/cssVars/uiElements';
-import { News } from '../types';
+import { News } from '../lib/types';
 import { Para2, Subtitle } from './Typography';
 
 const CardContainer = styled('div')(({ theme }) => ({

@@ -8,4 +8,8 @@ module.exports = withTM({
   images: {
     domains: ['localhost'],
   },
+  i18n: {
+    locales: ['en', 'uk', 'nl', 'ru'],
+    defaultLocale: 'en',
+  },
 });

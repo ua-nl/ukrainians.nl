@@ -1,4 +1,5 @@
 import { styled } from '@mui/system';
+import { useLocale } from 'ui/lib';
 import { News, StaticProps } from 'ui/types';
 import { Bread, H1, Img, Markdown, Page, Section } from 'ui/ux';
 
@@ -8,7 +9,7 @@ import {
 } from '../../lib/getStrapiData';
 
 type PathProps = {
-  params: { id: string };
+  params: { id: string; locale: string };
 };
 
 type NewsProps = {
@@ -23,6 +24,9 @@ const NewsContainer = styled('div')(({ theme }) => ({
 }));
 
 export default function NewsPage({ news }: NewsProps) {
+  const locale = useLocale();
+  console.log(news.locale);
+
   return (
     <Page>
       <Bread
@@ -53,8 +57,10 @@ export async function getStaticProps({
 }: PathProps): StaticProps<NewsProps> {
   const news = await getStrapiItem(`/all-news/${params.id}`);
 
+  console.log(params.locale);
+
   return {
-    props: { news },
+    props: { news, params },
   };
 }
 

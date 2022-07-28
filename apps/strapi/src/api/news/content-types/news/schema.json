@@ -10,19 +10,38 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "shortDescription": {
       "type": "text",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "longDescription": {
       "type": "richtext",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "pictures": {
       "type": "media",
@@ -36,6 +55,11 @@
       ]
     },
     "category": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
       "type": "enumeration",
       "enum": [
         "news",

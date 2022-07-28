@@ -4,18 +4,28 @@
   "info": {
     "singularName": "homepage",
     "pluralName": "homepages",
-    "displayName": "Homepage"
+    "displayName": "Homepage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "body": {
       "type": "dynamiczone",
       "components": [
         "components.section"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

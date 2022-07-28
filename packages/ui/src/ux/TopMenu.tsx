@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { IconClose } from '../assets/icons/IconClose.svg';
 import { IconMenu } from '../assets/icons/IconMenu.svg';
 import { LogoMenu } from '../assets/LogoMenu.svg';
-import { useScreen } from '../hooks/useScreen';
+import { useScreen } from '../lib/hooks/useScreen';
 import { UASysColors } from '../lib/theme/cssVars/color';
 import { CONTAINER_MAX_WIDTH } from '../lib/theme/cssVars/size';
 import { NavbarLinks } from '../ux';

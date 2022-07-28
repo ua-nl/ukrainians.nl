@@ -31,7 +31,7 @@ export default function Index({ pageContent, news }: PageProps) {
 
 export async function getStaticProps(): StaticProps<PageProps> {
   const pageContent = await getStrapiSingleType('/latest-news');
-  const newsCollection = await getStrapiCollectionTypes('/all-news');
+  const newsCollection = await getStrapiCollectionTypes('/all-news', {});
 
   return {
     props: {
